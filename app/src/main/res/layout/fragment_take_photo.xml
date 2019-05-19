@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="TakePhotoBinding" />
+
+    <LinearLayout
+        android:id="@+id/takePhotoContainer"
+        style="@style/LinearLayout.Vertical"
+        android:background="@android:color/white"
+        android:clipToPadding="true">
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:gravity="center"
+            android:padding="@dimen/default_padding"
+            android:text="@string/edit_picture"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/toolbar_text_size" />
+
+        <LinearLayout
+            style="@style/LinearLayout.Vertical"
+            android:animateLayoutChanges="true"
+            android:padding="@dimen/activity_top_margin">
+
+            <Button
+                android:id="@+id/takePhoto"
+                style="@style/Button.RectangularButton"
+                android:drawablePadding="@dimen/btn_drawable_padding"
+                android:drawableStart="@drawable/icn_photo"
+                android:text="@string/take_photo" />
+
+            <Button
+                android:id="@+id/choosePhoto"
+                style="@style/Button.RectangularButton"
+                android:layout_marginTop="-1dp"
+                android:drawableLeft="@drawable/icn_picture"
+                android:drawablePadding="@dimen/btn_drawable_padding"
+                android:text="@string/choose_photo" />
+
+            <Button
+                android:id="@+id/cancel"
+                style="@style/Button.RoundedBlueButton"
+                android:layout_marginTop="@dimen/default_margin"
+                android:text="@string/cancel" />
+
+            <android.view.View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_top_margin"
+                android:background="@android:color/transparent" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

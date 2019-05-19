@@ -1,0 +1,85 @@
+{
+  "id": 1227302,
+  "rider": {
+    "id": 2982,
+    "rating": 5,
+    "gender": "UNKNOWN",
+    "phoneNumber": "+971565362129",
+    "uuid": "2982",
+    "active": true,
+    "lastname": "Test",
+    "type": "RIDER",
+    "firstname": "RideOneTwoNine",
+    "fullName": "RideOneTwoNine Test",
+    "charity": {
+      "id": 8,
+      "cityBitmask": 1,
+      "imageUrl": "https:\/\/media.rideaustin.com\/images\/roundup\/austin-parks-foundation@2x.png",
+      "name": "Austin Parks Foundation",
+      "order": 1
+    },
+    "user": {
+      "id": 2245,
+      "uuid": "2245",
+      "avatars": [
+      ],
+      "phoneNumberVerified": true,
+      "lastname": "Test",
+      "firstname": "RideOneTwoNine",
+      "fullName": "RideOneTwoNine Test",
+      "enabled": true,
+      "photoUrl": "https://media.istockphoto.com/photos/beautiful-woman-takes-a-selfie-picture-id535921215?k=6&m=535921215&s=612x612&w=0&h=wArEuW1GDXFX1i9fUdwMSRcHnIod-6pe29OU8qve5ZU=",
+      "email": "ride129@test.com",
+      "phoneNumber": "+971565362129",
+      "gender": "UNKNOWN"
+    },
+    "cityId": 1,
+    "email": "ride129@test.com"
+  },
+  "start": {
+    "address": "11610 Jollyville Road, Austin, Texas",
+    "zipCode": "78759"
+  },
+  "end": {
+    "address": "11600 Research Blvd, Austin, Texas",
+    "zipCode": "78759"
+  },
+  "requestedCarType": {
+    "carCategory": "REGULAR",
+    "description": "Standard Car",
+    "ratePerMile": "0.99",
+    "processingFeeRate": 1,
+    "active": true,
+    "raFeeFactor": 0,
+    "processingFeeText": "$1.00 Processing fee",
+    "processingFee": "1.00",
+    "title": "STANDARD",
+    "maxPersons": 4,
+    "order": 1,
+    "minimumFare": "5.00",
+    "cancellationFee": "4.00",
+    "tncFeeRate": 1,
+    "iconUrl": "https:\/\/media.rideaustin.com\/icon\/regular.png",
+    "baseFare": "1.50",
+    "cityId": 1,
+    "bookingFee": "2.00",
+    "ratePerMinute": "0.25"
+  },
+  "cityId": 1,
+  "startAddress": "11610 Jollyville Road, Austin, Texas",
+  "endAddress": "11600 Research Blvd, Austin, Texas",
+  "createdDate": 1493982774691,
+  "uuid": "1227302",
+  "updatedDate": 1493982774691,
+  "raPayment": "0.00",
+  "rideCost": "0.00",
+  "totalCharge": "0.00",
+  "totalFare": "0.00",
+  "surgeFactor": 2.5,
+  "startLocationLat": 30.416855,
+  "startLocationLong": -97.74988399999999,
+  "endLocationLat": 30.415711,
+  "endLocationLong": -97.747448,
+  "status": "REQUESTED",
+  "startAreaId": 1411
+}

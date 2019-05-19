@@ -1,0 +1,92 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="DriverVehicleInformationBinding">
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.cars.add.DriverVehicleInformationViewModel" />
+    </data>
+
+
+    <ScrollView style="@style/ScrollView.Driver">
+
+        <LinearLayout style="@style/LinearLayout.Base">
+
+            <ImageView
+                android:id="@+id/license"
+                style="@style/ImageView.DriverSignUp.Top"
+                android:scaleType="centerInside"
+                android:src="@drawable/icn_vehicle" />
+
+            <include layout="@layout/view_single_divider" />
+
+            <TextView
+                style="@style/RATextView.Driver.Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/material_padding"
+                android:text="@string/driver_vehicle_tell_us" />
+
+            <TextView
+                style="@style/RATextView.Driver.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/material_padding"
+                android:layout_marginRight="@dimen/material_padding"
+                android:text="@{viewModel.vehicleDescription}"
+                tools:text="@string/driver_vehicle_information_description" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/vehicle_requirements_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/tv_bulleted_list_item_left_margin"
+                    android:layout_marginRight="@dimen/material_padding"
+                    android:layout_marginTop="@dimen/tv_bulleted_list_item_initial_vertical_margin"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/RATextView.Driver.BulletedListItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/driver_vehicle_information_required_year" />
+
+                    <TextView
+                        style="@style/RATextView.Driver.BulletedListItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/driver_vehicle_information_required_doors" />
+
+                    <TextView
+                        style="@style/RATextView.Driver.BulletedListItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/driver_vehicle_information_required_not_salvage" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <include layout="@layout/view_single_divider" />
+
+            <Button
+                android:id="@+id/continue_button"
+                style="@style/Button.RoundedBlueButton"
+                android:layout_margin="@dimen/material_padding"
+                android:text="@string/driver_continue" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

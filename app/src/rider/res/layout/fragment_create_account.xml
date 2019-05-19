@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="AccountBinding" />
+
+    <LinearLayout
+        style="@style/LinearLayout.Login"
+        android:layout_marginTop="@dimen/empty_margin_top"
+        android:background="@color/app_screen_background">
+
+        <Button
+            android:id="@+id/facebook"
+            style="@style/Button.RoundedBlueButton.FacebookButton"
+            android:text="@string/fb_login_text" />
+
+        <include layout="@layout/include_login_divider" />
+
+        <android.support.design.widget.TextInputLayout style="@style/TextInputLayout">
+
+            <EditText
+                android:id="@+id/email"
+                style="@style/EditText.AppLogin"
+                android:hint="@string/email_hint"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/country"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/country_flag_selector_height"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/homogenous_padding_compact"
+                android:spinnerMode="dialog" />
+
+
+            <android.support.design.widget.TextInputLayout style="@style/TextInputLayout">
+
+                <EditText
+                    android:id="@+id/mobile"
+                    style="@style/EditText.AppLogin"
+                    android:hint="@string/mobile_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="@integer/maximum_phone_number_length"
+                    android:maxLines="@integer/phone_maxline" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout style="@style/TextInputLayout">
+
+            <EditText
+                android:id="@+id/password"
+                style="@style/EditText.AppLogin"
+                android:hint="@string/password_hint"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="@string/sign_up_info"
+            android:textSize="@dimen/sign_up_info" />
+
+        <Button
+            android:id="@+id/next"
+            style="@style/Button.RoundedBlueButton"
+            android:text="@string/next" />
+
+        <android.view.View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_top_margin"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+</layout>

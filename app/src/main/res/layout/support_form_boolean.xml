@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.rideaustin.ui.drawer.triphistory.forms.SupportFieldViewModel.FieldType" />
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.triphistory.forms.SupportFieldViewModel" />
+    </data>
+
+    <LinearLayout
+        style="@style/LinearLayout.Base"
+        android:layout_marginBottom="@dimen/material_padding">
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_2dp"
+            android:text="@{viewModel.supportField.fieldTitle}"
+            android:textColor="@color/charcoalGrey"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding_48dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/padding_8dp"
+            android:paddingRight="@dimen/padding_8dp">
+
+            <RadioButton
+                android:id="@+id/radioButtonYes"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="@={viewModel.inputBoolean}"
+                android:text="@string/btn_yes"
+                android:textColor="@color/charcoalGrey"
+                app:buttonTint="@color/blue_text"
+                android:enabled="@{FieldType.BOOL.equals(viewModel.supportField.fieldType)}"/>
+
+            <RadioButton
+                android:id="@+id/radioButtonNo"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/btn_no"
+                android:textColor="@color/charcoalGrey"
+                app:buttonTint="@color/blue_text"
+                android:enabled="@{FieldType.BOOL.equals(viewModel.supportField.fieldType)}"/>
+        </RadioGroup>
+    </LinearLayout>
+</layout>

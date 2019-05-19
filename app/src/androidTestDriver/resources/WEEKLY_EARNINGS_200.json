@@ -1,0 +1,176 @@
+{
+  "content": [
+    {
+      "id": 1233057,
+      "status": "COMPLETED",
+      "startLocationLat": 30.27130074286913,
+      "startLocationLng": -97.74919990450142,
+      "start": {
+        "address": "702 Rio Grande Street",
+        "zipCode": "78701"
+      },
+      "endLocationLat": 30.2713,
+      "endLocationLng": -97.7492,
+      "end": {
+        "address": "702 Rio Grande St, Austin",
+        "zipCode": "78701"
+      },
+      "startedOn": 1496130556000,
+      "completedOn": 1496130567000,
+      "minimumFare": "5.00",
+      "baseFare": "1.50",
+      "ratePerMile": "0.99",
+      "ratePerMinute": "0.25",
+      "distanceFare": "0.00",
+      "timeFare": "0.05",
+      "rideMap": "ride-maps/204511a4-8e26-4b44-a9cb-82f8ddb626bf.png",
+      "cityFee": "0.08",
+      "raFee": "0.00",
+      "subTotal": "6.25",
+      "totalFare": "8.33",
+      "bookingFee": "2.00",
+      "driverPayment": "11.25",
+      "requestedCarType": {
+        "carCategory": "REGULAR",
+        "title": "STANDARD",
+        "description": "Standard Car",
+        "iconUrl": "https://media.rideaustin.com/icon/regular.png",
+        "maxPersons": 4,
+        "order": 1,
+        "cityCarTypes": [
+          {
+            "id": 21,
+            "cityId": 1,
+            "enabled": true,
+            "minimumFare": "5.00",
+            "baseFare": "1.50",
+            "bookingFee": "2.00",
+            "raFeeFactor": 0.00,
+            "ratePerMile": "0.99",
+            "ratePerMinute": "0.25",
+            "cancellationFee": "4.00",
+            "cityFeeRate": 0.01,
+            "processingFeeRate": 1.00,
+            "processingFeeFixedPart": 0.30,
+            "processingFeeMinimum": "1.00",
+            "processingFeeText": "$1.00 Processing fee",
+            "uuid": "21"
+          },
+          {
+            "id": 29,
+            "cityId": 2,
+            "enabled": true,
+            "minimumFare": "3.00",
+            "baseFare": "0.50",
+            "bookingFee": "1.95",
+            "raFeeFactor": 0.00,
+            "ratePerMile": "3.00",
+            "ratePerMinute": "1.00",
+            "cancellationFee": "14.00",
+            "cityFeeRate": 0.05,
+            "processingFeeRate": 1.00,
+            "processingFeeFixedPart": 0.30,
+            "processingFeeMinimum": "1.00",
+            "processingFeeText": "$1.00 Processing fee",
+            "uuid": "29"
+          }
+        ]
+      },
+      "car": {
+        "make": "Jeep",
+        "model": "Wrangler"
+      },
+      "roundUpAmount": "0.67",
+      "driverRating": 5.0,
+      "tip": "5.00",
+      "surgeFactor": 1.25,
+      "surgeFare": "1.25"
+    },
+    {
+      "id": 1233058,
+      "status": "COMPLETED",
+      "startLocationLat": 30.27130074286913,
+      "startLocationLng": -97.74919990450142,
+      "start": {
+        "address": "702 Rio Grande Street",
+        "zipCode": "78701"
+      },
+      "endLocationLat": 30.2713,
+      "endLocationLng": -97.7492,
+      "end": {
+        "address": "702 Rio Grande St, Austin",
+        "zipCode": "78701"
+      },
+      "startedOn": 1496130654000,
+      "completedOn": 1496130951000,
+      "minimumFare": "5.00",
+      "baseFare": "1.50",
+      "ratePerMile": "0.99",
+      "ratePerMinute": "0.25",
+      "distanceFare": "0.00",
+      "timeFare": "1.24",
+      "rideMap": "ride-maps/720bfd47-4743-43d2-9958-9424c44c123a.png",
+      "cityFee": "0.08",
+      "raFee": "0.00",
+      "subTotal": "6.25",
+      "totalFare": "8.33",
+      "bookingFee": "2.00",
+      "driverPayment": "11.25",
+      "requestedCarType": {
+        "carCategory": "REGULAR",
+        "title": "STANDARD",
+        "description": "Standard Car",
+        "iconUrl": "https://media.rideaustin.com/icon/regular.png",
+        "maxPersons": 4,
+        "order": 1,
+        "cityCarTypes": [
+          {
+            "id": 21,
+            "cityId": 1,
+            "enabled": true,
+            "minimumFare": "5.00",
+            "baseFare": "1.50",
+            "bookingFee": "2.00",
+            "raFeeFactor": 0.00,
+            "ratePerMile": "0.99",
+            "ratePerMinute": "0.25",
+            "cancellationFee": "4.00",
+            "cityFeeRate": 0.01,
+            "processingFeeRate": 1.00,
+            "processingFeeFixedPart": 0.30,
+            "processingFeeMinimum": "1.00",
+            "processingFeeText": "$1.00 Processing fee",
+            "uuid": "21"
+          },
+          {
+            "id": 29,
+            "cityId": 2,
+            "enabled": true,
+            "minimumFare": "3.00",
+            "baseFare": "0.50",
+            "bookingFee": "1.95",
+            "raFeeFactor": 0.00,
+            "ratePerMile": "3.00",
+            "ratePerMinute": "1.00",
+            "cancellationFee": "14.00",
+            "cityFeeRate": 0.05,
+            "processingFeeRate": 1.00,
+            "processingFeeFixedPart": 0.30,
+            "processingFeeMinimum": "1.00",
+            "processingFeeText": "$1.00 Processing fee",
+            "uuid": "29"
+          }
+        ]
+      },
+      "car": {
+        "make": "Jeep",
+        "model": "Wrangler"
+      },
+      "roundUpAmount": "0.67",
+      "driverRating": 5.0,
+      "tip": "5.00",
+      "surgeFactor": 1.25,
+      "surgeFare": "1.25"
+    }
+  ]
+}

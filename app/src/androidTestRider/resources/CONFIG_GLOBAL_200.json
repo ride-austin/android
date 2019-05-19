@@ -1,0 +1,281 @@
+{
+  "accessibility": {
+    "phoneNumber": "+15124782222",
+    "title": "Please contact Austin Cab Company (512) 478-2222",
+    "enabled": true
+  },
+  "currentTerms": {
+    "currentTermsId": 1,
+    "currentTermsUrl": "https://media.rideaustin.com/download/DriverTermsHouston.txt",
+    "currentTermsVersion": "1.0",
+    "currentTermsIsMandatory": false,
+    "currentTermsPublicationDate": 1497571199000
+  },
+  "supportedCities": [{
+    "cityId": 1,
+    "cityName": "AUSTIN",
+    "logoUrl": "https://media.rideaustin.com/images/logoRideAustin@3x.png",
+    "logoBlackUrl": "https://media.rideaustin.com/images/logoRideAustinBlack@3x.png"
+  },
+    {
+      "cityId": 2,
+      "cityName": "HOUSTON",
+      "logoUrl": "https://media.rideaustin.com/images/logoRideHouston@3x.png",
+      "logoBlackUrl": "https://media.rideaustin.com/images/logoRideHoustonBlack@3x.png"
+    }
+  ],
+  "smsMaskingEnabled": true,
+  "geocodingConfiguration": {
+    "pickupHints": [{
+      "name": "Austin Airport",
+      "areaPolygon": [{
+        "lng": -97.661287,
+        "lat": 30.198735
+      }, {
+        "lng": -97.661287,
+        "lat": 30.202642
+      }, {
+        "lng": -97.67264,
+        "lat": 30.202642
+      }, {
+        "lng": -97.67264,
+        "lat": 30.198735
+      }, {
+        "lng": -97.661287,
+        "lat": 30.198735
+      }],
+      "designatedPickup": {
+        "lng": -97.667177,
+        "lat": 30.202703
+      }
+    }],
+    "queryHints": [{
+      "prefixes": [
+        "ai",
+        "au"
+      ],
+      "contains": [
+        "airport"
+      ],
+      "description": "Austin-Bergstrom International Airport, Presidential Boulevard, Austin, TX, United States",
+      "reference": "ChIJRf9KizuxRIYRaCfcyaj8pxw",
+      "primaryAddress": "Austin-Bergstrom International Airport",
+      "secondaryAddress": "Presidential Boulevard, Austin, TX, United States"
+    }]
+  },
+  "currentCity": {
+    "cityId": 1,
+    "cityName": "AUSTIN",
+    "cityCenterLocation": "30.267153 -97.743061",
+    "cityCenterLocationData": {
+      "lat": 30.267153,
+      "lng": -97.743061
+    },
+    "cityBoundaryPolygon": [{
+      "lat": 30.58591,
+      "lng": -97.41895
+    },
+      {
+        "lat": 30.0758,
+        "lng": -97.41895
+      },
+      {
+        "lat": 30.0758,
+        "lng": -98.08044
+      },
+      {
+        "lat": 30.58591,
+        "lng": -98.08044
+      }
+    ]
+  },
+  "generalInformation": {
+    "privacyStatement": "http://www.rideaustin.com/legal/userterms/",
+    "splashUrl": "https://media.rideaustin.com/images/photoAustin@3x.jpg",
+    "companyDomain": "rideaustin.com",
+    "playStoreLink": "market://details?id=com.rideaustin.android",
+    "logoUrl": "https://media.rideaustin.com/images/logoRideAustin@3x.png",
+    "appstoreLink": "itms-apps://itunes.apple.com/app/id1116489847",
+    "legalRider": "http://www.rideaustin.com/legal/userterms/",
+    "supportEmail": "support@rideaustin.com",
+    "facebookUrl": "https://www.facebook.com/werideaustin",
+    "legalDriver": "http://www.rideaustin.com/legal/driverterms/",
+    "playStoreWeb": "https://play.google.com/store/apps/details?id=com.rideaustin.android",
+    "applicationNamePipe": "Ride|Austin",
+    "logoBlackUrl": "https://media.rideaustin.com/images/logoRideAustinBlack@3x.png",
+    "facebookUrlSchemeiOS": "fb://page?id=241278152906970",
+    "iconUrl": "https://media.rideaustin.com/images/Ride_180-1.png",
+    "companyWebsite": "http://www.rideaustin.com",
+    "applicationName": "Ride Austin"
+  },
+  "carTypes": [
+    {
+      "carCategory": "REGULAR",
+      "title": "STANDARD",
+      "description": "Standard Car",
+      "iconUrl": "https://media.rideaustin.com/icon/regular_seats.png",
+      "plainIconUrl": "https://media.rideaustin.com/icon/regular.png",
+      "maxPersons": 4,
+      "order": 1,
+      "active": true,
+      "cityId": 1,
+      "minimumFare": "5.00",
+      "baseFare": "1.50",
+      "bookingFee": "2.00",
+      "raFeeFactor": 0,
+      "ratePerMile": "0.99",
+      "ratePerMinute": "0.25",
+      "cancellationFee": "4.00",
+      "tncFeeRate": 1,
+      "processingFeeRate": 1,
+      "processingFeeText": "$1.00 Processing fee",
+      "processingFee": "1.00"
+    },
+    {
+      "carCategory": "SUV",
+      "title": "SUV",
+      "description": "SUV Car",
+      "iconUrl": "https://media.rideaustin.com/icon/suv_seats.png",
+      "plainIconUrl": "https://media.rideaustin.com/icon/suv.png",
+      "maxPersons": 6,
+      "order": 2,
+      "active": true,
+      "cityId": 1,
+      "minimumFare": "10.00",
+      "baseFare": "3.00",
+      "bookingFee": "2.00",
+      "raFeeFactor": 0.2,
+      "ratePerMile": "2.60",
+      "ratePerMinute": "0.35",
+      "cancellationFee": "5.00",
+      "tncFeeRate": 1,
+      "processingFeeRate": 1,
+      "processingFeeText": "$1.00 Processing fee",
+      "processingFee": "1.00"
+    },
+    {
+      "carCategory": "PREMIUM",
+      "title": "PREMIUM",
+      "description": "Premium Car",
+      "iconUrl": "https://media.rideaustin.com/icon/premium.png",
+      "plainIconUrl": "https://media.rideaustin.com/icon/premium.png",
+      "configuration": "{\"disableTipping\":true}",
+      "maxPersons": 4,
+      "order": 3,
+      "active": true,
+      "cityId": 1,
+      "minimumFare": "10.00",
+      "baseFare": "3.00",
+      "bookingFee": "2.00",
+      "raFeeFactor": 0.2,
+      "ratePerMile": "2.75",
+      "ratePerMinute": "0.40",
+      "cancellationFee": "6.00",
+      "tncFeeRate": 1,
+      "processingFeeRate": 1,
+      "processingFeeText": "$1.00 Processing fee",
+      "processingFee": "1.00"
+    },
+    {
+      "carCategory": "LUXURY",
+      "title": "LUXURY",
+      "iconUrl": "https://media.rideaustin.com/icon/luxury.png",
+      "plainIconUrl": "https://media.rideaustin.com/icon/luxury.png",
+      "maxPersons": 4,
+      "order": 5,
+      "active": true,
+      "cityId": 1,
+      "minimumFare": "10.00",
+      "baseFare": "5.00",
+      "bookingFee": "2.00",
+      "raFeeFactor": 0.2,
+      "ratePerMile": "3.75",
+      "ratePerMinute": "0.50",
+      "cancellationFee": "10.00",
+      "tncFeeRate": 1,
+      "processingFeeRate": 1,
+      "processingFeeText": "$1.00 Processing fee",
+      "processingFee": "1.00"
+    },
+    {
+      "carCategory": "TOMMY",
+      "title": "TOMMY",
+      "description": "TOMMY CAR",
+      "iconUrl": "https://media.rideaustin.com/icon/honda.png",
+      "plainIconUrl": "https://media.rideaustin.com/icon/honda.png",
+      "configuration": "{\"disableTipping\":false}",
+      "maxPersons": 5,
+      "order": 6,
+      "active": true,
+      "cityId": 1,
+      "minimumFare": "10.00",
+      "baseFare": "999.00",
+      "bookingFee": "10.00",
+      "raFeeFactor": 0.25,
+      "ratePerMile": "10.00",
+      "ratePerMinute": "10.00",
+      "cancellationFee": "99.00",
+      "tncFeeRate": 1,
+      "processingFeeRate": 1,
+      "processingFeeText": "$1.00 Processing fee",
+      "processingFee": "1.00"
+    }
+  ],
+  "rides": {
+    "distantPickUpNotificationThreshold": 200,
+    "rideSummaryDescription": "Eligible credits will be applied on your emailed receipt.",
+    "rideSummaryDescriptionFreeCreditCharged": "Eligible credits have been applied."
+  },
+  "riderLiveLocation": {
+    "expirationTime": 5,
+    "requiredAccuracy": 50,
+    "enabled": true
+  },
+  "riderReferFriend": {
+    "detailtexttemplate": " Every time a new RideAustin user signs up with your invite code, theyll receive $5 off their first fare. Once they take their first ride, youll also get $5 off the fare on your next ride. Discounts expire after 7 days, and you can accumulate up to $500 of discounts in your account.",
+    "emailbodytemplate": "<p>You should try RideAustin! Get <codeValue> in ride credit using my code <b><codeLiteral><b>. Download the app at: <downloadUrl></p>",
+    "downloadUrl": "http://www.rideaustin.com",
+    "smsbodytemplate": "You should try RideAustin! Get <codeValue> in ride credit using my code <codeLiteral> Download the app at: <downloadUrl>",
+    "enabled": false
+  },
+  "commonMessages": {
+    "networkTimeoutMessage": "You appear to have a poor connection. Keep calm and try again later."
+  },
+  "ratingConfiguration": {
+    "defaultRating": 5,
+    "minimumRatingThreshold": 5,
+    "limit": 50
+  },
+  "tipping": {
+    "rideTipLimit": 300,
+    "ridePaymentDelay": 60
+  },
+  "directConnectPhone": "+12013895725",
+  "rideCancellation": {
+    "enabled": false
+  },
+  "genderSelection": {
+    "title": "Select gender",
+    "subtitle": "Please select the gender you identify with",
+    "options": ["MALE", "FEMALE", "OTHER"]
+  },
+  "womanOnly": {
+    "femaleDriverEligibleCategories": ["REGULAR", "SUV", "PREMIUM", "LUXURY"],
+    "displayTitle": "Female Driver Mode",
+    "unknownGenderAlert": {
+      "cancelTitle": "Not now",
+      "message": "Female driver mode is intended for female passengers. To determine your eligibility for this mode, please confirm your gender identification.",
+      "enabled": true,
+      "actionTitle": "Confirm gender"
+    },
+    "displaySubtitle": "You can enable booking Ride Austin Female Drivers",
+    "femaleDriverEligibleGenders": ["FEMALE"],
+    "ineligibleGenderAlert": {
+      "cancelTitle": "Not now",
+      "message": "Female driver mode is intended for passengers identifying as female. If you made a mistake in selecting your gender, please change it in settings.",
+      "enabled": true,
+      "actionTitle": "Go to settings"
+    },
+    "enabled": true
+  }
+}

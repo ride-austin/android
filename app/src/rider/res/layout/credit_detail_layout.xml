@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.promotions.details.CreditDetailViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:paddingBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="14dp"
+            tools:src="@drawable/icn_credits_available"
+            android:src="@{viewModel.creditIcon}"
+            android:id="@+id/credit_icon" />
+
+        <TextView
+            android:id="@+id/credit_balance"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/credit_icon"
+            android:layout_toEndOf="@+id/credit_icon"
+            android:text="@{viewModel.creditBalance}"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:layout_marginLeft="5dp"
+            tools:text="$50"
+            android:layout_alignBottom="@+id/credit_icon" />
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/credit_icon"
+            android:layout_marginStart="175dp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            tools:text="For your next ride"
+            android:text="@{viewModel.creditRideQualifier}"
+            android:id="@+id/credit_ride_qualifier" />
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/credit_ride_qualifier"
+            android:layout_below="@+id/credit_icon"
+            android:text="Coupon Code"
+            android:textSize="12sp"
+            android:id="@+id/textView3" />
+
+        <TextView
+            style="@style/RATextView.MontserratRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView3"
+            android:layout_below="@+id/textView3"
+            android:textSize="12sp"
+            tools:text="XCJHG124"
+            android:layout_marginTop="3dp"
+            tools:textColor="@color/teal_300"
+            android:text="@{viewModel.creditCode}"
+            android:textColor="@{viewModel.creditCodeColor}"
+            android:id="@+id/credit_code" />
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/credit_code"
+            android:layout_alignBottom="@+id/credit_code"
+            android:layout_alignStart="@+id/credit_icon"
+            android:textSize="12sp"
+            tools:text="Expires in 2 days"
+            android:text="@{viewModel.creditExpiration}"
+            android:visibility="@{viewModel.creditExpirationVisibility}"
+            android:id="@+id/credit_expiration" />
+
+    </RelativeLayout>
+
+</layout>

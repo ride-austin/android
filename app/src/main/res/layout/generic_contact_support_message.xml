@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.genericsupport.GenericContactSupportViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/app_screen_background"
+        android:paddingTop="18dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp">
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/trip_history_support_message_description"
+            android:textColor="#4A515C" />
+
+        <EditText
+            android:id="@+id/inputMessage"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:padding="15dp"
+            android:minLines="1"
+            android:maxLines="5"
+            android:scrollbars="vertical"
+            android:inputType="textMultiLine"
+            android:hint="@string/trip_history_support_message_hint"
+            android:textColor="#4A515C"
+            android:textColorHint="#A0A2A6"
+            android:background="@drawable/bg_text_input_round"
+            android:text="@={viewModel.message}" />
+
+        <Button
+            android:id="@+id/buttonSubmit"
+            style="@style/Button.RoundedGreyButton"
+            tools:enabled="false"
+            android:enabled="@{!TextUtils.isEmpty(viewModel.message.trim())}"
+            android:onClick="@{viewModel::onSubmit}"
+            android:text="@string/btn_submit" />
+
+    </LinearLayout>
+
+</layout>

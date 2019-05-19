@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.stacked.NextRideDialogViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        tools:background="@color/black_80_opaq">
+
+        <RelativeLayout
+            android:id="@+id/content"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_support_message_sent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:paddingTop="50dp"
+            android:paddingBottom="25dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/stacked_ride_dialog_title"
+                android:textColor="@color/charcoalGrey"
+                android:textSize="20sp"/>
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="5dp"
+                android:padding="10dp"
+                android:scaleType="fitXY"
+                android:src="@{viewModel.avatar}"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_below="@id/title"
+                android:visibility="@{!viewModel.loading}"
+                tools:src="@drawable/ic_user_icon"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignTop="@id/avatar"
+                android:layout_toRightOf="@id/avatar"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:visibility="@{!viewModel.loading}">
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#070D17"
+                    android:singleLine="true"
+                    android:text="@{viewModel.name}"
+                    tools:text="James Watson" />
+
+                <TextView
+                    android:id="@+id/category"
+                    style="@style/MontserratLight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#919499"
+                    android:textAllCaps="true"
+                    android:text="@{viewModel.category}"
+                    tools:text="Standard"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/address_title"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/avatar"
+                android:drawableLeft="@drawable/ic_green"
+                android:drawablePadding="10dp"
+                android:textSize="16sp"
+                android:textAllCaps="true"
+                android:textColor="#070D16"
+                android:text="@string/stacked_ride_dialog_pickup"
+                android:visibility="@{!viewModel.loading}"/>
+
+            <TextView
+                android:id="@+id/cancel"
+                style="@style/MontserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:gravity="center_vertical"
+                android:textSize="12sp"
+                android:textColor="#070D16"
+                android:text="@string/stacked_ride_dialog_cancel"
+                android:layout_alignBottom="@id/address_title"
+                android:layout_alignParentRight="true"
+                android:visibility="@{!viewModel.loading}" />
+
+            <TextView
+                android:id="@+id/address"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:layout_below="@id/address_title"
+                android:textSize="18sp"
+                android:text="@{viewModel.address}"
+                android:textColor="@color/charcoalGrey"
+                tools:text="K.R.Layout, J P Nagar 6th Phase, Austin, Texas"
+                android:visibility="@{!viewModel.loading}"/>
+
+            <LinearLayout
+                android:id="@+id/call"
+                style="@style/Button.RoundedBlueButton"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal"
+                android:layout_below="@id/address"
+                android:gravity="center"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:descendantFocusability="blocksDescendants"
+                android:visibility="@{!viewModel.loading}">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_call"/>
+
+                <TextView
+                    style="@style/MontserratRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:textSize="14sp"
+                    tools:text="Call John"
+                    android:text="@{viewModel.callAction}"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sms"
+                style="@style/Button.RoundedBlueButton"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_below="@id/call"
+                android:gravity="center"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:descendantFocusability="blocksDescendants"
+                android:visibility="@{!viewModel.loading}">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_chat"/>
+
+                <TextView
+                    style="@style/MontserratRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:textSize="14sp"
+                    tools:text="Text John"
+                    android:text="@{viewModel.smsAction}"/>
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="100dp"
+                android:layout_centerHorizontal="true"
+                android:visibility="@{viewModel.loading}"
+                tools:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_above="@id/content"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignTop="@id/space"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_car"/>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_clear_white_24dp"/>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ExtendedEditText" >
+        <attr name="prefixText" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomRatingBar">
+        <attr name="maxStars" format="integer" />
+        <attr name="stars" format="float" />
+        <attr name="starOff" format="reference|integer" />
+        <attr name="starOn" format="reference|integer" />
+        <attr name="starHalf" format="reference|integer" />
+        <attr name="starPadding" format="dimension" />
+        <attr name="onlyForDisplay" format="boolean" />
+        <attr name="halfStars" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="EtaLoadedView">
+        <attr name="ringColor" format="color" />
+        <attr name="ringThickness" format="dimension" />
+        <attr name="ballColor" format="color" />
+        <attr name="ballRadius" format="dimension" />
+        <attr name="ballStrokeColor" format="color" />
+        <attr name="ballStroke" format="dimension" />
+        <attr name="cycleTime" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundedCorners">
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="topLeftCornerRadius" format="dimension" />
+        <attr name="topRightCornerRadius" format="dimension" />
+        <attr name="bottomLeftCornerRadius" format="dimension" />
+        <attr name="bottomRightCornerRadius" format="dimension" />
+    </declare-styleable>
+
+</resources>

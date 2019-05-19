@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="basic_widget_margin">4dp</dimen>
+    <dimen name="default_padding">10dp</dimen>
+    <dimen name="material_padding">10dp</dimen>
+    <dimen name="pickup_location_height">46dp</dimen>
+    <!--TextViews-->
+    <dimen name="toolbar_text_size">16sp</dimen>
+    <dimen name="regular_text_size">12sp</dimen>
+    <dimen name="edit_text_size">12sp</dimen>
+    <dimen name="btn_text_small">11dp</dimen>
+    <dimen name="font_size_payment">12sp</dimen>
+</resources>

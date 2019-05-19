@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/navPayment"
+            android:icon="@drawable/nav_payment"
+            android:title="@string/payment"
+            android:orderInCategory="1" />
+        <!--<item-->
+        <!--android:id="@+id/navHelp"-->
+        <!--android:icon="@drawable/nav_help"-->
+        <!--android:title="@string/help" />-->
+        <item
+            android:id="@+id/navDonate"
+            android:icon="@drawable/nav_donate"
+            android:title="@string/donate"
+            android:orderInCategory="2" />
+        <item
+            android:id="@+id/navHistory"
+            android:icon="@drawable/nav_history"
+            android:title="@string/history"
+            android:orderInCategory="3" />
+        <item
+            android:id="@+id/navPromotions"
+            android:icon="@drawable/nav_promotion"
+            android:title="@string/promotions"
+            android:orderInCategory="4" />
+
+        <item
+            android:id="@+id/navUTSettings"
+            android:icon="@drawable/nav_settings"
+            android:title="@string/ut"
+            android:visible="false"
+            android:orderInCategory="5"/>
+
+        <item
+            android:id="@+id/navDriveWithRideApp"
+            android:icon="@drawable/nav_car"
+            android:title="@string/drive_with_ride_city"
+            android:orderInCategory="6" />
+        <item
+            android:id="@+id/navDirectConnect"
+            android:icon="@drawable/nav_direct_connect"
+            android:title="@string/direct_connect_menu"
+            android:visible="true"
+            android:orderInCategory="7" />
+        <item
+            android:id="@+id/navAccessibility"
+            android:icon="@drawable/nav_accessibility"
+            android:title="@string/accessibility"
+            android:orderInCategory="8" />
+        <item
+            android:id="@+id/navFingerprintedOnly"
+            android:icon="@drawable/ic_nav_fingerprint"
+            android:title="@string/menu_fingerprinted_only_mode"
+            android:orderInCategory="9" />
+        <item
+            android:id="@+id/navFemaleOnly"
+            android:icon="@drawable/nav_female"
+            android:title="@string/menu_female_only_mode"
+            android:orderInCategory="10" />
+        <item
+            android:id="@+id/navSettings"
+            android:icon="@drawable/nav_settings"
+            android:title="@string/settings"
+            android:orderInCategory="11" />
+        <!--<item-->
+        <!--android:id="@+id/navReport"-->
+        <!--android:icon="@drawable/nav_mail"-->
+        <!--android:title="@string/send_report" />-->
+        <!--<item-->
+        <!--android:id="@+id/navAbout"-->
+        <!--android:icon="@drawable/nav_about"-->
+        <!--android:title="@string/about" />-->
+    </group>
+
+</menu>

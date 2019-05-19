@@ -1,0 +1,414 @@
+{
+  "currentTerms": {
+    "currentTermsId": 1,
+    "currentTermsUrl": "https://media.rideaustin.com/download/DriverTermsAustin.txt",
+    "currentTermsIsMandatory": true,
+    "currentTermsVersion": "1.0",
+    "currentTermsPublicationDate": 1496015700000
+  },
+  "accessibility": {
+    "phoneNumber": "+15124782222",
+    "title": "Please contact Austin Cab Company (512) 478-2222",
+    "enabled": true
+  },
+  "supportedCities": [
+    {
+      "cityId": 1,
+      "cityName": "AUSTIN",
+      "logoUrl": "https://media.rideaustin.com/images/logoRideAustin@3x.png",
+      "logoBlackUrl": "https://media.rideaustin.com/images/logoRideAustinBlack@3x.png"
+    },
+    {
+      "cityId": 2,
+      "cityName": "HOUSTON",
+      "logoUrl": "https://media.rideaustin.com/images/logoRideHouston@3x.png",
+      "logoBlackUrl": "https://media.rideaustin.com/images/logoRideHoustonBlack@3x.png"
+    }
+  ],
+  "smsMaskingEnabled": true,
+  "geocodingConfiguration": {
+    "pickupHints": [{
+      "name": "Austin Airport",
+      "areaPolygon": [{
+        "lng": -97.661287,
+        "lat": 30.198735
+      }, {
+        "lng": -97.661287,
+        "lat": 30.202642
+      }, {
+        "lng": -97.67264,
+        "lat": 30.202642
+      }, {
+        "lng": -97.67264,
+        "lat": 30.198735
+      }, {
+        "lng": -97.661287,
+        "lat": 30.198735
+      }],
+      "designatedPickup": {
+        "lng": -97.667177,
+        "lat": 30.202703
+      }
+    }],
+    "queryHints": [
+      {
+        "prefixes": [
+          "ai",
+          "au"
+        ],
+        "contains": [
+          "airport"
+        ],
+        "description": "Austin-Bergstrom International Airport, Presidential Boulevard, Austin, TX, United States",
+        "reference": "ChIJRf9KizuxRIYRaCfcyaj8pxw",
+        "primaryAddress": "Austin-Bergstrom International Airport",
+        "secondaryAddress": "Presidential Boulevard, Austin, TX, United States"
+      }
+    ]
+  },
+  "currentCity": {
+    "cityId": 1,
+    "cityName": "AUSTIN",
+    "cityCenterLocation": "30.267153 -97.743061",
+    "cityCenterLocationData": {
+      "lat": 30.267153,
+      "lng": -97.743061
+    },
+    "cityBoundaryPolygon": [
+      {
+        "lat": 30.58591,
+        "lng": -97.41895
+      },
+      {
+        "lat": 30.0758,
+        "lng": -97.41895
+      },
+      {
+        "lat": 30.0758,
+        "lng": -98.08044
+      },
+      {
+        "lat": 30.58591,
+        "lng": -98.08044
+      }
+    ]
+  },
+  "generalInformation": {
+    "privacyStatement": "http://www.rideaustin.com/legal/userterms/",
+    "splashUrl": "https://media.rideaustin.com/images/photoAustin@3x.jpg",
+    "companyDomain": "rideaustin.com",
+    "playStoreLink": "market://details?id=com.rideaustin.android",
+    "logoUrl": "https://media.rideaustin.com/images/logoRideAustin@3x.png",
+    "appstoreLink": "itms-apps://itunes.apple.com/app/id1116489847",
+    "legalRider": "http://www.rideaustin.com/legal/userterms/",
+    "supportEmail": "support@rideaustin.com",
+    "facebookUrl": "https://www.facebook.com/werideaustin",
+    "legalDriver": "http://www.rideaustin.com/legal/driverterms/",
+    "playStoreWeb": "https://play.google.com/store/apps/details?id=com.rideaustin.android",
+    "applicationNamePipe": "Ride|Austin",
+    "logoBlackUrl": "https://media.rideaustin.com/images/logoRideAustinBlack@3x.png",
+    "facebookUrlSchemeiOS": "fb://page?id=241278152906970",
+    "iconUrl": "https://media.rideaustin.com/images/Ride_180-1.png",
+    "companyWebsite": "http://www.rideaustin.com",
+    "applicationName": "Ride Austin"
+  },
+  "rides": {
+    "rideSummaryDescription": "Eligible credits will be applied on your emailed receipt.",
+    "rideSummaryDescriptionFreeCreditCharged": "Eligible credits have been applied.",
+    "distantPickUpNotificationThreshold": 200
+  },
+  "riderLiveLocation": {
+    "expirationTime": 5,
+    "requiredAccuracy": 50,
+    "enabled": true
+  },
+  "riderReferFriend": {
+    "detailtexttemplate": " Share your referral code with a friend and they'll receive their first ride free! You will also receive a $20.00 ride credit to your account (up to a $500 maximum) once they take their first ride. Referral codes remain valid for 30 days from issue.",
+    "emailbodytemplate": "<p>You should try RideAustin! Get <codeValue> in ride credit using my code <b><codeLiteral><b>. Download the app at: <downloadUrl></p>",
+    "downloadUrl": "http://www.rideaustin.com",
+    "smsbodytemplate": "You should try RideAustin! Get <codeValue> in ride credit using my code <codeLiteral> Download the app at: <downloadUrl>",
+    "enabled": true
+  },
+  "commonMessages": {
+    "networkTimeoutMessage": "You appear to have a poor connection. Keep calm and try again later."
+  },
+  "ratingConfiguration": {
+    "defaultRating": 5.0,
+    "minimumRatingThreshold": 5,
+    "limit": 50
+  },
+  "tipping": {
+    "rideTipLimit": 300,
+    "ridePaymentDelay": 300
+  },
+  "unpaidBalance": {
+    "iconSmallURL": "https://media.rideaustin.com/icon/unpaid_small.png",
+    "subtitle": "You need to pay your balance to be able to take another trip",
+    "warningMessage": "You have unpaid rides",
+    "iconLargeURL": "https://media.rideaustin.com/icon/unpaid_large.png",
+    "title": "Unpaid balance",
+    "enabled": true
+  },
+  "directConnectPhone": "+12013895725",
+  "rideCancellation": {
+    "enabled": false
+  },
+  "womanOnly": {
+    "enabled": false
+  },
+  "UT": {
+    "payWithBevoBucks": {
+      "enabled": true,
+      "iconLargeUrl": "https://media.rideaustin.com/icon/bevobucks_logo.png",
+      "ridePaymentDelay": 3600,
+      "description": "When you select Bevo Bucks as payment method, you will be asked to pay with Bevo Bucks after the trip.\n\nIf the trip is not paid within 1 hour we will charge your credit card.",
+      "availableForSplitfare": false,
+      "splitfareMessage": "Split fare is currently not available to use with Bevo Bucks. Do you want to continue?"
+    }
+  },
+  "driverTypes": [
+    {
+      "cityId": 1,
+      "availableInCategories": [
+        "REGULAR",
+        "SUV",
+        "PREMIUM",
+        "LUXURY"
+      ],
+      "name": "WOMEN_ONLY",
+      "description": "WOMEN ONLY",
+      "penalizeDeclinedRides": true,
+      "displayTitle": "Female Driver Mode",
+      "displaySubtitle": "You can enable booking Ride Austin Female Drivers"
+    }
+  ],
+  "carTypes": [
+    {
+      "carCategory": "REGULAR",
+      "title": "STANDARD",
+      "description": "Standard Car",
+      "iconUrl": "https://media.rideaustin.com/icon/regular_seats.png",
+      "plainIconUrl": "https://media.rideaustin.com/icon/regular.png",
+      "maxPersons": 4,
+      "order": 1,
+      "active": true,
+      "cityId": 1,
+      "minimumFare": "5.00",
+      "baseFare": "1.50",
+      "bookingFee": "2.00",
+      "raFeeFactor": 0.00,
+      "ratePerMile": "0.99",
+      "ratePerMinute": "0.20",
+      "cancellationFee": "4.00",
+      "tncFeeRate": 0.00,
+      "processingFeeRate": 1.00,
+      "processingFeeText": "$1.00 Processing fee",
+      "processingFee": "1.00"
+    },
+    {
+      "carCategory": "STUDENT",
+      "title": "Student",
+      "description": "Student car",
+      "iconUrl": "https://media.rideaustin.com/icon/UT_logo.png",
+      "plainIconUrl": "https://media.rideaustin.com/icon/UT_logo.png",
+      "configuration": "{\"restrictedZipCodes\":[\"78705\", \"78712\" ],\"disableTipping\":true, \"showAlert\": true, \"allowedPolygons\": [{\"name\" : \"UT\", \"boundary\": [{\"lng\" :-97.7298930, \"lat\":30.2784340},{\"lng\" :-97.7195190, \"lat\":30.2948700},{\"lng\" :-97.7375640, \"lat\":30.3034470},{\"lng\" :-97.7329730, \"lat\":30.3108020},{\"lng\" :-97.7352680, \"lat\":30.3121910},{\"lng\" :-97.7340880, \"lat\":30.3140620},{\"lng\" :-97.7361480, \"lat\":30.3151740},{\"lng\" :-97.7430580, \"lat\":30.3052070},{\"lng\" :-97.7479710, \"lat\":30.3073750},{\"lng\" :-97.7500740, \"lat\":30.3026320},{\"lng\" :-97.7471990, \"lat\":30.2993160},{\"lng\" :-97.7490660, \"lat\":30.2989640},{\"lng\" :-97.7501600, \"lat\":30.2976120},{\"lng\" :-97.7477570, \"lat\":30.2927200},{\"lng\" :-97.7517480, \"lat\":30.2915350},{\"lng\" :-97.7534650, \"lat\":30.2886810},{\"lng\" :-97.7544300, \"lat\":30.2840310},{\"lng\" :-97.7519520, \"lat\":30.2835120},{\"lng\" :-97.7497630, \"lat\":30.2838450},{\"lng\" :-97.7298930, \"lat\":30.2784340}]}]}",
+      "maxPersons": 4,
+      "order": 1,
+      "active": true,
+      "cityId": 1,
+      "minimumFare": "0.00",
+      "baseFare": "0.00",
+      "bookingFee": "0.00",
+      "raFeeFactor": 0.00,
+      "ratePerMile": "0.00",
+      "ratePerMinute": "0.00",
+      "cancellationFee": "0.00",
+      "tncFeeRate": 0.00,
+      "processingFeeRate": 0.00,
+      "processingFeeText": "",
+      "processingFee": "0.00"
+    },
+    {
+      "carCategory": "SUV",
+      "title": "SUV",
+      "description": "SUV Car",
+      "iconUrl": "https://media.rideaustin.com/icon/suv_seats.png",
+      "plainIconUrl": "https://media.rideaustin.com/icon/suv.png",
+      "maxPersons": 6,
+      "order": 2,
+      "active": true,
+      "cityId": 1,
+      "minimumFare": "9.00",
+      "baseFare": "3.00",
+      "bookingFee": "2.00",
+      "raFeeFactor": 0.10,
+      "ratePerMile": "2.00",
+      "ratePerMinute": "0.30",
+      "cancellationFee": "5.00",
+      "tncFeeRate": 0.00,
+      "processingFeeRate": 1.00,
+      "processingFeeText": "$1.00 Processing fee",
+      "processingFee": "1.00"
+    },
+    {
+      "carCategory": "PREMIUM",
+      "title": "PREMIUM",
+      "description": "Premium Car",
+      "iconUrl": "https://media.rideaustin.com/icon/premium.png",
+      "plainIconUrl": "https://media.rideaustin.com/icon/premium.png",
+      "configuration": "{\"disableTipping\":true}",
+      "maxPersons": 4,
+      "order": 3,
+      "active": true,
+      "cityId": 1,
+      "minimumFare": "10.00",
+      "baseFare": "3.00",
+      "bookingFee": "2.00",
+      "raFeeFactor": 0.20,
+      "ratePerMile": "2.75",
+      "ratePerMinute": "0.40",
+      "cancellationFee": "6.00",
+      "tncFeeRate": 0.00,
+      "processingFeeRate": 1.00,
+      "processingFeeText": "$1.00 Processing fee",
+      "processingFee": "1.00"
+    },
+    {
+      "carCategory": "LUXURY",
+      "title": "LUXURY",
+      "iconUrl": "https://media.rideaustin.com/icon/luxury.png",
+      "plainIconUrl": "https://media.rideaustin.com/icon/luxury.png",
+      "maxPersons": 4,
+      "order": 5,
+      "active": true,
+      "cityId": 1,
+      "minimumFare": "10.00",
+      "baseFare": "5.00",
+      "bookingFee": "2.00",
+      "raFeeFactor": 0.20,
+      "ratePerMile": "3.75",
+      "ratePerMinute": "0.50",
+      "cancellationFee": "10.00",
+      "tncFeeRate": 0.00,
+      "processingFeeRate": 1.00,
+      "processingFeeText": "$1.00 Processing fee",
+      "processingFee": "1.00"
+    }
+  ],
+  "servicedZipCodes": {
+    "servicedZipCodes": [
+      "78701",
+      "78702",
+      "78703",
+      "78704",
+      "78705",
+      "78708",
+      "78709",
+      "78710",
+      "78711",
+      "78712",
+      "78713",
+      "78714",
+      "78715",
+      "78716",
+      "78717",
+      "78718",
+      "78719",
+      "78720",
+      "78721",
+      "78722",
+      "78723",
+      "78724",
+      "78725",
+      "78726",
+      "78727",
+      "78728",
+      "78729",
+      "78730",
+      "78731",
+      "78732",
+      "78733",
+      "78734",
+      "78735",
+      "78736",
+      "78737",
+      "78738",
+      "78739",
+      "78741",
+      "78742",
+      "78744",
+      "78745",
+      "78746",
+      "78747",
+      "78748",
+      "78749",
+      "78750",
+      "78751",
+      "78752",
+      "78753",
+      "78754",
+      "78755",
+      "78756",
+      "78757",
+      "78758",
+      "78759",
+      "78760",
+      "78761",
+      "78762",
+      "78763",
+      "78764",
+      "78765",
+      "78766",
+      "78767",
+      "78768",
+      "78769",
+      "78772",
+      "78773",
+      "78774",
+      "78778",
+      "78779",
+      "78783",
+      "78785",
+      "78789",
+      "78799",
+      "78664",
+      "78665",
+      "78680",
+      "78681",
+      "78682",
+      "78683",
+      "78660",
+      "78691",
+      "78729",
+      "78746",
+      "78610",
+      "78640",
+      "78621",
+      "78613",
+      "78630",
+      "78734",
+      "78738",
+      "78652",
+      "78621",
+      "78653",
+      "78653",
+      "78651",
+      "78660",
+      "78727",
+      "78728",
+      "78753",
+      "78641",
+      "78646",
+      "78617",
+      "78633",
+      "78626",
+      "78628",
+      "76574",
+      "78634",
+      "78519",
+      "78659",
+      "78650",
+      "78619"
+    ]
+  }
+}

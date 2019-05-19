@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="isDestination"
+            type="Boolean" />
+    </data>
+
+    <LinearLayout
+        style="@style/LinearLayout.Base"
+        android:background="@android:color/transparent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/destination_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/addressInput"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/autocomplete_height"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:drawableLeft="@{isDestination ? @drawable/ic_red : @drawable/ic_green}"
+                android:drawablePadding="@dimen/material_padding"
+                android:gravity="center"
+                android:hint="@{isDestination ? @string/enter_destination_address : @string/enter_pickup_address}"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:paddingBottom="4dp"
+                android:paddingLeft="22dp"
+                android:paddingRight="40dp"
+                android:paddingTop="4dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/regular_text_size"
+                tools:drawableLeft="@drawable/ic_green"
+                tools:hint="@string/enter_pickup_address"/>
+
+            <ImageView
+                android:id="@+id/clearButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="center"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_close_small"
+                android:tint="@color/light_icon_tint"
+                android:layout_gravity="right|center_vertical"/>
+
+        </android.support.v7.widget.CardView>
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/list_item_divider"
+            android:dividerHeight="0.1dp"
+            tools:listitem="@layout/view_address_selection_item" />
+
+    </LinearLayout>
+</layout>

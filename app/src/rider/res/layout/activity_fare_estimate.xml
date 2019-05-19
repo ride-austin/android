@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.estimate.FareEstimateViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar.Base"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/Toolbar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/shade_layout_height"
+            android:layout_below="@+id/toolbar"
+            android:background="@color/iron" />
+
+        <TextView
+            android:id="@+id/tv_pickup"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/tv_home_location_top"
+            android:background="@drawable/address_green"
+            android:clickable="false"
+            android:paddingLeft="@dimen/tv_location_padding_left"
+            android:paddingTop="@dimen/tv_location_padding_top"
+            android:text="@{viewModel.riderPickup}"
+            android:textSize="@dimen/tv_location_text_size" />
+
+        <TextView
+            android:id="@+id/tv_destination"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_pickup"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-3dp"
+            android:background="@drawable/address_red"
+            android:clickable="false"
+            android:paddingLeft="@dimen/tv_location_padding_left"
+            android:paddingTop="@dimen/tv_location_padding_top"
+            android:text="@{viewModel.riderDestination}"
+            android:textSize="@dimen/tv_location_text_size" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/tv_destination"
+            android:layout_alignLeft="@+id/tv_destination"
+            android:layout_alignRight="@+id/tv_destination"
+            android:layout_alignStart="@+id/tv_destination"
+            android:layout_below="@+id/tv_destination"
+            android:background="@drawable/bg_fare">
+
+            <TextView
+                android:id="@+id/tv_estimate_price"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/tv_estimate_price_margin_top"
+                android:text="@{viewModel.getFareEstimate}"
+                android:textSize="@dimen/tv_estimate_price_text_size" />
+
+            <TextView
+                android:id="@+id/tv_fare_description"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_estimate_price"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/tv_fare_description_margin_left"
+                android:layout_marginRight="@dimen/tv_fare_description_margin_right"
+                android:layout_marginTop="@dimen/tv_fare_description_margin_top"
+                android:gravity="center"
+                android:paddingLeft="@dimen/tv_fare_description_padding_left"
+                android:paddingRight="@dimen/tv_fare_description_padding_right"
+                android:text="@string/text_fares"
+                android:textSize="@dimen/tv_fare_description_text_size" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_set_new_destination"
+            style="@style/MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/btn_set_new_destination_margin_bottom"
+            android:layout_marginLeft="@dimen/btn_set_new_destination_margin_left"
+            android:layout_marginRight="@dimen/btn_set_new_destination_margin_right"
+            android:background="@drawable/rounded_white_button_states"
+            android:drawableLeft="@drawable/icn_pin"
+            android:paddingLeft="@dimen/btn_set_new_destination_padding_left"
+            android:text="@string/enter_a_new_destination"
+            android:textAllCaps="false" />
+    </RelativeLayout>
+</layout>

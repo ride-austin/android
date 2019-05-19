@@ -1,0 +1,33 @@
+{
+    "id": 2581,
+    "photoUrl": "http://media-stage.rideaustin.com/user-photos/d81dd8fc-0f12-4240-966a-be7bcb7f03c6.png",
+    "email": "serg.driver1@crossover.com",
+    "firstname": "Serg",
+    "lastname": "Rider One",
+    "nickName": "",
+    "phoneNumber": "+79095020103",
+    "phoneNumberVerified": true,
+    "address": {
+        "address": "1234 Wooten Dr, Austin, TX 78757, USA",
+        "zipCode": "78757"
+    },
+    "dateOfBirth": "1996-02-21",
+    "gender": "UNKNOWN",
+    "fullName": "Serg Rider One",
+    "uuid": "2581",
+    "enabled": true,
+    "avatars": [{
+        "id": 3438,
+        "type": "RIDER",
+        "active": true
+    }, {
+        "id": 3439,
+        "type": "DRIVER",
+        "active": true
+    }, {
+        "id": 3515,
+        "type": "ADMIN",
+        "active": true
+    }],
+    "active": true
+}

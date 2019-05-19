@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_80_opaq">
+
+    <LinearLayout
+        android:id="@+id/viewContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/padding_60dp"
+        android:layout_marginRight="@dimen/padding_60dp"
+        android:background="@drawable/bg_support_message_sent"
+        android:gravity="center_horizontal"
+        android:minWidth="156dp"
+        android:orientation="vertical"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:visibility="invisible">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_green_check" />
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="6dp"
+            android:text="@string/send_message_title"
+            android:textAllCaps="true"
+            android:textColor="#2C323C"
+            android:textSize="13dp" /> <!-- use dp here -->
+
+        <TextView
+            android:id="@+id/message"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/trip_history_support_message_success_message"
+            android:textAlignment="center"
+            android:textColor="#2C323C"
+            android:textSize="12dp" /> <!-- use dp here -->
+
+
+    </LinearLayout>
+
+</RelativeLayout>

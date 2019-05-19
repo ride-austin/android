@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/heterogenous_padding">
+
+        <ImageView
+            android:id="@+id/im_icon"
+            android:layout_width="@dimen/fare_split_rider_pic_dimen"
+            android:layout_height="@dimen/fare_split_rider_pic_dimen"
+            android:layout_marginBottom="@dimen/heterogenous_padding"
+            app:srcCompat="@drawable/ic_person" />
+
+        <TextView
+            android:id="@+id/tv_message"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/homogenous_padding_compact"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            tools:text="TextView" />
+    </LinearLayout>
+</layout>

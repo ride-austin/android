@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.rideaustin.ui.drawer.triphistory.forms.SupportFieldViewModel.FieldType" />
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.triphistory.forms.SupportFieldViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/form_boolean"
+            layout="@layout/support_form_boolean"
+            android:visibility="@{FieldType.BOOL.equals(viewModel.supportField.fieldType) ? View.VISIBLE : View.GONE}"
+            bind:viewModel="@{viewModel}" />
+
+        <include
+            android:id="@+id/form_text"
+            layout="@layout/support_form_text"
+            android:visibility="@{FieldType.TEXT.equals(viewModel.supportField.fieldType) ? View.VISIBLE : View.GONE}"
+            bind:viewModel="@{viewModel}" />
+
+        <include
+            android:id="@+id/form_phone"
+            layout="@layout/support_form_phone"
+            android:visibility="@{FieldType.PHONE.equals(viewModel.supportField.fieldType) ? View.VISIBLE : View.GONE}"
+            bind:viewModel="@{viewModel}" />
+
+        <include
+            android:id="@+id/form_date"
+            layout="@layout/support_form_date"
+            android:visibility="@{FieldType.DATE.equals(viewModel.supportField.fieldType) ? View.VISIBLE : View.GONE}"
+            bind:viewModel="@{viewModel}" />
+
+        <include
+            android:id="@+id/form_photo"
+            layout="@layout/support_form_photo"
+            android:visibility="@{FieldType.PHOTO.equals(viewModel.supportField.fieldType) ? View.VISIBLE : View.GONE}"
+            bind:viewModel="@{viewModel}" />
+
+    </FrameLayout>
+</layout>

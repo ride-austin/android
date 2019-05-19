@@ -1,0 +1,50 @@
+{
+  "id": 112709,
+  "driver": {
+    "id": 3439,
+    "user": {
+      "id": 2581
+    }
+  },
+  "latitude": 30.2739868,
+  "longitude": -97.7570038,
+  "speed": 0.0,
+  "course": 180.0,
+  "status": "RIDING",
+  "ride": {
+    "id": 1227302,
+    "status": "DRIVER_REACHED",
+    "rider": {
+      "id": 3449,
+      "firstname" : "RideOneTwoNine",
+      "lastname" : "Test",
+      "phoneNumber": "+79095021111",
+      "email": "serg.rider1@crossover.com",
+      "rating": 5,
+      "user": {
+        "photoUrl": "http://media-dev.rideaustin.com/user-photos/29da750c-dd08-4005-928e-5922974bdd83.png"
+      },
+      "fullName" : "RideOneTwoNine Test"
+    },
+    "startLocationLat": 30.416855,
+    "startLocationLong": -97.74988399999999,
+    "startAddress" : "11610 Jollyville Road, Austin, Texas",
+    "start": {
+      "address" : "11610 Jollyville Road, Austin, Texas",
+      "zipCode" : "78759"
+    },
+    "endLocationLat": 0.0,
+    "endLocationLong": 0.0,
+    "endAddress": "",
+    "end": {},
+    "surgeFactor": 1.00,
+    "requestedCarType": {
+      "title": "STANDARD",
+      "carCategory": "REGULAR",
+      "plainIconUrl": "https://media.rideaustin.com/icon/regular.png",
+      "configuration": "{\"skipRideAuthorization\": false}"
+    },
+    "requestedDriverType": {},
+    "estimatedTimeArrive": 0
+  }
+}

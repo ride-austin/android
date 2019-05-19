@@ -1,0 +1,280 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="settingsFragmentViewModel"
+            type="com.rideaustin.ui.drawer.settings.SettingsFragmentViewModel" />
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/app_screen_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/usersPhoto"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:padding="10dp"
+                        android:scaleType="fitXY"
+                        tools:src="@drawable/ic_user_icon"
+                        android:src="@{settingsFragmentViewModel.userImage}" />
+
+                    <TextView
+                        android:id="@+id/usersName"
+                        style="@style/RATextView.MontserratLight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/usersPhoto"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/users_name_6dp"
+                        android:text="@{settingsFragmentViewModel.user.name}"
+                        android:textColor="@color/users_name_in_settings"
+                        android:textSize="@dimen/users_name_17sp"
+                        tools:text="Thomas Whatson" />
+
+                    <TextView
+                        android:id="@+id/editAccount"
+                        style="@style/RATextView.MontserratSemiBold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/usersName"
+                        android:gravity="center_horizontal"
+                        android:paddingBottom="@dimen/activity_horizontal_margin"
+                        android:text="@string/edit_account"
+                        android:textAllCaps="true"
+                        android:textColor="@color/drawer_icon"
+                        android:textSize="@dimen/edit_account_10sp" />
+                </RelativeLayout>
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/textViewRateOnGooglePlay"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/padding_8dp"
+                    android:text="@string/rate_us_on_google_play"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts" />
+
+                <TextView
+                    android:id="@+id/textViewVersionName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:paddingBottom="@dimen/padding_8dp"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:text="@string/version"
+                    android:textSize="@dimen/edit_account_10sp" />
+
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/textViewLikeOnFacebook"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/like_us_on_facebook"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/textViewLegal"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/legal"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/textViewCompanyDomain"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts"
+                    tools:text="rideaustin.com" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/textViewMyStats"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/stats_title"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts"
+                    android:visibility="@{settingsFragmentViewModel.showStats}"/>
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray"
+                    android:visibility="@{settingsFragmentViewModel.showStats}"/>
+
+                <TextView
+                    android:id="@+id/textViewMyCars"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/my_cars"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/textViewMyDocuments"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/update_documents"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <LinearLayout
+                    android:id="@+id/default_nav_app_pref"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{TextUtils.isEmpty(settingsFragmentViewModel.defaultNavigationApp) ? View.GONE : View.VISIBLE}">
+
+                    <TextView
+                        style="@style/RATextView.MontserratRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:paddingTop="@dimen/activity_horizontal_margin"
+                        android:text="@string/default_navigation_pref"
+                        android:textColor="@color/users_name_in_settings"
+                        android:textSize="@dimen/settings_texts" />
+
+                    <TextView
+                        android:id="@+id/default_navigation_app"
+                        style="@style/RATextView.MontserratRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:paddingBottom="@dimen/activity_horizontal_margin"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:text="@{settingsFragmentViewModel.defaultNavigationApp}"
+                        android:textSize="@dimen/settings_texts_subtext"
+                        tools:text="Google Map" />
+                </LinearLayout>
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray"
+                    android:visibility="@{TextUtils.isEmpty(settingsFragmentViewModel.defaultNavigationApp) ? View.GONE : View.VISIBLE}" />
+
+                <TextView
+                    android:id="@+id/text_contact_support"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/text_contact_support"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts" />
+
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/signOut"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/sign_out"
+                    android:textColor="@color/drawer_icon"
+                    android:textSize="@dimen/settings_texts" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

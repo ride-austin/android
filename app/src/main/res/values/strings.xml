@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="money">$%s</string>
+    <string name="text_date_delimiter">" - "</string>
+    <string name="text_subject">Production Defect Report</string>
+
+    <string name="error_unknown">We are experiencing technical difficulties</string>
+    <string name="network_error">Something went wrong. Please check network connection.</string>
+    <string name="location_timeout_error">Unable to identify your location.</string>
+    <string name="error_generic">Something went wrong.</string>
+    <string name="send_message_msg">Your message has been sent</string>
+    <string name="send_message_title">Success</string>
+    <string name="send_message_fail">Your message has failed</string>
+    <string name="empty_message_error">Message can\'t be empty</string>
+    <string name="connection_problems">Poor connectivity. Verify cell reception</string>
+
+    <string name="masked_credit_card_number">**** **** **** %1$s</string>
+    <string name="ride_active">You have an active ride.</string>
+
+    <string name="no_mins">-- min</string>
+    <string name="zero_mins">&lt;1 min</string>
+    <string name="one_min">1 min</string>
+    <string name="many_mins">%d mins</string>
+    <plurals name="minutes_plural">
+        <item quantity="one">@string/one_min</item>
+        <item quantity="other">@string/many_mins</item>
+    </plurals>
+
+    <string name="not_available">N/A</string>
+    <string name="address">Address</string>
+
+    <string name="tnc_driver_card_text">TNC Driver Card</string>
+    <string name="you_will_need_a_tnc_card_text">You will need a TNC Card from the City Transportation Office</string>
+    <string name="dont_have_one_tnc_text">Don\'t have one?</string>
+    <string name="mock_tnc_instructions_text"><![CDATA[View instructions <a href=\"https://media.rideaustin.com/download/Houston_TNC_Application_Form_2016.pdf\">here</a> on how to obtain one. Download TNC Driver Registration forms <a href=\"https://media.rideaustin.com/download/Houston_TNC_Application_Form_2016.pdf\">here</a>.]]></string>
+    <string name="general_server_comunication_error">We experienced error during server communication, do you want to retry?</string>
+
+    <string name="missing_tnc_card_photo_warning">Please upload %s photo to continue</string>
+    <string name="missing_tnc_card_expiration_date_warning">Please choose valid expiration date to continue</string>
+
+    <string name="loading">Loading…</string>
+    <string name="you_have_arrived_to_pickup_location">You have arrived to pickup location</string>
+
+    <string name="fb_email_error">Please allow to use your email in order to complete registration</string>
+    <string name="fb_login_error">We are unable to access your email associated with Facebook.\nPlease check your permissions for %1$s and/or create a %1$s account using your email</string>
+    <string name="first_name_must_be">First name must be at least %d characters</string>
+    <string name="middle_name_must_be">Middle name must be at least %d characters or confirm you do not have a middle name</string>
+    <string name="confirm_middle_name">Please confirm you do not have a middle name</string>
+    <string name="last_name_must_be">Last name must be at least %d characters</string>
+    <string name="first_name_error">Please enter your first name</string>
+    <string name="last_name_error">Please enter your last name</string>
+    <string name="first_name_special_chars_error">Please write your first name in English</string>
+    <string name="last_name_special_chars_error">Please write your last name in English</string>
+    <string name="middle_name_special_chars_error">Please write your middle name in English</string>
+    <string name="select">Select</string>
+    <string name="error_driver_photo_upload_failed">Uploading driver photo failed, do you want to retry?</string>
+    <string name="ride_app">Ride %s</string>
+    <string name="update_documents">Update Documents</string>
+    <string name="documents">Documents</string>
+    <string name="need_help">Need Help? Contact us.</string>
+    <string name="need_help_message_documents">Need help on documents</string>
+    <string name="select_email_application_message">Select email application…</string>
+    <string name="title_insurance">Insurance</string>
+
+    <!-- driver sign up -->
+    <string name="driver_photo_description">Take Driver User Photo</string>
+    <string name="driver_photo_detail">Shows your face clearly (no dark shadows, not blurry)\nNo sunglasses (but regular glasses are fine)\nOnly has yourself (no group photos)</string>
+    <string name="driver_license_take_photo_description">Take a photo of your Driver\'s License</string>
+    <string name="driver_can_easy_read">Please make sure we can easily read all the details.</string>
+    <string name="driver_insurance_take_photo_description">Take a photo of your Insurance</string>
+    <string name="driver_continue">Continue</string>
+    <string name="driver_vehicle_tell_us">Tell us about your vehicle</string>
+    <string name="driver_vehicle_information_description">To qualify you must be 21 years of age and have a vehicle that meets the following requirements:</string>
+    <string name="driver_vehicle_information_required_year">2001 or newer</string>
+    <string name="driver_vehicle_information_required_doors">4 doors</string>
+    <string name="driver_vehicle_information_required_not_salvage">Not salvaged</string>
+    <string name="driver_clear_photo">Are you sure your Driver Profile Photo clearly shows your face and eyes without sunglasses?</string>
+
+    <string name="title_driver_photo">Your Driver Photo</string>
+    <string name="title_driver_license">Driver License</string>
+    <string name="title_driver_tnc_sticker">Auto Inspection Sticker</string>
+    <string name="title_driver_insurance">Insurance</string>
+    <string name="title_terms_and_conditions">Terms and Conditions</string>
+    <string name="title_driver_vehicle_information">Vehicle Information</string>
+    <string name="title_driver_year">Year</string>
+    <string name="title_driver_make">Make</string>
+    <string name="title_driver_model">Model</string>
+    <string name="title_driver_color">Color</string>
+    <string name="title_license_plate">License plate</string>
+    <string name="licence_place">Licence place</string>
+    <string name="driver_licence_expiration_date">Expiration Date:</string>
+    <!-- driver -->
+    <string name="register_driver">Register as a driver</string>
+    <string name="register_driver_sucess">Thank you for your application! We will reach out to you soon regarding next steps.</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+
+    <string name="rating_feedback_message_text">What feedback would you give %s</string>
+
+    <string name="driver_info">Interested in\nbecoming a driver?</string>
+    <string name="coming_soon">Coming soon, please be patient</string>
+    <string name="license_confirm">Have you had your license for at least ONE year?</string>
+    <string name="car_photo_confirm">Please take clear photo %1$s?</string>
+    <string name="car_photo_front">Front right angle, showing the licence plate</string>
+    <string name="car_photo_back">Back left angle showing plate</string>
+    <string name="car_photo_inside">Inside photo showing the entire back seat</string>
+    <string name="car_photo_trunk">Open trunk, full view</string>
+    <string name="car_photo_dialog_required">Please upload car photo to continue.</string>
+    <string name="car_photo_dialog_front">Are you sure the Photo is clearly taken from the Front right angle side and shows your license plate?</string>
+    <string name="car_photo_dialog_back">Are you sure the Photo is clearly taken from the Back left angle side and shows your license plate?</string>
+    <string name="car_photo_dialog_inside">Are you sure the Photo is clearly taken from Inside the car showing the entire back seat?</string>
+    <string name="car_photo_dialog_trunk">Are your sure the Photo is showing the Trunk open in full view?</string>
+    <string name="missing_addresses_fare_estimate_msg">Please enter PICKUP and DESTINATION locations</string>
+    <string name="pricing_details">PRICING DETAILS</string>
+    <string name="update">Update</string>
+    <string name="try_contact_driver_again">Try contact driver again</string>
+
+    <string-array name="driver_vehicle_colors">
+        <item>Black</item>
+        <item>White</item>
+        <item>Blue</item>
+        <item>Brown</item>
+        <item>Gray</item>
+        <item>Green</item>
+        <item>Orange</item>
+        <item>Red</item>
+        <item>Silver</item>
+        <item>Yellow/Gold</item>
+    </string-array>
+
+    <!-- PHONE MASKING -->
+    <string name="call_to">Call %s</string>
+    <string name="sms_to">Text %s</string>
+    <string name="cant_find_app_to_call">Can\'t find application to make call</string>
+    <string name="cant_get_app_to_sms">Can\'t find application to send message</string>
+    <string name="call_to_deaf">Calling turned off because %s is deaf or hard of hearing.</string>
+
+    <!-- Ride status -->
+    <string name="ride_status_admin_cancelled">Admin cancelled</string>
+    <string name="ride_status_driver_cancelled">Driver cancelled</string>
+    <string name="ride_status_rider_cancelled">Rider cancelled</string>
+    <string name="gps_disabled_msg">GPS Disabled</string>
+    <string name="please_enable_gps_msg">Please enable GPS in order to use app</string>
+
+    <!-- Trip History -->
+    <string name="trip_history_title">Trip History</string>
+    <string name="trip_history_details_title">Trip Details</string>
+    <string name="trip_history_support_topics_title">Support</string>
+    <string name="trip_history_support_message_title">Tell us more</string>
+    <string name="trip_history_empty_list">No trips present</string>
+    <string name="trip_history_rated_driver">You rated %s</string>
+    <string name="trip_history_your_driver">You driver is %s</string>
+    <string name="trip_history_support_message_description">Please share any additional details you may have that you believe will assist - and we will get back to you quickly.</string>
+    <string name="trip_history_support_message_hint">Share details</string>
+    <string name="trip_history_support_message_success_message">We\'ll be in touch soon</string>
+    <string name="confirm">Confirm</string>
+
+    <!-- Earnings -->
+    <string name="earning_car_info">%1$s - %2$s, %3$s</string>
+
+    <!-- PRICE DETAILS -->
+    <string name="base_fare_text">BASE FARE</string>
+    <string name="per_mile_text">PER MILE</string>
+    <string name="per_min_text">PER MIN</string>
+    <string name="minimum_fare_text">MINIMUM FARE</string>
+    <string name="booking_fee_text">BOOKING FEE</string>
+    <string name="city_tnc_fee_text">CITY TNC FEE</string>
+    <string name="processing_fee_text">PROCESSING FEE</string>
+
+    <string name="cant_process_image">We can\'t process your picture: %s</string>
+    <string name="contact">Contact</string>
+
+    <string name="text_contact_support">Contact Support</string>
+    <string name="error_io_write_disk">Can\'t save file on disk. Please check if it\'s enough free disk space.</string>
+    <string name="you_are_in_this_queue">You are in this queue</string>
+    <string name="you_are_not_in_this_queue">You are not in this queue</string>
+
+    <plurals name="stars">
+        <item quantity="one">%d star</item>
+        <item quantity="other">%d stars</item>
+    </plurals>
+
+    <string name="terms_invalid">Can\'t load Terms and Conditions. Please contact support</string>
+    <string name="terms_load_error">Failed loading Terms and Conditions. Please retry</string>
+    <string name="google_map">Google Map</string>
+    <string name="car_marker">Car Marker</string>
+    <string name="pickup_marker">Pickup Marker</string>
+    <string name="destination_marker">Destination Marker</string>
+    <string name="prev_ride_marker">Prev Ride Marker</string>
+    <string name="next_ride_marker">Next Ride Marker</string>
+    <string name="eta_marker">Eta Marker:</string>
+    <string name="eta_marker_with_eta">Eta Marker: %s</string>
+    <string name="comment_hint">Additional comment for your driver…</string>
+    <string name="field_required">This field is required.</string>
+
+    <!-- edit picture -->
+    <string name="edit_picture">Edit Picture</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="choose_photo">Choose From Library</string>
+    <string name="cancel">Cancel</string>
+    <string name="please_select_photo">Please select photo</string>
+    <string name="enter_value">Enter value</string>
+    <string name="ride_upgrade_msg">Do you confirm an upgrade from: %1$s to: %2$s class?</string>
+    <string name="my_location">My Location</string>
+
+    <!-- ride upgrade -->
+    <string name="priority_fare_text">PRIORITY FARE: %s</string>
+    <string name="upgrade_ride_title">Do you confirm an\nupgrade to %s class?</string>
+    <string name="upgrade_ride_content">Your driver requested a car class\nupgrade from %1$s to %2$s</string>
+    <string name="upgrade_failed">Not upgrading to SUV</string>
+    <string name="no_car_categories_error_msg">We are unable to find any available car category for your location</string>
+
+    <string name="verify_mobile">Please enter your verification code</string>
+    <string name="verify_mobile_text">that was sent to</string>
+    <string name="resend">resend the text</string>
+    <string name="change_mobile">change mobile number</string>
+    <string name="verification_sent">Verification code was sent</string>
+    <string name="email_sent">Email was successfully sent</string>
+
+    <string name="failed_sending_phone_for_verification">Failed sending phone number for verification, try use resend text</string>
+    <string name="failed_to_verify_phone_number">Failed to verify phone number</string>
+    <string name="title_verify_phone">Verify Mobile</string>
+
+    <string name="bypass_pin_title">TEST MODE</string>
+    <string name="bypass_pin_message">Do you want to bypass pin verification?</string>
+    <string name="upgrade_ride_expired_msg">Upgrade ride request expired</string>
+    <string name="upgrade_ride_cancelled_msg">Upgrade ride request cancelled</string>
+    <string name="surge_updated_dialog_msg">Surge has been updated please review it</string>
+    <string name="surge_disabled_fialog_msg">Surge has been disabled. Do you want to request ride?</string>
+
+
+    <string name="nickname_hint">Nickname</string>
+    <string name="rider_marker_title">Rider Position</string>
+    <string name="arrive_not_allowed_dialog_msg">You may tap arrive when you are %d meters close to pickup location</string>
+    <string name="starting_trip_confirmation_dialog_msg">Are you sure you want to start the trip?</string>
+    <string name="ending_trip_confirmation_dialog_msg">Are you sure you want to end the trip?</string>
+    <string name="finish_ride_notification_msg">Congratulations on arriving to the destination. End trip?</string>
+    <string name="direct_connect_menu">Direct Connect</string>
+    <string name="direct_connect_change_id_confirmation">Are you sure you want to change you ID?</string>
+
+    <string name="verify_email_title">Verify your Email</string>
+    <string name="verify_email_message1">We\'ve sent you an email verification to</string>
+    <string name="verify_email_message2">Please click the link in email to confirm it\'s you</string>
+    <string name="verify_email_button">Re-send email verification</string>
+
+    <string name="change_photo">Change Photo</string>
+
+    <!-- permissions -->
+    <string name="permission_header">This feature requires the following permission:</string>
+    <string name="permissions_header">This feature requires the following permissions:</string>
+    <string name="permission_location">Location</string>
+    <string name="permission_camera">Camera</string>
+    <string name="permission_storage">Storage</string>
+    <string name="permission_phone">Phone</string>
+    <string name="permission_sms">SMS</string>
+    <string name="permission_contacts">Contacts</string>
+    <string name="dont_have_permission">Ride requires your location to accurately pinpoint the location of your car. Please go to setting and enable location for %1$s</string>
+    
+    <!-- cancellation feedback -->
+    <string name="cancel_feedback_rider_ok">Submit</string>
+    <string name="cancel_feedback_rider_cancel">Cancel</string>
+    <string name="cancel_feedback_driver_ok">Cancel Ride</string>
+    <string name="cancel_feedback_driver_cancel">Don\'t Cancel Ride</string>
+    <string name="cancel_feedback_message_hint">Enter your reason</string>
+    <string name="cancel_feedback_rider_title">Your ride was cancelled.</string>
+    <string name="cancel_feedback_rider_description">Tell us why and help us improve.</string>
+    <string name="cancel_feedback_driver_title">Cancel this ride?</string>
+    <string name="cancel_feedback_driver_description">The rider can be charged.</string>
+    <string name="cancel_feedback_no_reason">Please select a reason</string>
+
+
+</resources>

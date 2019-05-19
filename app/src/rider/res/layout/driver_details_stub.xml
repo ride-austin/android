@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="detailsViewModel"
+            type="com.rideaustin.ui.viewstub.DriverDetailsViewModel" />
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:background="@color/black_10_opaq"
+        tools:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/ride_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ride_details_card"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="@dimen/basic_widget_margin"
+                android:layout_marginLeft="@dimen/basic_widget_margin"
+                android:layout_marginRight="@dimen/basic_widget_margin"
+                android:layout_marginTop="48dp"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:id="@+id/ride_details_card"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/container_layout"
+                android:layout_marginLeft="@dimen/basic_widget_margin"
+                android:layout_marginRight="@dimen/basic_widget_margin"
+                android:elevation="6dp"
+                android:paddingBottom="@dimen/basic_widget_margin"
+                app:elevation="6dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@color/divider"
+                    android:visibility="@{detailsViewModel.isDeafDriver}"/>
+
+                <TextView
+                    style="@style/RATextView.MontserratLight"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:text="@string/deaf_driver_text"
+                    android:textColor="#2C323C"
+                    android:textSize="12sp"
+                    android:visibility="@{detailsViewModel.isDeafDriver}"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@color/divider" />
+
+                <LinearLayout
+                    android:id="@+id/buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/share_live_eta"
+                        style="@style/BorderedRoundButton"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/driver_details_round_button"
+                        android:text="@string/live_eta"
+                        android:textSize="12dp" />
+
+                    <Button
+                        android:id="@+id/cancel_trip"
+                        style="@style/BorderedRoundButton"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/driver_details_round_button"
+                        android:enabled="@{!detailsViewModel.tripActivated}"
+                        android:text="@string/cancel_trip"
+                        android:textSize="12dp"
+                        tools:enabled="false" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@color/divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/fare_estimate_button"
+                        style="@style/BorderLessButton"
+                        android:layout_width="@dimen/zero_width"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/btn_drawable_driver_details_padding"
+                        android:drawableTop="@drawable/ic_fare_estimate"
+                        android:text="@string/fare_estimate"
+                        android:textAllCaps="false"
+                        android:textColor="@color/charcoal_grey_state"
+                        android:textSize="@dimen/btn_text_small_driver_details" />
+
+                    <View
+                        android:layout_width="@dimen/rate_driver_divider_height"
+                        android:layout_height="fill_parent"
+                        android:background="@color/divider" />
+
+                    <Button
+                        android:id="@+id/btn_fare_split"
+                        style="@style/BorderLessButton"
+                        android:layout_width="@dimen/zero_width"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/btn_drawable_driver_details_padding"
+                        android:drawableTop="@drawable/ic_split_fare"
+                        android:text="@string/btn_split_fare"
+                        android:textAllCaps="false"
+                        android:textColor="@color/charcoal_grey_state"
+                        android:textSize="@dimen/btn_text_small_driver_details" />
+
+                    <View
+                        android:layout_width="@dimen/rate_driver_divider_height"
+                        android:layout_height="fill_parent"
+                        android:background="@color/divider"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/promo_code_button"
+                        style="@style/BorderLessButton"
+                        android:layout_width="@dimen/zero_width"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/btn_drawable_driver_details_padding"
+                        android:drawableTop="@drawable/ic_promo"
+                        android:text="@string/promo_code"
+                        android:textAllCaps="false"
+                        android:textColor="@color/charcoal_grey_state"
+                        android:textSize="@dimen/btn_text_small_driver_details"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="6dp"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:id="@+id/driver_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/driver_image"
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="64dp"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <LinearLayout
+                                android:id="@+id/rating_container"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_driver_rate"
+                                    style="@style/RATextView.MontserratRegular"
+                                    android:layout_width="45dp"
+                                    android:layout_height="17dp"
+                                    android:layout_gravity="bottom"
+                                    android:gravity="center"
+                                    android:textColor="@color/charcoalGrey"
+                                    android:textSize="10dp"
+                                    tools:text="4.92" />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="17dp"
+                                    android:background="@color/grey_300" />
+
+                                <ImageView
+                                    android:id="@+id/iv_rating"
+                                    android:layout_width="24dp"
+                                    android:layout_height="17dp"
+                                    android:layout_gravity="bottom"
+                                    android:padding="3.5dp"
+                                    android:src="@drawable/icn_star" />
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/tv_driver_name"
+                            style="@style/RATextView.MontserratRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:textAllCaps="true"
+                            android:textColor="@color/charcoalGreyTwo"
+                            android:textSize="12dp"
+                            tools:text="Sinan Güneş, Android of Things" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/car_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/car_image"
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/circular_place_holder"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="64dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/car_plate"
+                                style="@style/RATextView.MontserratRegular"
+                                android:layout_width="70dp"
+                                android:layout_height="17dp"
+                                android:gravity="center"
+                                android:text="ABCD 12"
+                                android:textColor="@color/charcoalGrey"
+                                android:textSize="10dp"
+                                tools:text="4.9" />
+                        </android.support.v7.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/car_color_make_model"
+                            style="@style/RATextView.MontserratRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:textAllCaps="true"
+                            android:textColor="@color/charcoalGreyTwo"
+                            android:textSize="12dp"
+                            tools:text="Blue Jeep Wrangler" />
+
+                        <TextView
+                            android:id="@+id/car_category"
+                            style="@style/RATextView.MontserratRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="17dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/lorem_ipsum"
+                            android:textAllCaps="true"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/driver_container_small"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="40dp"
+                android:elevation="6dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/driver_image_small"
+                    android:layout_width="@dimen/driver_avatar_in_ride_big_version_size"
+                    android:layout_height="@dimen/driver_avatar_in_ride_big_version_size"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/ic_launcher" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="80dp">
+
+                    <LinearLayout
+                        android:id="@+id/rating_container_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/driver_rate_small"
+                            style="@style/RATextView.MontserratRegular"
+                            android:layout_width="50dp"
+                            android:layout_height="17dp"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:text="4.9"
+                            android:textColor="@color/charcoalGrey"
+                            android:textSize="10dp"
+                            tools:text="4.9" />
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="1dp"
+                            android:layout_height="17dp"
+                            android:background="@color/grey_300" />
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="17dp"
+                            android:layout_gravity="bottom"
+                            android:padding="3.5dp"
+                            android:src="@drawable/icn_star" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/mark_image"
+                    android:layout_width="15dp"
+                    android:layout_height="10dp"
+                    android:layout_below="@+id/driver_image_small"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="14dp"
+                    android:src="@drawable/icn_down_arrow" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/mark_image"
+                    android:layout_marginTop="60dp"
+                    android:gravity="center_vertical">
+
+                    <View
+                        android:id="@+id/center"
+                        android:layout_width="90dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/driver_name_small"
+                            style="@style/RATextView.MontserratRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:text="Jimbo Jimbo"
+                            android:textAllCaps="true"
+                            android:textColor="@color/charcoalGreyTwo"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/car_category_small"
+                            style="@style/RATextView.MontserratRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="17dp"
+                            android:gravity="center"
+                            android:text="SUV"
+                            android:textAllCaps="true"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/center"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/car_make_small"
+                            style="@style/RATextView.MontserratRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:text="Range Rover s as s s s s s s"
+                            android:textAllCaps="true"
+                            android:textColor="@color/charcoalGreyTwo"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/car_plate_small"
+                            style="@style/RATextView.MontserratRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="17dp"
+                            android:layout_weight="0.16"
+                            android:gravity="center"
+                            android:text="000abcd"
+                            android:textAllCaps="true"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

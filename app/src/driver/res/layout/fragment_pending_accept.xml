@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.map.PendingAcceptViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/pending_pickup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/eta"
+            style="@style/RATextView.MontserratRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@{viewModel.eta}"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black"
+            tools:text="15 mins" />
+
+        <TextView
+            android:id="@+id/pickup_address"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:gravity="center_horizontal"
+            android:text="@{viewModel.startAddress}"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            tools:text="301 W. Second St. Austin, TX 78701" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/rider_avatar"
+                android:layout_width="@dimen/user_avatar"
+                android:layout_height="@dimen/user_avatar"
+                android:layout_marginRight="@dimen/user_avatar_left"
+                android:src="@{viewModel.avatar}"
+                tools:src="@drawable/ic_user_icon" />
+
+            <TextView
+                android:id="@+id/rider_rate"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@{viewModel.rating}"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                tools:text="4.9" />
+
+            <ImageView
+                android:id="@+id/rider_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/homogenous_padding"
+                android:background="@drawable/icn_star" />
+
+            <TextView
+                android:id="@+id/rider_name"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@{viewModel.name}"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                tools:text="James Watson" />
+
+        </LinearLayout>
+
+        <android.view.View
+            android:id="@+id/horizontal_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rate_driver_divider_height"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/rider_car_type"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableLeft="@{viewModel.categoryIcon}"
+                    android:drawablePadding="5dp"
+                    android:text="@{viewModel.categoryName}"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    app:fontSize="@{viewModel.categoryFontSize}"
+                    tools:drawableLeft="@drawable/nav_direct_connect"
+                    tools:text="Direct Connect:\nRegular" />
+
+            </RelativeLayout>
+
+            <android.view.View
+                android:id="@+id/vertical_line"
+                android:layout_width="@dimen/rate_driver_divider_height"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@android:color/darker_gray"
+                android:visibility="@{viewModel.isSurge}"
+                tools:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/surge_panel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:visibility="@{viewModel.isSurge}"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/surge_factor"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableLeft="@drawable/ic_p_inside_circle"
+                    android:drawablePadding="5dp"
+                    android:text="@{viewModel.surgeFactor}"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    tools:text="2,50X" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/accept"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/counter_text"
+                style="@style/RATextView.MontserratBold"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                app:backgroundDrawableRes="@{viewModel.buttonLeft}"
+                tools:background="@drawable/rounded_pink_button_left"
+                tools:text="10" />
+
+
+            <LinearLayout
+                android:id="@+id/accept_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/counter_text"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:backgroundDrawableRes="@{viewModel.buttonRight}"
+                tools:background="@drawable/rounded_pink_button_right">
+
+                <TextView
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/accept"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/accept_subtitle"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/female_only"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:visibility="@{viewModel.isFemale}"
+                    tools:visibility="visible" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.favorite.FavoritesViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mapContainer"
+        style="@style/RelativeLayout.Base">
+
+        <com.rideaustin.utils.TouchWrapper
+            android:id="@+id/touchWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.rideaustin.utils.TouchWrapper>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/destination_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/basic_widget_margin"
+            android:layout_marginRight="@dimen/basic_widget_margin"
+            android:layout_marginTop="@dimen/basic_widget_margin">
+
+            <AutoCompleteTextView
+                android:id="@+id/pickup_address"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/autocomplete_height"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:drawableLeft="@{viewModel.leftIconRes}"
+                android:drawablePadding="@dimen/material_padding"
+                android:hint="@string/your_place"
+                android:imeOptions="actionDone"
+                android:inputType="textPostalAddress"
+                android:maxLines="1"
+                android:paddingBottom="4dp"
+                android:paddingLeft="@dimen/material_padding"
+                android:paddingRight="@dimen/material_padding"
+                android:paddingTop="4dp"
+                android:singleLine="true"
+                android:text="@{viewModel.addressLine}"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/regular_text_size"
+                tools:drawableLeft="@drawable/ic_green"/>
+
+        </android.support.v7.widget.CardView>
+
+
+        <ImageView
+            android:id="@+id/empty_view"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_above="@id/empty_view"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:id="@+id/green_pin"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:src="@{viewModel.markerRes}"
+                tools:src="@drawable/icn_pickup_pin"/>
+
+        </RelativeLayout>
+
+        <Button
+            style="@style/Button.RoundedBlueButton"
+            android:id="@+id/buttonDone"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/done"
+            android:enabled="@{viewModel.saveEnabled}"
+            tools:enabled="false"/>
+    </RelativeLayout>
+</layout>

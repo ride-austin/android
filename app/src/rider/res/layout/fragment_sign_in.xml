@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="SignInBinding" />
+
+    <LinearLayout
+        style="@style/LinearLayout.Login"
+        android:layout_marginTop="@dimen/empty_margin_top"
+        android:background="@color/app_screen_background">
+
+        <Button
+            android:id="@+id/facebook"
+            style="@style/Button.RoundedBlueButton.FacebookButton"
+            android:drawableStart="@drawable/facebook"
+            android:drawablePadding="5dp"
+            android:paddingLeft="@dimen/fb_button_padding"
+            android:paddingRight="@dimen/fb_button_padding"
+            android:textSize="14dp"
+            android:text="@string/fb_login_text" />
+
+        <include layout="@layout/include_login_divider" />
+
+        <android.support.design.widget.TextInputLayout style="@style/TextInputLayout">
+
+            <EditText
+                android:id="@+id/email"
+                style="@style/EditText.AppLogin"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout style="@style/TextInputLayout">
+
+            <EditText
+                android:id="@+id/password"
+                style="@style/EditText.AppLogin"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:hint="@string/password_hint"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/done"
+            style="@style/Button.RoundedBlueButton"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@string/done"/>
+
+        <Button
+            android:id="@+id/forgotPassword"
+            style="@style/BorderLessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/forgot_password"
+            android:textColor="@color/light_blue"
+            android:textSize="@dimen/btn_text_small"/>
+
+    </LinearLayout>
+</layout>

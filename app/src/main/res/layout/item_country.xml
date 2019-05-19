@@ -1,0 +1,12 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/country_flag_width"
+        android:layout_height="@dimen/country_flag_height"
+        android:scaleType="fitCenter"
+        android:src="@drawable/f222"
+        android:padding="0dp"
+        android:layout_margin="0dp"/>
+
+</layout>

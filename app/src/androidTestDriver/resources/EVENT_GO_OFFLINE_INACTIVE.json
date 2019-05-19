@@ -1,0 +1,5 @@
+[{
+  "id": 3177099,
+  "eventType": "GO_OFFLINE",
+  "parameters": "{\"source\":\"DRIVER_INACTIVE\",\"message\":\"You have been marked as offline due to inactivity. \nPlease go online again for additional requests.\"}"
+}]

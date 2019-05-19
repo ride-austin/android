@@ -1,0 +1,58 @@
+android {
+    applicationVariants.all { variant ->
+
+        /*Manifest place holders api is not present on variant object define them in resValue*/
+        println("Iterating variant: " + variant.getName())
+        if (variant.getName().contains("Rider") && variant.getName().contains("Debug")) {
+            variant.buildConfigField 'String', 'GOOGLE_DIRECTION_API_KEY', "\"$RIDER_GOOGLE_DIRECTION_API_KEY_DEBUG\""
+        } else if (variant.getName().contains("Rider") && variant.getName().contains("Release")) {
+            variant.buildConfigField 'String', 'GOOGLE_DIRECTION_API_KEY', "\"$RIDER_GOOGLE_DIRECTION_API_KEY_RELEASE\""
+        } else if (variant.getName().contains("Driver") && variant.getName().contains("Debug")) {
+            variant.buildConfigField 'String', 'GOOGLE_DIRECTION_API_KEY', "\"$DRIVER_GOOGLE_DIRECTION_API_KEY_DEBUG\""
+        } else if (variant.getName().contains("Driver") && variant.getName().contains("Release")) {
+            variant.buildConfigField 'String', 'GOOGLE_DIRECTION_API_KEY', "\"$DRIVER_GOOGLE_DIRECTION_API_KEY_RELEASE\""
+        }
+
+        def projectFlavorNames = []
+        variant.productFlavors.each() { flavor ->
+            projectFlavorNames.add(flavor.name)
+        }
+        def isProd = variant.getName().contains("prod")
+        println('Application variant ' + variant.name + '. Flavor names list: ' + projectFlavorNames)
+
+        if (projectFlavorNames.contains('driver') && projectFlavorNames.contains('austin')) {
+            variant.mergedFlavor.applicationId = 'com.rideaustin.driver'
+            resValue "string", "app_name", isProd ? "RideAustin" : "RideAustinDriver"
+            buildConfigField 'String', 'USER_AGENT', '"RideAustinDriver"'
+            variant.mergedFlavor.manifestPlaceholders.put("FACEBOOK_KEYS", "$DRIVER_AUSTIN_FACEBOOK_ID")
+        } else if (projectFlavorNames.contains('rider') && projectFlavorNames.contains('austin')) {
+            variant.mergedFlavor.applicationId = 'com.rideaustin.android'
+            resValue "string", "app_name", isProd ? "RideAustin" : "RideAustinRider"
+            buildConfigField 'String', 'USER_AGENT', '"RideAustinRider"'
+            variant.mergedFlavor.manifestPlaceholders.put("FACEBOOK_KEYS", "$RIDER_AUSTIN_FACEBOOK_ID")
+        } else if (projectFlavorNames.contains('driver') && projectFlavorNames.contains('houston')) {
+            variant.mergedFlavor.applicationId = 'com.ridehouston.driver'
+            resValue "string", "app_name", isProd ? "RideHouston" : "RideHoustonDriver"
+            buildConfigField 'String', 'USER_AGENT', '"RideHoustonDriver"'
+            variant.mergedFlavor.manifestPlaceholders.put("FACEBOOK_KEYS", "$DRIVER_HOUSTON_FACEBOOK_ID")
+        } else if (projectFlavorNames.contains('rider') && projectFlavorNames.contains('houston')) {
+            variant.mergedFlavor.applicationId = 'com.ridehouston.android'
+            resValue "string", "app_name", isProd ? "RideHouston" : "RideHoustonRider"
+            buildConfigField 'String', 'USER_AGENT', '"RideHoustonRider"'
+            variant.mergedFlavor.manifestPlaceholders.put("FACEBOOK_KEYS", "$RIDER_HOUSTON_FACEBOOK_ID")
+        } // else use standard package name
+
+        if (isProd) {
+            if (variant.getName().contains("Rider")) {
+                variant.buildConfigField 'String', 'STRIPE_KEY', "\"$RIDER_STRIPE_KEY_PROD\""
+            }
+        } else {
+            variant.mergedFlavor.versionNameSuffix += "(" + variant.versionCode + ")"
+            if (variant.getName().contains("Rider")) {
+                variant.buildConfigField 'String', 'STRIPE_KEY', "\"$RIDER_STRIPE_KEY_BETA\""
+            }
+        }
+
+        println('Using project name: ' + variant.applicationId)
+    }
+}

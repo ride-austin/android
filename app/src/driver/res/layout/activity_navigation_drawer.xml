@@ -1,0 +1,153 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:elevation="0dp">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    style="@style/Toolbar.Base"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:layout_gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/toolbarAvatar"
+                        android:layout_width="?attr/actionBarSize"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_gravity="start"
+                        android:padding="@dimen/avatar_margin_top"
+                        android:visibility="gone"
+                        tools:src="@drawable/ic_user_icon"
+                        tools:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/app_title_logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:cropToPadding="true"
+                        android:padding="@dimen/avatar_margin_top"
+                        android:scaleType="fitCenter"
+                        android:visibility="gone"
+                        tools:src="@drawable/app_austin_black_logo"
+                        tools:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/toolbarTitle"
+                            style="@style/Toolbar.Title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:maxLines="1"
+                            tools:text="@string/app_name"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/toolbarSubtitle"
+                            style="@style/Toolbar.Title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:visibility="gone"
+                            tools:text="SHORT"
+                            tools:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="120dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center">
+
+                        <Button
+                            android:id="@+id/toolbarActionButton"
+                            style="@style/Toolbar.ActionButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_toolbar_action_fatal"
+                            tools:background="@drawable/bg_toolbar_action_warn"
+                            tools:ignore="RtlSymmetry"
+                            tools:paddingStart="@dimen/padding_14dp"
+                            tools:text="@string/action_sync" />
+
+                        <ProgressBar
+                            android:id="@+id/toolbarActionProgress"
+                            style="?android:attr/progressBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/padding_14dp"
+                            android:indeterminateDrawable="@drawable/toolbar_action_progress"
+                            android:indeterminateTintMode="src_atop"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                </android.support.v7.widget.Toolbar>
+
+                <include layout="@layout/view_single_divider" />
+
+            </android.support.design.widget.AppBarLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:id="@+id/mapRootView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                <FrameLayout
+                    android:id="@+id/rootView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/black_80_opaq"
+            android:fitsSystemWindows="false"
+            app:itemBackground="@color/navigation_item"
+            app:itemIconTint="@color/navigation_icon"
+            app:itemTextAppearance="@style/RATextView.MontserratRegular"
+            app:itemTextColor="@color/white_85_opaq"
+            app:menu="@menu/navigation_drawer_menu"
+            tools:visibility="gone">
+
+        </android.support.design.widget.NavigationView>
+
+    </android.support.v4.widget.DrawerLayout>
+</layout>

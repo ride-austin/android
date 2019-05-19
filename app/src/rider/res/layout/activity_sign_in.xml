@@ -1,0 +1,29 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="SignInContainerBinding" />
+
+    <LinearLayout style="@style/LinearLayout.Base"
+        android:background="@color/app_screen_background">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar.Base"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                style="@style/Toolbar.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_sign_in" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <include layout="@layout/view_single_divider" />
+
+        <FrameLayout style="@style/FrameLayout.Base.Fragment" />
+
+    </LinearLayout>
+
+</layout>

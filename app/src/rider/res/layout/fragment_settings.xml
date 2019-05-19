@@ -1,0 +1,321 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="settingsFragmentViewModel"
+            type="com.rideaustin.ui.drawer.settings.SettingsFragmentViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/app_screen_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white">
+
+                    <ImageView
+                        android:id="@+id/usersPhoto"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:padding="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@{settingsFragmentViewModel.userImage}"
+                        tools:src="@drawable/ic_user_icon" />
+
+                    <TextView
+                        android:id="@+id/usersName"
+                        style="@style/RATextView.MontserratLight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/usersPhoto"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/users_name_6dp"
+                        android:text="@{settingsFragmentViewModel.user.fullName}"
+                        android:textColor="@color/users_name_in_settings"
+                        android:textSize="@dimen/users_name_17sp"
+                        tools:text="Thomas Whatson"/>
+
+                    <TextView
+                        android:id="@+id/editAccount"
+                        style="@style/RATextView.MontserratSemiBold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/usersName"
+                        android:gravity="center_horizontal"
+                        android:paddingBottom="@dimen/activity_horizontal_margin"
+                        android:text="@string/edit_account"
+                        android:textAllCaps="true"
+                        android:textColor="@color/drawer_icon"
+                        android:textSize="@dimen/edit_account_10sp" />
+                </RelativeLayout>
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:text="@string/favorites"
+                    android:textAllCaps="true"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <RelativeLayout
+                    android:id="@+id/layoutFavoriteHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white">
+
+                    <ImageView
+                        android:id="@+id/homeIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="2dp"
+                        android:paddingTop="12dp"
+                        android:src="@drawable/ic_home_black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/homeIcon"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin">
+
+                        <TextView
+                            android:id="@+id/homeLabel"
+                            style="@style/RATextView.MontserratRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/white"
+                            android:text="@string/home"
+                            android:textColor="@color/users_name_in_settings"
+                            android:textSize="@dimen/settings_texts" />
+
+                        <TextView
+                            android:id="@+id/homeAddress"
+                            style="@style/RATextView.MontserratLight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/white"
+                            android:text="@{settingsFragmentViewModel.favoritePlaceHome}"
+                            android:textSize="@dimen/edit_account_10sp"
+                            android:visibility="@{!TextUtils.isEmpty(settingsFragmentViewModel.favoritePlaceHome)}" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <RelativeLayout
+                    android:id="@+id/layoutFavoriteWork"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white">
+
+                    <ImageView
+                        android:id="@+id/workIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="2dp"
+                        android:paddingTop="12dp"
+                        android:src="@drawable/ic_work_black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/workIcon"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin">
+
+                        <TextView
+                            android:id="@+id/workLabel"
+                            style="@style/RATextView.MontserratRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/white"
+                            android:text="@string/work"
+                            android:textColor="@color/users_name_in_settings"
+                            android:textSize="@dimen/settings_texts" />
+
+                        <TextView
+                            android:id="@+id/workAddress"
+                            style="@style/RATextView.MontserratLight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/white"
+                            android:text="@{settingsFragmentViewModel.favoritePlaceWork}"
+                            android:textSize="@dimen/edit_account_10sp"
+                            android:visibility="@{!TextUtils.isEmpty(settingsFragmentViewModel.favoritePlaceWork)}" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:text="@string/about"
+                    android:textAllCaps="true"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/textViewRateOnGooglePlay"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/padding_8dp"
+                    android:text="@string/rate_us_on_google_play"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts" />
+
+                <TextView
+                    android:id="@+id/textViewVersionName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:paddingBottom="@dimen/padding_8dp"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:text="@string/version"
+                    android:textSize="@dimen/edit_account_10sp" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/textViewLikeOnFacebook"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/like_us_on_facebook"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/textViewLegal"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/legal"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/textViewWebsite"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts"
+                    tools:text="rideaustin.com" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/textViewContactUs"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/settings_contact_support"
+                    android:textColor="@color/users_name_in_settings"
+                    android:textSize="@dimen/settings_texts" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/signOut"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/sign_out"
+                    android:textColor="@color/drawer_icon"
+                    android:textSize="@dimen/settings_texts" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

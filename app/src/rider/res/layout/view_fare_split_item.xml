@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.splitfare.FareSplitItemViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="12dp"
+            android:src="@{viewModel.avatar}"
+            tools:src="@drawable/ic_user_icon" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="center"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/close" />
+
+        <TextView
+            style="@style/MontserratRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:layout_toLeftOf="@id/iv_close"
+            android:textColor="@color/charcoalGrey"
+            android:textSize="14sp"
+            android:text="@{viewModel.name}"
+            tools:text="James Watson" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="#D8D8D8"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="FCRADisclosureBinding" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:id="@+id/fcra_content_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_8dp">
+
+                <TextView
+                    android:id="@+id/fcra_agreement_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="FRCA disclosure agreement" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_8dp"
+                    android:text="@string/frca_disclosure_any_questions" />
+
+                <EditText
+                    android:id="@+id/firstNameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/first_name"
+                    android:imeOptions="actionNext"
+                    android:lines="1"
+                    android:nextFocusDown="@+id/middleNameInput"
+                    android:paddingTop="@dimen/padding_8dp">
+
+                    <requestFocus />
+                </EditText>
+
+                <EditText
+                    android:id="@+id/middleNameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/middle_name_s"
+                    android:lines="1"
+                    android:nextFocusDown="@+id/lastNameInput"
+                    android:paddingTop="@dimen/padding_8dp" />
+
+                <CheckBox
+                    android:id="@+id/middleNameConfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/i_confirm_that_i_do_not_have_a_middle_name" />
+
+                <EditText
+                    android:id="@+id/lastNameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/last_name"
+                    android:lines="1"
+                    android:paddingTop="@dimen/padding_8dp" />
+                <!--android:nextFocusDown="@+id/dateOfBirthInput"-->
+                <EditText
+                    android:id="@+id/dateOfBirthInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/date_of_birth_mm_dd_yyyy"
+                    android:lines="1"
+                    android:editable="false"
+                    android:nextFocusDown="@+id/socialSecurityNumber"
+                    android:paddingTop="@dimen/padding_8dp"
+                    tools:ignore="Deprecated" />
+
+                <com.rideaustin.ui.widgets.NotSelectableEditText
+                    android:id="@+id/socialSecurityNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/social_security_number"
+                    android:inputType="numberPassword"
+                    android:lines="1"
+                    android:nextFocusDown="@+id/currentZipcodeInput"
+                    android:paddingTop="@dimen/padding_8dp" />
+
+                <EditText
+                    android:id="@+id/currentZipcodeInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/current_zipcode"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="@integer/zip_code_max_length"
+                    android:nextFocusDown="@+id/driverLicenseNumberInput"
+                    android:paddingTop="@dimen/padding_8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/driverLicenseNumberInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:digits="@string/alpha_numeric_characters"
+                        android:hint="@string/driver_license_number"
+                        android:inputType="textCapCharacters"
+                        android:lines="1"
+                        android:nextFocusDown="@+id/dlsInput" />
+
+                    <EditText
+                        android:id="@+id/dlsInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:hint="@string/d_l_sate"
+                        android:inputType="textCapCharacters"
+                        android:lines="1"
+                        android:maxLength="2"
+                        android:nextFocusDown="@+id/addressInput" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/addressInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/address"
+                    android:inputType="textPostalAddress"
+                    android:lines="1"
+                    android:maxLength="@integer/maximum_input_length"
+                    android:nextFocusDown="@+id/acknowledgeReceipt"
+                    android:paddingTop="@dimen/padding_8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/summary_of_your_rights_under_the_fair_credit_reporting_act"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/the_fcra_is_a_complex_piece" />
+
+                <CheckBox
+                    android:id="@+id/acknowledgeReceipt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acknowledge_receipt_summary" />
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</layout>

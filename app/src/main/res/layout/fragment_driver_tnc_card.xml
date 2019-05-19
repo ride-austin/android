@@ -1,0 +1,137 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="DriverTNCCardBinding" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/createProfileContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_screen_background">
+
+        <LinearLayout
+            style="@style/LinearLayout.Base"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout style="@style/LinearLayout.Base">
+
+                    <TextView
+                        android:id="@+id/tnc_card_title_1"
+                        style="@style/RATextView.Driver.Header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/material_padding"
+                        tools:text="@string/tnc_driver_card_text" />
+
+                    <TextView
+                        android:id="@+id/tnc_card_text_1"
+                        style="@style/RATextView.Driver.Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/material_padding"
+                        android:paddingRight="@dimen/material_padding"
+                        tools:text="@string/you_will_need_a_tnc_card_text" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="@dimen/material_padding"
+                        android:background="@color/blue_grey_50"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:id="@+id/tnc_icn_upload"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:drawableTop="@drawable/ic_upload"
+                            android:padding="@dimen/padding_8dp"
+                            android:visibility="gone"
+                            tools:visibility="visible"
+                            tools:text="" />
+
+                        <ImageView
+                            android:id="@+id/tnc_image"
+                            style="@style/ImageView.DriverSignUp.Top"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/icn_license"
+                            tools:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <include layout="@layout/view_single_divider" />
+
+                    <TextView
+                        android:id="@+id/tnc_card_title_2"
+                        style="@style/RATextView.Driver.Header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/material_padding"
+                        tools:text="@string/dont_have_one_tnc_text" />
+
+                    <TextView
+                        android:id="@+id/tnc_card_text_2"
+                        style="@style/RATextView.Driver.Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/material_padding"
+                        android:paddingRight="@dimen/material_padding"
+                        android:paddingBottom="@dimen/material_padding"
+                        tools:text="@string/mock_tnc_instructions_text" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/expiration_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/driver_licence_expiration_date" />
+
+                <Button
+                    android:id="@+id/select_expiration_date_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    android:ems="12"
+                    android:text="@string/select" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_single_divider" />
+
+            <Button
+                android:id="@+id/openTakePhotoControl"
+                style="@style/Button.RoundedBlueButton"
+                android:layout_margin="@dimen/material_padding"
+                android:drawableStart="@drawable/icn_photo_white"
+                android:paddingEnd="@dimen/material_padding"
+                android:paddingStart="@dimen/material_padding"
+                android:text="@string/take_photo" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/edit_picture_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

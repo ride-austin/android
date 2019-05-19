@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="page_titles_payment_history" >
+        <item>@string/tab_title_payment_history_completed</item>
+        <item>@string/tab_title_payment_history_cancelled</item>
+    </string-array>
+    <string-array name="header_cancelled_trips" >
+        <item>@string/cancelled_by_driver</item>
+        <item>@string/cancelled_by_rider</item>
+    </string-array>
+
+    <string name="tab_title_payment_history_completed">Completed</string>
+    <string name="tab_title_payment_history_cancelled">Cancelled</string>
+    <string name="cancelled_by_rider">Cancelled by Me</string>
+    <string name="cancelled_by_driver">Cancelled by Driver</string>
+</resources>

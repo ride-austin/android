@@ -1,0 +1,7 @@
+[
+  {
+    "id": 3435638,
+    "eventType": "RIDER_LOCATION_UPDATED",
+    "parameters": "{\"lat\":30.311059,\"lng\":-97.667856,\"timeRecorded\":1501000952392}"
+  }
+]

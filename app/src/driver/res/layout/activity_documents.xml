@@ -1,0 +1,71 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="DocumentsBinding" />
+
+    <LinearLayout
+        style="@style/LinearLayout.Base"
+        android:background="@color/app_screen_background">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar.Base"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/Toolbar.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <include layout="@layout/view_single_divider" />
+
+        <LinearLayout
+            android:id="@+id/content_documents"
+            style="@style/FrameLayout.Base.Fragment"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textDriverLicense"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="@string/my_driver_license"
+                android:textColor="@color/users_name_in_settings"
+                android:textSize="@dimen/settings_texts" />
+
+            <android.view.View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/rate_driver_divider_height"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/textTncCard"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:textColor="@color/users_name_in_settings"
+                android:textSize="@dimen/settings_texts"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:text="My TNC Card"/>
+
+            <android.view.View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/rate_driver_divider_height"
+                android:background="@android:color/darker_gray" />
+
+        </LinearLayout>
+
+        <include layout="@layout/view_single_divider" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="error_tnc_upload_failed">Uploading TNC data failed, do you want to retry?</string>
+    <string name="error_car_photo_upload_failed">Uploading car photo data failed, do you want to retry?</string>
+    <string name="error_car_data_upload_failed">Uploading car data failed, do you want to retry?</string>
+    <string name="error_driver_creation_failed">Creating new driver failed</string>
+
+</resources>

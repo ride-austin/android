@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="RCRADisclosureCheckAuthorizationBinding"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal|top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_8dp">
+
+            <TextView
+                style="@style/RATextView.Driver.Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:maxLines="2"
+                android:text="@string/the_fcra_background_check_authorization"
+            />
+
+            <TextView
+                style="@style/RATextView.Driver.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:text="@string/the_fcra_background_check_authorization_first_paragraph"
+            />
+
+            <TextView
+                style="@style/RATextView.Driver.Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:text="@string/the_fcra_background_check_authorization_electronic_signature"
+            />
+
+
+            <EditText
+                android:id="@+id/fcra_authorization_full"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:hint="@string/full_name"/>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

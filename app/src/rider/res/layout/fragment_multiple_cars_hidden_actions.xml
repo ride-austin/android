@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.map.MultipleCarViewModel" />
+
+        <variable
+            name="handler"
+            type="com.rideaustin.ui.map.MultipleCarFragment" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/eta_title"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/slider_label_eta"
+            android:text="@string/slider_label_eta"
+            android:textSize="12sp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="50dp" />
+
+        <TextView
+            android:id="@+id/people_title"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/slider_label_people"
+            android:text="@string/slider_label_people"
+            android:textSize="12sp"
+            android:layout_alignBaseline="@+id/eta_title"
+            android:layout_alignBottom="@+id/eta_title"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="50dp" />
+
+        <TextView
+            android:id="@+id/max_size_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="4 PEOPLE"
+            android:text="@{viewModel.maxPeopleValue}"
+            android:textSize="15dp"
+            style="@style/RATextView.MontserratLight"
+            android:textColor="@color/rate_ride_price_grey"
+            android:layout_above="@+id/horizontal_line_1"
+            android:layout_alignEnd="@+id/people_title" />
+
+        <TextView
+            android:id="@+id/eta_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.etaValue}"
+            android:textColor="@color/rate_ride_price_grey"
+            android:textSize="15dp"
+            tools:text="10 MIN"
+            android:layout_below="@+id/eta_title"
+            android:layout_alignStart="@+id/eta_title" />
+
+        <android.view.View
+            android:id="@+id/horizontal_line_1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rate_driver_divider_height"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@id/eta_value"
+             />
+
+        <android.view.View
+            android:layout_width="@dimen/rate_driver_divider_height"
+            android:layout_height="30dp"
+            android:background="@android:color/darker_gray"
+            android:id="@+id/vertical_lin"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignTop="@+id/people_title"
+            android:layout_centerHorizontal="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_below="@+id/horizontal_line_1"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/view_costs_text"
+                android:textAppearance="@style/RATextView.Driver.ViewPricing"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/slider_label_pricing"
+                tools:text="@string/slider_label_pricing"
+                android:onClick="@{handler.onViewPricingClicked}" />
+
+            <android.view.View
+                android:layout_width="@dimen/rate_driver_divider_height"
+                android:layout_height="30dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/fare_estimate_text"
+                android:textAppearance="@style/RATextView.Driver.ViewPricing"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/slider_label_estimate"
+                tools:text="@string/slider_label_estimate"
+                android:onClick="@{handler.onFareEstimateClicked}" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
+

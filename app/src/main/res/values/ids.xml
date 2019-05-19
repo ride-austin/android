@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="content_frame" type="id" />
+    <item name="navMap" type="id" />
+    <item name="navUnpaid" type="id" />
+    <item name="navCampaign" type="id" />
+    <item name="glide_tag" type="id" />
+    <item name="bool_tag" type="id" />
+    <item name="data_tag" type="id" />
+</resources>

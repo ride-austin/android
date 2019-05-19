@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/ride_map"
+        android:layout_width="351dp"
+        android:layout_height="138dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp">
+
+        <ProgressBar
+            android:id="@+id/image_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/image_ride_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_addresses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_below="@+id/ride_map">
+
+        <TextView
+            android:id="@+id/tv_cancelled"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@color/red_400"
+            android:paddingBottom="@dimen/discrete_slider_bar_thickness"
+            android:paddingLeft="@dimen/iv_week_indicator_margin"
+            android:paddingRight="@dimen/iv_week_indicator_margin"
+            android:paddingTop="@dimen/discrete_slider_bar_thickness"
+            android:text="Cancelled"
+            android:textColor="@android:color/white"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/iv_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/iv_week_indicator_margin"
+            android:src="@drawable/ic_green" />
+
+        <TextView
+            android:id="@+id/tv_ride_time"
+            style="@style/RATextView.MontserratBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/tv_ride_start"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_ride_time"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp" />
+
+        <ImageView
+            android:id="@+id/iv_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_green"
+            android:layout_margin="@dimen/iv_week_indicator_margin"
+            android:src="@drawable/ic_red" />
+
+        <TextView
+            android:id="@+id/tv_end_ride_time"
+            style="@style/RATextView.MontserratBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="65dp" />
+
+        <TextView
+            android:id="@+id/tv_end_ride_location"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_ride_time"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="65dp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/delimiter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vertical_delimiter_height"
+        android:layout_below="@+id/rl_addresses"
+        android:layout_margin="@dimen/iv_week_indicator_margin"
+        android:background="@color/grey_200" />
+
+    <TextView
+        android:id="@+id/text_base_fare"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delimiter"
+        android:layout_marginLeft="@dimen/iv_week_indicator_margin"
+        android:text="@string/text_base_fare" />
+
+    <TextView
+        android:id="@+id/text_distance_fare"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_base_fare"
+        android:layout_marginLeft="@dimen/iv_week_indicator_margin"
+        android:layout_marginTop="@dimen/fare_top"
+        android:text="@string/text_distance_fare" />
+
+    <TextView
+        android:id="@+id/text_time_fare"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_distance_fare"
+        android:layout_marginLeft="@dimen/iv_week_indicator_margin"
+        android:layout_marginTop="@dimen/fare_top"
+        android:text="@string/text_time_fare" />
+
+    <TextView
+        android:id="@+id/text_priority_fare_view"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_time_fare_count"
+        android:layout_marginLeft="@dimen/iv_week_indicator_margin"
+        android:layout_marginRight="@dimen/iv_week_indicator_margin"
+        android:layout_marginTop="@dimen/fare_top" />
+
+    <TextView
+        android:id="@+id/text_priority_fare"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_time_fare"
+        android:layout_marginLeft="@dimen/iv_week_indicator_margin"
+        android:layout_marginTop="@dimen/fare_top"
+        android:text="@string/text_priority_default" />
+
+    <View
+        android:id="@+id/delimiter2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vertical_delimiter_height"
+        android:layout_below="@+id/text_priority_fare"
+        android:layout_margin="@dimen/iv_week_indicator_margin"
+        android:background="@color/grey_200" />
+
+    <TextView
+        android:id="@+id/text_total_fare_view"
+        style="@style/RATextView.MontserratBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delimiter2"
+        android:layout_marginLeft="@dimen/iv_week_indicator_margin"
+        android:text="@string/text_total_fare" />
+
+    <View
+        android:id="@+id/delimiter6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vertical_delimiter_height"
+        android:layout_below="@+id/text_total_fare_view"
+        android:layout_margin="@dimen/iv_week_indicator_margin"
+        android:background="@color/grey_200" />
+
+    <TextView
+        android:id="@+id/text_tip_view"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delimiter6"
+        android:layout_marginLeft="@dimen/iv_week_indicator_margin"
+        android:text="@string/tip" />
+
+    <TextView
+        android:id="@+id/tv_tip_count"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/delimiter6"
+        android:layout_marginRight="@dimen/iv_week_indicator_margin" />
+
+    <View
+        android:id="@+id/delimiter3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vertical_delimiter_height"
+        android:layout_below="@+id/text_tip_view"
+        android:layout_margin="@dimen/iv_week_indicator_margin"
+        android:background="@color/grey_200" />
+
+    <TextView
+        android:id="@+id/text_ride_service_fee"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delimiter3"
+        android:layout_marginLeft="@dimen/iv_week_indicator_margin"
+        tools:text="RideAustin Fee" />
+
+    <View
+        android:id="@+id/delimiter4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vertical_delimiter_height"
+        android:layout_below="@+id/text_ride_service_fee"
+        android:layout_margin="@dimen/iv_week_indicator_margin"
+        android:background="@color/grey_200" />
+
+    <TextView
+        android:id="@+id/text_your_earning"
+        style="@style/RATextView.MontserratBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delimiter4"
+        android:layout_marginLeft="@dimen/iv_week_indicator_margin"
+        android:text="@string/text_your_earning" />
+
+    <View
+        android:id="@+id/delimiter5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vertical_delimiter_height"
+        android:layout_below="@+id/text_your_earning"
+        android:layout_margin="@dimen/iv_week_indicator_margin"
+        android:background="@color/grey_200" />
+
+    <TextView
+        android:id="@+id/tv_fare_count"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/delimiter"
+        android:layout_marginRight="@dimen/iv_week_indicator_margin" />
+
+    <TextView
+        android:id="@+id/tv_fare_distance_count"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_fare_count"
+        android:layout_marginRight="@dimen/iv_week_indicator_margin"
+        android:layout_marginTop="@dimen/fare_top" />
+
+    <TextView
+        android:id="@+id/tv_time_fare_count"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_fare_distance_count"
+        android:layout_marginRight="@dimen/iv_week_indicator_margin"
+        android:layout_marginTop="@dimen/fare_top" />
+
+    <TextView
+        android:id="@+id/tv_total_fare_count"
+        style="@style/RATextView.MontserratBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/delimiter2"
+        android:layout_marginRight="@dimen/iv_week_indicator_margin" />
+
+    <TextView
+        android:id="@+id/tv_ra_fee_count"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/delimiter3"
+        android:layout_marginRight="@dimen/iv_week_indicator_margin" />
+
+    <TextView
+        android:id="@+id/tv_earning_count"
+        style="@style/RATextView.MontserratBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/delimiter4"
+        android:layout_marginRight="@dimen/iv_week_indicator_margin" />
+
+    <TextView
+        android:id="@+id/text_contact_support"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delimiter5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:drawableLeft="@drawable/icn_mail"
+        android:drawablePadding="@dimen/discrete_slider_padding_left"
+        android:text="@string/text_contact_support"
+        android:textColor="@color/blue_500" />
+</RelativeLayout>

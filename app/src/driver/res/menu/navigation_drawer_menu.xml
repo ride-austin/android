@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+
+        <!--<item-->
+        <!--android:id="@+id/navPayment"-->
+        <!--android:icon="@drawable/nav_payment"-->
+        <!--android:title="@string/payment" />-->
+        <!--<item-->
+        <!--android:id="@+id/navHistory"-->
+        <!--android:icon="@drawable/nav_history"-->
+        <!--android:title="@string/history" />-->
+        <!--<item-->
+        <!--android:id="@+id/navHelp"-->
+        <!--android:icon="@drawable/nav_help"-->
+        <!--android:title="@string/help" />-->
+        <!--<item-->
+        <!--android:id="@+id/navPromotions"-->
+        <!--android:icon="@drawable/nav_promotion"-->
+        <!--android:title="@string/promotions" />-->
+        <!--<item-->
+        <!--android:id="@+id/navDonate"-->
+        <!--android:icon="@drawable/nav_donate"-->
+        <!--android:title="@string/donate" />-->
+        <!--<item-->
+        <!--android:id="@+id/navDriveWithRideAustin"-->
+        <!--android:icon="@drawable/nav_car"-->
+        <!--android:title="@string/drive_with_ride_austin" />-->
+
+        <item
+            android:id="@+id/navRide"
+            android:icon="@drawable/nav_ride_type"
+            android:title="@string/ride_request" />
+        <item
+            android:id="@+id/navEarning"
+            android:icon="@drawable/nav_earnings"
+            android:title="@string/earnings" />
+        <item
+            android:id="@+id/navDirectConnect"
+            android:icon="@drawable/nav_direct_connect"
+            android:title="@string/direct_connect_menu"
+            android:visible="true" />
+        <item
+            android:id="@+id/navSettings"
+            android:icon="@drawable/nav_settings"
+            android:title="@string/settings" />
+        <item
+            android:id="@+id/navRefer"
+            android:icon="@drawable/nav_refer"
+            android:title="@string/refer_friend_title"/>
+        <item
+            android:id="@+id/navReport"
+            android:icon="@drawable/nav_mail"
+            android:title="@string/send_report" />
+        <!--<item-->
+        <!--android:id="@+id/navAbout"-->
+        <!--android:icon="@drawable/nav_about"-->
+        <!--android:title="@string/about" />-->
+    </group>
+
+</menu>

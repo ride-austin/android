@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MontserratRegular">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <style name="MontserratLight">
+        <item name="android:fontFamily">@font/montserrat_light</item>
+        <item name="fontFamily">@font/montserrat_light</item>
+    </style>
+
+    <style name="MontserratBold">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="MontserratSemiBold">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="fontFamily">@font/montserrat_semibold</item>
+    </style>
+
+    <style name="MontserratLightItalic">
+        <item name="android:fontFamily">@font/montserrat_light_italic</item>
+        <item name="fontFamily">@font/montserrat_light_italic</item>
+    </style>
+
+</resources>

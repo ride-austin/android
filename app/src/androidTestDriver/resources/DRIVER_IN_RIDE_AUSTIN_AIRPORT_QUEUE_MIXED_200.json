@@ -1,0 +1,15 @@
+{
+  "areaQueueName": "RideAustin Airport",
+  "positions": {
+    "REGULAR": 0,
+    "SUV": 1,
+    "PREMIUM": 1,
+    "LUXURY": 0
+  },
+  "lengths": {
+    "REGULAR": 2,
+    "SUV": 2,
+    "PREMIUM": 2,
+    "LUXURY": 2
+  }
+}

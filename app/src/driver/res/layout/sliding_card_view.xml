@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+
+    <SeekBar
+        android:id="@+id/sliderSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/slider_seekbar_height"
+        android:clickable="false"
+        android:max="100"
+        android:progressDrawable="@android:color/transparent"
+        android:thumb="@null"
+        android:thumbOffset="@dimen/slider_thumb_offset" />
+
+    <TextView
+        android:id="@+id/sliderText"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/slide_to_arrive"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

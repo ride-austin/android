@@ -1,0 +1,8 @@
+[
+  {
+    "id": 110329189,
+    "title": "Ride reassigned",
+    "message": "Ride was reassigned",
+    "eventType": "RIDE_STACKED_REASSIGNED"
+  }
+]

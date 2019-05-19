@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/custom_toast_container"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_horizontal"
+              android:background="@drawable/bg_toast_dark"
+              android:elevation="6dp"
+              android:orientation="vertical"
+              android:paddingBottom="9dp"
+              android:paddingTop="7dp"
+              android:paddingLeft="16dp"
+              android:paddingRight="16dp">
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/app_austin_white_logo"/>
+
+    <TextView
+        android:id="@+id/message_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        tools:text="This is message This is message This is message "/>
+
+</LinearLayout>

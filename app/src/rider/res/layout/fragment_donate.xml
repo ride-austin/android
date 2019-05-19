@@ -1,0 +1,83 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.donate.DonateFragmentViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_screen_background"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:paddingLeft="@dimen/padding_60dp"
+            android:paddingRight="@dimen/padding_60dp"
+            android:paddingTop="@dimen/activity_horizontal_margin"
+            android:text="@string/choose_a_round_up" />
+
+        <android.view.View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rate_driver_divider_height"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <TextView
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:text="@string/round_up_fare" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switchToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <android.view.View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rate_driver_divider_height"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:id="@+id/charities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/activity_horizontal_margin"
+                android:text="@string/choose_charity"
+                android:textColor="@color/black" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerRoundUpFare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

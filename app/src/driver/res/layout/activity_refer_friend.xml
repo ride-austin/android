@@ -1,0 +1,105 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.refer.ReferFriendViewModel" />
+    </data>
+
+
+    <LinearLayout
+        style="@style/LinearLayout.Base"
+        android:background="@color/app_screen_background">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar.Base"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/Toolbar.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <include layout="@layout/view_single_divider" />
+
+        <RelativeLayout
+            android:id="@+id/content_refer_friend"
+            style="@style/FrameLayout.Base.Fragment">
+
+
+            <TextView
+                android:id="@+id/header_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_80dp"
+                android:text="@{viewModel.header}"
+                android:textSize="@dimen/text_15sp"
+                android:textStyle="normal|bold"
+                tools:text="Receive a $125 bonus" />
+
+            <TextView
+                android:id="@+id/message_text"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/header_text"
+                android:gravity="center"
+                android:padding="@dimen/padding_20dp"
+                android:text="@{viewModel.message}"
+                tools:text="Refer a driver, and you'll each receive a $125 bonus after your friend completes 20 trips with" />
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/message_text"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:textSize="@dimen/text_30sp"
+                tools:text="@string/app_name" />
+
+
+            <Button
+                android:id="@+id/email_button"
+                style="@style/Button.RoundedGreyButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/text_button"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/margin_10dp"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:drawableStart="@drawable/icn_chat"
+                android:text="Email"
+                android:visibility="@{viewModel.emailVisibility}" />
+
+            <Button
+                android:id="@+id/text_button"
+                style="@style/Button.RoundedBlackButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/margin_20dp"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:drawableStart="@drawable/icn_envelope"
+                android:text="Text"
+                android:visibility="@{viewModel.textVisibility}" />
+
+        </RelativeLayout>
+
+        <include layout="@layout/view_single_divider" />
+
+    </LinearLayout>
+
+</layout>

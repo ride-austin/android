@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ImageView" />
+
+    <style name="ImageView.DriverSignUp.Top" parent="ImageView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/driver_top_image_height</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@color/blue_grey_50</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+</resources>

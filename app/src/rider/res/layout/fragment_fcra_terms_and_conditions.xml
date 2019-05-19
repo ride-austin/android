@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="RCRATermsAndConditionsBinding">
+        <import type="android.text.TextUtils" />
+        <variable name="terms" type="String"/>
+    </data>
+
+    <LinearLayout style="@style/LinearLayout.Base">
+
+        <ImageView
+            android:id="@+id/license"
+            style="@style/ImageView.DriverSignUp.Top"
+            android:src="@drawable/icn_insurance" />
+
+        <TextView
+            style="@style/RATextView.Driver.Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/default_elevation"
+            android:paddingLeft="@dimen/material_padding"
+            android:paddingRight="@dimen/material_padding"
+            android:paddingBottom="@dimen/default_elevation"
+            android:text="@string/the_fcra_review_and_approve" />
+
+        <LinearLayout style="@style/LinearLayout.Base">
+
+            <ScrollView
+                style="@style/ScrollView.Driver"
+                android:fillViewport="true"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/terms_and_conditions"
+                    style="@style/RATextView.Driver.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/material_padding"
+                    android:text="@={terms}"/>
+            </ScrollView>
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/default_elevation"
+                android:text="@string/i_agree_and_acknowledge"
+                android:enabled="@{!TextUtils.isEmpty(terms)}"/>
+
+            <Button
+                android:id="@+id/continue_button"
+                style="@style/Button.RoundedBlueButton"
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/default_elevation"
+                android:text="@string/driver_continue"
+                android:enabled="@{!TextUtils.isEmpty(terms)}"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

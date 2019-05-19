@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.earnings.WeeklyEarningsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar.Base"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                style="@style/Toolbar.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_weekly_earnings" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <include layout="@layout/view_single_divider" />
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/rl_week_controller"
+                    style="@style/RelativeLayout.Match"
+                    android:layout_height="50dp"
+                    android:background="@color/grey_100"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_previous_week"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="24dp"
+                        android:paddingRight="24dp"
+                        android:visibility="@{viewModel.needShowPreviousWeek ? View.VISIBLE : View.INVISIBLE}"
+                        app:srcCompat="@drawable/icn_back" />
+
+                    <TextView
+                        android:id="@+id/tv_week"
+                        style="@style/RATextView.MontserratLight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@{viewModel.weekName}"/>
+
+                    <ImageView
+                        android:id="@+id/iv_next_week"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="24dp"
+                        android:paddingRight="24dp"
+                        android:visibility="@{viewModel.needShowNextWeek ? View.VISIBLE : View.INVISIBLE}"
+                        app:srcCompat="@drawable/icn_back" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_week_controller"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.needShowCalendarView ? View.VISIBLE : View.GONE}" />
+
+                <com.db.chart.view.BarChartView
+                    android:id="@+id/barchart"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/chart_height"
+                    android:layout_below="@+id/calendar"
+                    android:layout_marginLeft="@dimen/chart_margin"
+                    android:layout_marginRight="@dimen/chart_margin" />
+
+                <View
+                    android:id="@+id/delimiter"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/vertical_delimiter_height"
+                    android:layout_below="@+id/barchart"
+                    android:layout_margin="@dimen/iv_week_indicator_margin"
+                    android:background="@color/grey_200" />
+
+                <LinearLayout
+                    android:id="@+id/driver_trips_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/delimiter"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/driver_trip_padding">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_rating"
+                            style="@style/RATextView.MontserratBold.Large"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:drawableLeft="@drawable/icn_star"
+                            android:drawablePadding="@dimen/iv_week_indicator_margin"
+                            android:text="@{viewModel.rating}"
+                            tools:text="5.0" />
+
+                        <TextView
+                            android:id="@+id/tv_current_rating"
+                            style="@style/RATextView.MontserratLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_rating"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/tv_driver_data_top"
+                            android:text="@string/text_current_rating"
+                            android:textSize="@dimen/text_size_14" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="@dimen/vertical_delimiter_height"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/driver_trip_padding"
+                        android:layout_marginTop="@dimen/driver_trip_padding"
+                        android:background="@color/grey_200" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_trip_count"
+                            style="@style/RATextView.MontserratBold.Large"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="@{viewModel.tripCount}"
+                            tools:text="10" />
+
+                        <TextView
+                            android:id="@+id/tv_trips"
+                            style="@style/RATextView.MontserratLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_trip_count"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/tv_driver_data_top"
+                            android:text="@string/text_trips"
+                            android:textSize="@dimen/text_size_14" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="@dimen/vertical_delimiter_height"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/driver_trip_padding"
+                        android:layout_marginTop="@dimen/driver_trip_padding"
+                        android:background="@color/grey_200" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_online"
+                            style="@style/RATextView.MontserratBold.Large"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="@{viewModel.totalHours}"
+                            tools:text="12:41" />
+
+                        <TextView
+                            android:id="@+id/tv_total_hours"
+                            style="@style/RATextView.MontserratLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_online"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/tv_driver_data_top"
+                            android:text="@string/text_hours_online"
+                            android:textSize="@dimen/text_size_14" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/delimiter_full"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/vertical_delimiter_height"
+                    android:layout_below="@+id/driver_trips_info"
+                    android:layout_marginTop="@dimen/iv_week_indicator_margin"
+                    android:background="@color/grey_200" />
+
+                <TextView
+                    android:id="@+id/tv_this_week"
+                    style="@style/RATextView.MontserratLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/delimiter_full"
+                    android:layout_marginBottom="@dimen/iv_week_indicator_margin"
+                    android:layout_marginLeft="@dimen/iv_week_indicator_margin"
+                    android:layout_marginTop="@dimen/tv_this_week_top"
+                    android:text="@string/text_this_week" />
+
+                <TextView
+                    android:id="@+id/tv_earnings_amount"
+                    style="@style/RATextView.MontserratBold.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/delimiter_full"
+                    android:layout_margin="@dimen/iv_week_indicator_margin"
+                    android:text="@{viewModel.weeklyEarnings}"/>
+
+                <View
+                    android:id="@+id/delimiter3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/third_delimiter_height"
+                    android:layout_below="@+id/tv_earnings_amount"
+                    android:background="@color/grey_100" />
+
+                <com.rideaustin.ui.earnings.NonScrollableListView
+                    android:id="@+id/lv_earnings"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/delimiter3" />
+            </RelativeLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

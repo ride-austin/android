@@ -1,0 +1,32 @@
+ [
+  {
+      "id": 512,
+      "cardNumber": "2222",
+      "cardBrand": "AMERICAN_EXPRESS",
+      "cardExpired": false,
+      "fingerprint": "aKiDumCEWMEYVoXB",
+      "primary": false,
+      "removed": false,
+      "uuid": "512"
+  },
+  {
+      "id": 1445,
+      "cardNumber": "1111",
+      "cardBrand": "MASTERCARD",
+      "cardExpired": false,
+      "fingerprint": "aKiDumCEWMEYVoXB",
+      "primary": false,
+      "removed": false,
+      "uuid": "1445"
+  },
+  {
+      "id": 1653,
+      "cardNumber": "0000",
+      "cardBrand": "VISA",
+      "cardExpired": false,
+      "fingerprint": "QH5lPfuqL1IQX6Zd",
+      "primary": true,
+      "removed": false,
+      "uuid": "1653"
+  }
+]

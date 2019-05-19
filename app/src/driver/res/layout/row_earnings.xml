@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/iv_week_indicator_margin"
+    android:paddingTop="@dimen/iv_week_indicator_margin">
+
+    <TextView
+        android:id="@+id/tv_day_of_week"
+        style="@style/RATextView.MontserratLight.Small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="@dimen/row_day_weight"
+        android:gravity="center"
+        android:textColor="@color/blue_500"
+        tools:text="Oct 24" />
+
+    <TextView
+        android:id="@+id/tv_trip_count"
+        style="@style/RATextView.MontserratLight.Small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="@dimen/row_count_weight"
+        android:gravity="center"
+        android:textColor="@color/grey_500"
+        tools:text="12" />
+
+    <TextView
+        android:id="@+id/tv_total_fare"
+        style="@style/RATextView.MontserratLight.Small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="@dimen/row_column_weight"
+        android:gravity="center"
+        android:textColor="@color/grey_500"
+        tools:text="$ 96.14" />
+
+    <TextView
+        android:id="@+id/tv_total_fee"
+        style="@style/RATextView.MontserratLight.Small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="@dimen/row_column_weight"
+        android:gravity="center"
+        android:textColor="@color/grey_500"
+        tools:text="$ 12.34" />
+
+    <TextView
+        android:id="@+id/tv_total_tips"
+        style="@style/RATextView.MontserratLight.Small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="@dimen/row_column_weight"
+        android:gravity="center"
+        android:textColor="@color/grey_500"
+        tools:text="$ 23.45" />
+
+    <TextView
+        android:id="@+id/tv_total_earnings"
+        style="@style/RATextView.MontserratLight.Small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="@dimen/row_column_weight"
+        android:gravity="center"
+        tools:text="$ 123.45" />
+</LinearLayout>

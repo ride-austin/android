@@ -1,0 +1,93 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.refer.ReferFriendEmailViewModel"/>
+    </data>
+
+
+    <LinearLayout
+        style="@style/LinearLayout.Base"
+        android:background="@color/app_screen_background">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar.Base"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/Toolbar.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </android.support.v7.widget.Toolbar>
+
+        <include layout="@layout/view_single_divider" />
+
+        <RelativeLayout
+            android:id="@+id/content_refer_friend"
+            style="@style/FrameLayout.Base.Fragment">
+
+
+            <LinearLayout
+                android:id="@+id/email_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/message_text"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_9dp"
+                android:weightSum="4">
+
+
+                <android.support.design.widget.TextInputLayout
+                    style="@style/TextInputLayout">
+
+                    <EditText
+                        android:id="@+id/email"
+                        style="@style/EditText.AppLogin"
+                        android:hint="@string/email_hint"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:text="@={viewModel.email}"/>
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/send_button"
+                style="@style/Button.RoundedGreyButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/email_section"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                android:text="Send"/>
+
+            <TextView
+                android:id="@+id/message_text"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:padding="@dimen/padding_20dp"
+                android:text="@string/please_enter_email_address"/>
+
+        </RelativeLayout>
+
+        <include layout="@layout/view_single_divider"/>
+
+    </LinearLayout>
+
+</layout>

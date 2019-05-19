@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.editprofile.VerifyEmailViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/black_80_opaq">
+
+        <RelativeLayout
+            android:id="@+id/content"
+            android:layout_width="330dp"
+            android:layout_height="272dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_support_message_sent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:paddingTop="50dp"
+            android:paddingBottom="25dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/verify_email_title"
+                android:textColor="@color/charcoalGrey"
+                android:textSize="20dp"/> <!-- use dp here -->
+
+            <TextView
+                android:id="@+id/message1"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/title"
+                android:text="@string/verify_email_message1"
+                android:textColor="@color/charcoalGrey"
+                android:textSize="14dp"/> <!-- use dp here -->
+
+            <TextView
+                android:id="@+id/email"
+                style="@style/RATextView.MontserratSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/message1"
+                android:textColor="@color/charcoalGrey"
+                android:textSize="16dp"
+                android:text="@{viewModel.email}"
+                tools:text="thomaswatson@gmail.com" />
+
+            <TextView
+                android:id="@+id/message2"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/email"
+                android:gravity="center"
+                android:text="@string/verify_email_message2"
+                android:textColor="@color/charcoalGrey"
+                android:textSize="14dp"/> <!-- use dp here -->
+
+            <Button
+                android:id="@+id/button"
+                style="@style/Button.RoundedBlueButton"
+                android:layout_alignParentBottom="true"
+                android:text="@string/verify_email_button"
+                tools:enabled="true"/>
+
+        </RelativeLayout>
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_above="@id/content"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignTop="@id/space"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/icn_dialog_hourglass"/>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/content"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_clear_white_24dp"/>
+
+    </RelativeLayout>
+</layout>

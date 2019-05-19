@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_trip_time"
+        style="@style/RATextView.MontserratBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_top_margin"
+        android:layout_marginTop="@dimen/iv_week_indicator_margin"
+        tools:text="10:02 PM" />
+
+    <TextView
+        android:id="@+id/tv_car_name"
+        style="@style/RATextView.MontserratLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_trip_time"
+        android:layout_marginLeft="@dimen/activity_top_margin"
+        tools:text="Regular - Rapide S, Aston Martin" />
+
+    <TextView
+        android:id="@+id/trip_payment"
+        style="@style/RATextView.MontserratBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/btn_set_new_destination_margin_right"
+        android:layout_marginTop="@dimen/activity_top_margin"
+        tools:text="$ 12.34" />
+</RelativeLayout>

@@ -1,0 +1,399 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.triphistory.TripDetailsViewModel" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_screen_background"
+            android:orientation="vertical">
+
+            <!-- Trip details  -->
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/trip_history_item_margin"
+                android:foreground="@drawable/card_view_stroke"
+                app:cardCornerRadius="@dimen/card_view_corner_radius"
+                app:cardElevation="0dp"
+                app:cardUseCompatPadding="false">
+
+                <RelativeLayout
+                    style="@style/RelativeLayout.Base"
+                    android:paddingBottom="@dimen/trip_history_card_vertical_margin">
+
+                    <!-- Map image -->
+
+                    <ImageView
+                        android:id="@+id/imageRideMap"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/trip_history_map_height"
+                        android:scaleType="centerCrop"
+                        app:selectedHistoryMapUrl="@{viewModel.history.mapUrl}"
+                        tools:src="@drawable/map_placeholder" />
+
+                    <!-- Date / Cost / Car info -->
+
+                    <TextView
+                        android:id="@+id/textViewDriveDate"
+                        style="@style/RATextView.MontserratRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imageRideMap"
+                        android:layout_marginStart="@dimen/trip_history_card_horizontal_margin"
+                        android:layout_marginTop="@dimen/trip_history_card_vertical_margin"
+                        android:text="@{viewModel.history.dateString}"
+                        android:textColor="@color/trip_history_item_black"
+                        android:textSize="14sp"
+                        tools:text="15/03/2017 06:25 AM" />
+
+                    <TextView
+                        android:id="@+id/textViewDriveCost"
+                        style="@style/RATextView.MontserratRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/imageRideMap"
+                        android:layout_marginEnd="@dimen/trip_history_card_horizontal_margin"
+                        android:layout_marginTop="@dimen/trip_history_card_vertical_margin"
+                        android:text="@{String.format(@string/money, viewModel.history.stripeCreditCharge)}"
+                        android:textColor="@color/trip_history_item_black"
+                        android:textSize="14sp"
+                        tools:text="$1.50" />
+
+                    <TextView
+                        android:id="@+id/textViewDriversName"
+                        style="@style/RATextView.MontserratLight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textViewDriveDate"
+                        android:layout_marginStart="@dimen/trip_history_card_horizontal_margin"
+                        android:layout_marginTop="@dimen/trip_history_card_space"
+                        android:text="@{viewModel.history.carInfo}"
+                        android:textColor="@color/trip_history_item_grey"
+                        android:textSize="11sp"
+                        tools:text="Mercedes E-Class" />
+
+                    <LinearLayout
+                        android:id="@+id/rideCost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewDriversName"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginTop="13dp"
+                        android:orientation="vertical"
+                        android:visibility="@{viewModel.history.hasCampaignProvider}">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                style="@style/RATextView.MontserratRegular"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="@string/trip_history_ride_cost"
+                                android:textColor="#9F9FA2"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                style="@style/RATextView.MontserratRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{String.format(@string/money, viewModel.history.rideTotalFare)}"
+                                android:textColor="@color/trip_history_item_black"
+                                android:textSize="14sp"
+                                tools:text="$5.00" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                style="@style/RATextView.MontserratBold"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="@{viewModel.history.campaignDescriptionHistory}"
+                                android:textColor="#9F9FA2"
+                                android:textSize="12sp"
+                                tools:text="Capmetro Innovation Ride"/>
+
+                            <TextView
+                                style="@style/RATextView.MontserratRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{`-` + String.format(@string/money, viewModel.history.rideTotalFare)}"
+                                android:textColor="#D0021B"
+                                android:textSize="14sp"
+                                tools:text="-$5.00" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                style="@style/RATextView.MontserratRegular"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="@string/trip_history_total"
+                                android:textColor="#9F9FA2"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                style="@style/RATextView.MontserratRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{String.format(@string/money, viewModel.history.stripeCreditCharge)}"
+                                android:textColor="@color/trip_history_item_black"
+                                android:textSize="14sp"
+                                tools:text="$0.00" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Pickup / Destination -->
+
+                    <LinearLayout
+                        android:id="@+id/routeIcons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rideCost"
+                        android:layout_marginEnd="9dp"
+                        android:layout_marginStart="@dimen/trip_history_card_horizontal_margin"
+                        android:layout_marginTop="@dimen/trip_history_card_vertical_margin"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:layout_width="13dp"
+                            android:layout_height="13dp"
+                            app:srcCompat="@drawable/ic_green" />
+
+                        <View
+                            android:layout_width="@dimen/divider_line"
+                            android:layout_height="12dp"
+                            android:background="#D8D8D8"
+                            android:visibility="@{TextUtils.isEmpty(viewModel.history.rideEndAddress) ? View.GONE : View.VISIBLE}" />
+
+                        <ImageView
+                            android:layout_width="13dp"
+                            android:layout_height="13dp"
+                            android:visibility="@{TextUtils.isEmpty(viewModel.history.rideEndAddress) ? View.GONE : View.VISIBLE}"
+                            app:srcCompat="@drawable/ic_red" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textViewPickupAddress"
+                        style="@style/RATextView.MontserratRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/routeIcons"
+                        android:layout_marginTop="-1dp"
+                        android:layout_toEndOf="@id/routeIcons"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text='@{TextUtils.isEmpty(viewModel.history.rideStartAddress)? @string/address_not_known : viewModel.history.rideStartAddress}'
+                        android:textColor="#919499"
+                        android:textSize="12dp"
+                        tools:text="Ulitsa Volkhonka, 2/16, Moskva, Russia, 1190" /> <!-- use dp here -->
+
+                    <TextView
+                        android:id="@+id/textViewDestinationAddress"
+                        style="@style/RATextView.MontserratRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/routeIcons"
+                        android:layout_marginBottom="-2dp"
+                        android:layout_toEndOf="@id/routeIcons"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text='@{TextUtils.isEmpty(viewModel.history.rideEndAddress)? @string/address_not_known : viewModel.history.rideEndAddress}'
+                        android:textColor="#919499"
+                        android:textSize="12dp"
+                        android:visibility="@{TextUtils.isEmpty(viewModel.history.rideEndAddress) ? View.GONE : View.VISIBLE}"
+                        tools:text="Ulitsa Volkhonka, 2/16, Moskva, Russia, 1190" /> <!-- use dp here -->
+
+
+                    <!-- Payment card info -->
+
+                    <ImageView
+                        android:id="@+id/payment_provider_logo"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignStart="@+id/linearLayout4"
+                        android:layout_below="@+id/routeIcons"
+                        android:layout_marginTop="14dp" />
+
+                    <TextView
+                        android:id="@+id/textViewPaymentCard"
+                        style="@style/RATextView.MontserratRegular"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_alignTop="@+id/payment_provider_logo"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toEndOf="@+id/payment_provider_logo"
+                        android:drawablePadding="9dp"
+                        android:gravity="center|left"
+                        android:textColor="#919499"
+                        android:textSize="13dp"
+                        tools:text="**** **** **** 1234" /> <!-- use dp here -->
+
+
+                    <TextView
+                        style="@style/RATextView.MontserratRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/textViewPaymentCard"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/trip_history_card_horizontal_margin"
+                        android:background="@drawable/bg_red_label"
+                        android:paddingBottom="4dp"
+                        android:paddingEnd="5dp"
+                        android:paddingStart="5dp"
+                        android:paddingTop="3dp"
+                        android:text="@{viewModel.history.rideStatusName}"
+                        android:textColor="@color/white"
+                        android:textSize="10dp"
+                        android:visibility="@{viewModel.history.cancelled}"
+                        tools:visibility="gone"
+                        tools:text="Admin cancelled" /> <!-- use dp here -->
+
+                    <TextView
+                        style="@style/RATextView.MontserratRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/textViewPaymentCard"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/trip_history_card_horizontal_margin"
+                        android:background="@drawable/bg_blue_label"
+                        android:paddingBottom="4dp"
+                        android:paddingEnd="5dp"
+                        android:paddingStart="5dp"
+                        android:paddingTop="3dp"
+                        android:text="@{viewModel.history.campaignProvider}"
+                        android:textColor="@color/white"
+                        android:textSize="10dp"
+                        android:visibility="@{viewModel.history.hasCampaignProvider}"
+                        tools:text="CapMetro" /> <!-- use dp here -->
+
+                    <!-- Rating info -->
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewPaymentCard"
+                        android:layout_marginEnd="@dimen/trip_history_card_horizontal_margin"
+                        android:layout_marginStart="@dimen/trip_history_card_horizontal_margin"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="@{viewModel.history.cancelled ? View.GONE : View.VISIBLE}">
+
+                        <ImageView
+                            android:id="@+id/imageDriver"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_marginEnd="9dp"
+                            tools:src="@drawable/ic_user_icon" />
+
+                        <TextView
+                            android:id="@+id/textViewRate"
+                            style="@style/RATextView.MontserratRegular"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/trip_history_item_black"
+                            android:textSize="13dp"
+                            android:visibility="@{TextUtils.isEmpty(viewModel.history.cardNumber) ? View.GONE : View.VISIBLE}"
+                            tools:text="You rated Serg" /> <!-- use dp here -->
+
+
+                        <com.rideaustin.ui.widgets.CustomRatingBar
+                            android:id="@+id/ratingBar"
+                            style="@style/Base.Widget.AppCompat.RatingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="10dp"
+                            app:maxStars="5"
+                            app:onlyForDisplay="true"
+                            app:starPadding="@dimen/padding_2dp" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- Help title -->
+
+            <TextView
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/trip_history_card_horizontal_margin"
+                android:layout_marginEnd="@dimen/trip_history_item_margin"
+                android:layout_marginStart="@dimen/trip_history_item_margin"
+                android:layout_marginTop="@dimen/trip_history_card_vertical_margin"
+                android:text="@string/help"
+                android:textColor="#2C323D"
+                android:textSize="13sp"
+                android:visibility="@{viewModel.shouldShowHelpSection ? View.VISIBLE : View.GONE}" />
+
+
+            <include
+                layout="@layout/view_single_divider"
+                android:visibility="@{viewModel.shouldShowHelpSection ? View.VISIBLE : View.GONE}" />
+
+            <!-- List section -->
+
+            <LinearLayout
+                android:id="@+id/viewSupportTopics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{viewModel.shouldShowHelpSection ? View.VISIBLE : View.GONE}" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

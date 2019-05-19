@@ -1,0 +1,165 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="showUnpaid" type="Boolean"/>
+    </data>
+
+    <LinearLayout
+        style="@style/LinearLayout.Base">
+
+        <TextView
+            android:id="@+id/unpaid_title"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:visibility="@{showUnpaid}"
+            tools:text="@string/unpaid_title"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/unpaid_item"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_add_payment"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:visibility="@{unpaidTitle.visibility}"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/ic_unpaid_car"/>
+
+            <TextView
+                android:id="@+id/unpaid_amount"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:textSize="14sp"
+                android:textColor="#FA0608"
+                tools:text="$56.60"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/icn_item_arrow_right"
+                android:tint="#C7C7CC"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/unpaid_sub_title"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="7dp"
+            android:textSize="12sp"
+            android:textColor="#8B8784"
+            android:visibility="@{unpaidTitle.visibility}"
+            tools:text="@string/unpaid_subtitle"
+            tools:visibility="visible"/>
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/label_payment_methods"
+            android:textSize="14sp"
+            android:textColor="@color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D8D8D8" />
+
+        <ListView
+            android:id="@+id/list_payments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_height="@dimen/card_payment_history_height"
+            tools:listitem="@layout/fragment_payment_item"
+            android:background="@color/white"
+            android:divider="@drawable/list_item_divider"
+            android:dividerHeight="1dp"/>
+
+        <LinearLayout
+            android:id="@+id/add_payment"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_add_payment"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:descendantFocusability="blocksDescendants">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/ic_add_payment"/>
+
+            <TextView
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/btn_add_payment"
+                android:textSize="14sp"
+                android:textColor="@color/drawer_icon"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/promo_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_9dp"
+            android:gravity="center"
+            android:text="@string/promo_payment_get_free_rides"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/inviteFriends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="?selectableItemBackground"
+            android:minHeight="20dp"
+            android:paddingBottom="@dimen/padding_8dp"
+            android:paddingLeft="@dimen/padding_15dp"
+            android:paddingRight="@dimen/padding_15dp"
+            android:paddingTop="@dimen/padding_8dp"
+            android:text="@string/promo_payment_invite"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="false"
+            android:textColor="@color/light_blue_300"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+    </LinearLayout>
+</layout>

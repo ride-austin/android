@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Separator">
+        <item name="android:background">@color/grey_400_20_opaq</item>
+    </style>
+
+    <style name="Separator.Horizontal">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="Separator.Vertical">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Separator.Vertical.Queue">
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+    </style>
+</resources>

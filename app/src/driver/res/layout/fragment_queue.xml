@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.queue.QueueViewModel" />
+    </data>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:refreshing="@{viewModel.refreshing}">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                style="@style/LinearLayout.Base"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/queue_info"
+                    style="@style/RATextView.MontserratLight"
+                    android:textColor="@color/charcoalGrey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="@{viewModel.header}"
+                    tools:text="@string/queue_out_number_info"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/queue_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_2dp"
+                    tools:listitem="@layout/queue_entry"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</layout>

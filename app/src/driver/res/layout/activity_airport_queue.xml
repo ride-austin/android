@@ -1,0 +1,30 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <data class="QueueContainerBinding" />
+
+    <LinearLayout style="@style/LinearLayout.Base"
+        android:background="@color/app_screen_background">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar.Base"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:id="@+id/queue_name"
+                style="@style/Toolbar.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <include layout="@layout/view_single_divider" />
+
+        <FrameLayout style="@style/FrameLayout.Base.Fragment"
+            android:id="@+id/content_airport"/>
+
+    </LinearLayout>
+
+</layout>

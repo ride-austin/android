@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btn_ok">OK</string>
+    <string name="btn_yes">YES</string>
+    <string name="btn_no">NO</string>
+    <string name="done">Done</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_dismiss">Dismiss</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_settings">Open settings</string>
+    <string name="save">Save</string>
+    <string name="close">Close</string>
+    <string name="btn_submit">Submit</string>
+    <string name="retry">Retry</string>
+    <string name="accept">Accept</string>
+    <string name="read">Read</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+</resources>

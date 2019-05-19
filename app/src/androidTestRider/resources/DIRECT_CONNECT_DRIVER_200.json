@@ -1,0 +1,11 @@
+{
+  "firstName": "Ride15 ",
+  "lastName": "",
+  "photoUrl": "https://i2-prod.cornwalllive.com/news/uk-world-news/article355580.ece/ALTERNATES/s615b/rude-plate.png",
+  "rating": 4.96,
+  "categories": ["REGULAR", "PREMIUM"],
+  "factors": {
+    "REGULAR": 2.25,
+    "PREMIUM": 1.00
+  }
+}

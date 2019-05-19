@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="DriverInfoBinding" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/basic_widget_margin"
+        android:layout_marginRight="@dimen/basic_widget_margin"
+        android:layout_marginTop="@dimen/basic_widget_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/tv_driver_name"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                tools:text="SS Driver 1"
+                android:text="@string/lorem_ipsum" />
+
+            <TextView
+                android:id="@+id/tv_driver_rate"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_rating"
+                android:layout_marginRight="@dimen/car_model_margin"
+                android:text="@string/placeholder_rate" />
+
+            <ImageView
+                android:id="@+id/iv_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/icn_star" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/text_left_margin"
+                android:layout_toLeftOf="@+id/tv_driver_rate"
+                android:layout_marginRight="@dimen/text_left_margin"
+                android:layout_toRightOf="@+id/tv_driver_name"
+                android:padding="@dimen/slider_thumb_offset"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/tv_car_make"
+                    style="@style/RATextView.MontserratLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    tools:text="Continental GT Speed"
+                    android:text="@string/lorem_ipsum" />
+
+                <TextView
+                    android:id="@+id/tv_plate_number"
+                    style="@style/RATextView.MontserratLight"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/text_left_margin"
+                    android:text="@string/lorem_ipsum" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</layout>

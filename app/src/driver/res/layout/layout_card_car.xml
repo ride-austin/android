@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="CarItemBinding">
+
+        <variable
+            name="carViewModel"
+            type="com.rideaustin.ui.drawer.cars.CarViewModel" />
+
+        <variable
+            name="myCarsViewModel"
+            type="com.rideaustin.ui.drawer.cars.MyCarsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_12dp"
+        android:orientation="vertical">
+
+        <android.view.View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rate_driver_divider_height"
+            android:background="@android:color/darker_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_80dp"
+            android:background="@android:color/white"
+            android:onClick="@{() -> myCarsViewModel.onCarClicked(carViewModel.car)}">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="@dimen/padding_60dp"
+                android:layout_height="@dimen/padding_60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12dp"
+                app:carPhoto="@{carViewModel.car}"
+                tools:src="@drawable/icn_car_luxury_ride_request" />
+
+            <ImageView
+                android:id="@+id/checked"
+                android:layout_width="@dimen/padding_24dp"
+                android:layout_height="@dimen/padding_24dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_12dp"
+                android:src="@{carViewModel.car.isSelected ? @drawable/ic_checked : @drawable/ic_unchecked}" />
+
+            <TextView
+                android:id="@+id/car_name"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/checked"
+                android:layout_toRightOf="@id/avatar"
+                android:paddingLeft="@dimen/margin_12dp"
+                android:paddingRight="@dimen/margin_12dp"
+                android:text="@{carViewModel.car.make+' '+carViewModel.car.model}"
+                android:textColor="@{carViewModel.car.isSelected ? @color/drawer_icon : @color/rate_ride_price_grey}"
+                android:textSize="@dimen/text_size_14"
+                tools:text="Ford Fiesta DI1434" />
+        </RelativeLayout>
+
+        <android.view.View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rate_driver_divider_height"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/update_insurance"
+            style="@style/RATextView.MontserratRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:onClick="@{() -> myCarsViewModel.onUpdateInsuranceClicked(carViewModel)}"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/update_insurance"
+            android:textColor="@color/users_name_in_settings"
+            android:textSize="@dimen/settings_texts" />
+
+        <android.view.View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rate_driver_divider_height"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/update_photos"
+            style="@style/RATextView.MontserratRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:onClick="@{() -> myCarsViewModel.onUpdatePhotosClicked(carViewModel)}"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/update_car_photos"
+            android:textColor="@color/users_name_in_settings"
+            android:textSize="@dimen/settings_texts"
+            android:visibility="visible" />
+
+        <android.view.View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rate_driver_divider_height"
+            android:background="@android:color/darker_gray"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/update_inspection_sticker"
+            style="@style/RATextView.MontserratRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:onClick="@{() -> myCarsViewModel.onUpdateInspectionStickerClicked(carViewModel)}"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@{carViewModel.updateInspectionStickerText}"
+            android:textColor="@color/users_name_in_settings"
+            android:textSize="@dimen/settings_texts"
+            android:visibility="@{carViewModel.updateInspectionStickerVisibility}"
+            tools:visibility="visible" />
+
+        <android.view.View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rate_driver_divider_height"
+            android:background="@android:color/darker_gray"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+</layout>

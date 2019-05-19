@@ -1,0 +1,13 @@
+{
+  "id": 112708,
+  "driver": {
+    "id": 3439,
+    "user": {
+      "id": 2581
+    }
+  },
+  "latitude": 30.2739868,
+  "longitude": -97.7570038,
+  "status": "AVAILABLE",
+  "carCategories": ["REGULAR", "SUV"]
+}

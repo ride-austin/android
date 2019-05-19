@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ImageView.FarePriority" parent="ImageView">
+        <item name="android:layout_width">@dimen/fare_priority_image_size</item>
+        <item name="android:layout_height">@dimen/fare_priority_image_size</item>
+        <item name="android:layout_marginTop">@dimen/fare_priority_image_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/fare_priority_image_margin_right</item>
+    </style>
+</resources>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/pricing_details"
+            android:text="@string/pricing_details"
+            android:textSize="18dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/selected_category_text"
+            android:layout_marginTop="10dp"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="PREMIUM"
+            android:text="PREMIUM"
+            android:textSize="14dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <RelativeLayout
+            android:id="@+id/category_data_container"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            >
+
+
+            <android.view.View
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/rate_driver_divider_height"
+                android:background="@android:color/darker_gray"
+                android:layout_below="@id/eta_value"
+                android:id="@+id/horizontal_line_1" />
+
+            <TextView
+                android:id="@+id/base_fare_value"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="$ 1.50"
+                android:layout_below="@id/horizontal_line_1"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/per_mile_value"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/base_fare_value"
+                android:text="$ 0.99"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/per_min_value"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/per_mile_value"
+                android:text="$ 0.25"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/min_value"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/per_min_value"
+                android:text="$ 4.00"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/black"/>
+
+            <android.view.View
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/rate_driver_divider_height"
+                android:background="@android:color/darker_gray"
+                android:layout_below="@id/min_value"
+                android:id="@+id/horizontal_line_2" />
+
+            <TextView
+                android:id="@+id/booking_fee_value"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/horizontal_line_2"
+                android:text="$ 2.00"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/black"/>
+
+
+            <TextView
+                android:id="@+id/tnc_fee_value"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/booking_fee_value"
+                android:text="1%"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/processing_fee_value"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/tnc_fee_value"
+                android:text="$ 1"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tnc_fee_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/city_tnc_fee_text"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/grey_400"
+                android:layout_below="@+id/booking_fee_text"
+                android:layout_alignStart="@+id/booking_fee_text" />
+
+            <TextView
+                android:id="@+id/processing_fee_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/processing_fee_text"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/grey_400"
+                android:layout_below="@+id/tnc_fee_text"
+                android:layout_alignStart="@+id/booking_fee_text" />
+
+            <LinearLayout
+                android:id="@+id/special_fee_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/processing_fee_text">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/base_fare_text"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="@string/base_fare_text"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/grey_400"
+                android:layout_alignBaseline="@+id/base_fare_value"
+                android:layout_alignBottom="@+id/base_fare_value"
+                android:layout_toEndOf="@+id/base_fare_value" />
+
+            <TextView
+                android:id="@+id/per_mile_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/per_mile_text"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/grey_400"
+                android:layout_below="@+id/base_fare_text"
+                android:layout_toEndOf="@+id/base_fare_value" />
+
+            <TextView
+                android:id="@+id/per_min_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/per_min_text"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/grey_400"
+                android:layout_alignBaseline="@+id/per_min_value"
+                android:layout_alignBottom="@+id/per_min_value"
+                android:layout_toEndOf="@+id/per_min_value" />
+
+            <TextView
+                android:id="@+id/min_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/minimum_fare_text"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/grey_400"
+                android:layout_below="@+id/per_min_text"
+                android:layout_toEndOf="@+id/min_value" />
+
+            <TextView
+                android:id="@+id/booking_fee_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/RATextView.MontserratBold"
+                android:textSize="12dp"
+                android:textColor="@color/grey_400"
+                android:text="@string/booking_fee_text"
+                android:layout_below="@+id/horizontal_line_2"
+                android:layout_toEndOf="@+id/booking_fee_value" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>
+

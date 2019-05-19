@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        style="@style/LinearLayout.Login"
+        android:background="@color/app_screen_background"
+        android:layout_marginTop="@dimen/empty_margin_top"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            style="@style/RATextView.MontserratRegular"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_elevation"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="@string/verify_mobile"
+            android:textSize="@dimen/edit_text_size" />
+
+        <TextView
+            android:id="@+id/verifyText"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:layout_marginLeft="@dimen/text_left_margin"
+            android:layout_marginRight="@dimen/text_left_margin"
+            android:layout_marginTop="@dimen/default_elevation"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="@string/verify_mobile_text"
+            android:textSize="@dimen/sign_up_info" />
+
+        <com.dpizarro.pinview.library.PinView
+            android:id="@+id/pin"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:password="false"
+            app:numberPinBoxes="4"
+            app:deleteOnClick="true"
+            app:keyboardMandatory="false"
+            app:nativePinBox="false" />
+
+        <RelativeLayout
+            style="@style/RelativeLayout.Wrap"
+            android:paddingTop="-5dp">
+
+            <Button
+                android:id="@+id/resend"
+                style="@style/BorderLessButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="@string/resend"
+                android:textColor="@color/light_blue_button"
+                android:textSize="@dimen/btn_phone_validation_small"/>
+
+            <Button
+                android:id="@+id/changeMobile"
+                style="@style/BorderLessButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/change_mobile"
+                android:textColor="@color/light_blue"
+                android:textSize="@dimen/btn_phone_validation_small"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/next"
+            style="@style/Button.RoundedBlueButton"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@string/next"/>
+
+        <android.view.View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_top_margin"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+</layout>

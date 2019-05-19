@@ -1,0 +1,14 @@
+[
+  {
+    "title": "PICKUP SURCHARGE",
+    "description": "",
+    "valueType": "AMOUNT",
+    "value": 1.00
+  },
+  {
+    "title": "ANOTHER SURCHARGE",
+    "description": "DESCRIPTION",
+    "valueType": "AMOUNT",
+    "value": 2.25
+  }
+]

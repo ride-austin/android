@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="com.rideaustin.ui.drawer.triphistory.forms.SupportFieldViewModel.FieldType" />
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.triphistory.forms.SupportFieldViewModel" />
+    </data>
+
+    <LinearLayout
+        style="@style/LinearLayout.Base"
+        android:layout_marginBottom="@dimen/material_padding">
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_2dp"
+            android:text="@{viewModel.supportField.fieldTitle}"
+            android:textColor="@color/charcoalGrey"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/country"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/padding_8dp"
+                android:spinnerMode="dialog" />
+
+            <EditText
+                android:id="@+id/mobile"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_48dp"
+                android:background="@drawable/bg_text_input_round"
+                android:hint="@{viewModel.supportField.fieldPlaceholder}"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:padding="15dp"
+                android:textSize="@dimen/button_text_size"
+                android:enabled="@{FieldType.PHONE.equals(viewModel.supportField.fieldType)}"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

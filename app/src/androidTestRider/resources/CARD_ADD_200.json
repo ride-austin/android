@@ -1,0 +1,10 @@
+{
+  "id": 1234,
+  "cardNumber": "1234",
+  "cardBrand": "VISA",
+  "cardExpired": false,
+  "fingerprint": "aKiDumCEWMEYVoXB",
+  "primary": false,
+  "removed": false,
+  "uuid": "1234"
+}

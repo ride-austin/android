@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FrameLayout" />
+
+    <style name="FrameLayout.Base">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="FrameLayout.Wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="FrameLayout.Base.Fragment" parent="FrameLayout.Base">
+        <item name="android:id">@id/content_frame</item>
+    </style>
+
+    <style name="FrameLayout.DividerHeaderActivityUser">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/frame_layout_height</item>
+    </style>
+
+</resources>

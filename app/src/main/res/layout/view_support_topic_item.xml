@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/disclosure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        app:srcCompat="@drawable/ic_disclosure_arrow"/>
+
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/RATextView.MontserratRegular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/trip_history_item_margin"
+        android:layout_marginEnd="@dimen/trip_history_card_space"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/disclosure"
+        tools:text="I had issues with this trip"
+        android:textColor="#2C323D"
+        android:textSize="14sp" />
+
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#DFDFDF"/>
+
+</RelativeLayout>

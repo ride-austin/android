@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.dc.CarCategoryItemViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/car_picker"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:descendantFocusability="blocksDescendants">
+
+        <ImageView
+            android:id="@+id/car_image"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="15dp"
+            android:src="@{viewModel.carImage}"
+            tools:src="@drawable/icn_generic_car" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/car_category_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.carCategory}"
+                android:textAppearance="@style/RATextView.MontserratRegular"
+                android:textColor="@color/charcoalGrey"
+                android:textSize="12sp"
+                tools:text="STANDARD" />
+
+            <TextView
+                android:id="@+id/car_category_seats_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.carCategorySeats}"
+                android:textAppearance="@style/RATextView.MontserratLight"
+                android:textColor="@color/grey_600"
+                android:textSize="12sp"
+                tools:text="4 seats" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/priority_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_p_inside_circle_small"
+            android:visibility="@{viewModel.priorityIconVisibility}" />
+
+        <TextView
+            android:id="@+id/surge_factor_text"
+            android:layout_width="wrap_content"
+            android:minWidth="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{viewModel.carCategorySurgeFactor}"
+            android:textAppearance="@style/RATextView.MontserratRegular"
+            android:textColor="@color/charcoalGrey"
+            android:textSize="14sp"
+            android:visibility="@{viewModel.priorityIconVisibility}"
+            tools:text="2.5X" />
+
+        <ImageView
+            android:id="@+id/car_selected_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/ic_blue_check"
+            android:visibility="@{viewModel.selectedIconVisibility}" />
+
+    </LinearLayout>
+
+</layout>

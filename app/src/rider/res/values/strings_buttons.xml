@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btn_contact_driver">Contact Driver</string>
+    <string name="btn_split_fare">Fare Split</string>
+    <string name="fare_estimate">Fare Estimate</string>
+    <string name="promo_code">Promo Code</string>
+    <string name="request_ride">Request ride</string>
+    <string name="request_category">Request %s</string>
+    <string name="enter_a_new_destination">Enter a new destination</string>
+</resources>

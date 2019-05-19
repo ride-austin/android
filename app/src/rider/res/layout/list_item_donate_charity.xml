@@ -1,0 +1,66 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="charity"
+            type="com.rideaustin.api.model.Charity" />
+
+        <variable
+            name="rider"
+            type="com.rideaustin.api.model.Rider" />
+
+        <variable
+            name="charityClickHandler"
+            type="com.rideaustin.ui.drawer.donate.DonateCharitiesAdapter.DonationCharityAdapterHandler" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{charityClickHandler.onCharityClick}"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/layoutCharityImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/donate_fragment_charity_image_height"
+            android:background="@{charity.id == rider.charity.id ? @drawable/bg_charity_focused : @drawable/bg_charity}"
+            android:padding="@dimen/donate_image_padding">
+
+            <ImageView
+                android:id="@+id/imageViewCharityImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                app:charityImageUrl="@{charity.imageUrl}"
+                tools:src="@mipmap/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/imageViewChecked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:padding="@dimen/padding_8dp"
+                android:src="@drawable/icn_check"
+                android:visibility="@{charity.id == rider.charity.id ? View.VISIBLE : View.INVISIBLE}" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textCharityName"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:text="@{charity.name}"
+            tools:text="Charity Name" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,5 @@
+[{
+  "id": 3177099,
+  "eventType": "GO_OFFLINE",
+  "parameters": "{\"source\":\"TERMS_NOT_ACCEPTED\",\"message\":\"In order to go online you should read and accept new Driver terms and conditions\"}"
+}]

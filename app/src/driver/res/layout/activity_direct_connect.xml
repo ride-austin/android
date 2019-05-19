@@ -1,0 +1,92 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.directconnect.DirectConnectViewModel" />
+    </data>
+
+    <LinearLayout style="@style/LinearLayout.Base">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar.Base"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                style="@style/Toolbar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@{viewModel.title}"
+                tools:text="@string/direct_connect_menu" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <include layout="@layout/view_single_divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_screen_background">
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="42dp"
+                android:layout_marginRight="42dp"
+                android:layout_marginTop="31dp"
+                android:fontFamily="@font/font_montserrat_light"
+                android:gravity="center"
+                android:text="@{viewModel.description}"
+                android:textSize="13sp"
+                tools:text="@string/direct_connect_description" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/shade_layout_height"
+                android:layout_below="@id/description"
+                android:layout_marginTop="29dp"
+                android:background="@color/iron" />
+
+            <TextView
+                android:id="@+id/driverId"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_below="@id/line1"
+                android:fontFamily="@font/font_montserrat_regular"
+                android:gravity="center"
+                android:text="@{viewModel.driverId}"
+                android:hint="@string/direct_connect_id_hint"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:background="@color/white"
+                tools:text="" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/shade_layout_height"
+                android:layout_below="@id/driverId"
+                android:background="@color/iron" />
+
+            <Button
+                android:id="@+id/done"
+                style="@style/Button.RoundedBlueButton"
+                android:layout_margin="24dp"
+                android:layout_below="@id/line2"
+                android:text="@string/direct_connect_new_id"
+                tools:enabled="true"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

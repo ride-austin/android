@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RATextView.MontserratRegular"
+    android:layout_width="80dp"
+    android:layout_height="24dp"
+    android:gravity="center_horizontal|bottom"
+    android:textSize="11sp"
+    android:textColor="@color/charcoalGrey"
+    android:maxLines="2"
+    android:textAllCaps="true"
+    tools:text="STANDARD" />

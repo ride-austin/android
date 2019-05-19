@@ -1,0 +1,150 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="DriverBinding">
+
+        <import type="android.view.View" />
+
+        <variable
+            name="spinnerShown"
+            type="boolean" />
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.driver.DriverViewModel" />
+    </data>
+
+    <android.support.percent.PercentRelativeLayout
+        style="@style/RelativeLayout.SplashRegister"
+        android:background="@drawable/bg_driver_screen">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/splash_logo_margin_top"
+            app:driverCityLogo="@{viewModel.selectedCity.logoUrl}"
+            app:layout_heightPercent="10%"
+            tools:src="@drawable/app_austin_black_logo" />
+
+        <View
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_vertical_margin"
+            android:layout_alignParentBottom="true" />
+
+        <Button
+            android:id="@+id/skip"
+            style="@style/Button.RoundedBlueButton.RoundedTransparentButton"
+            android:layout_above="@+id/bottom"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/button_horizontal_margin"
+            android:text="@string/skip" />
+
+        <Button
+            android:id="@+id/registerDriver"
+            style="@style/Button.RoundedBlueButton"
+            android:layout_above="@+id/skip"
+            android:layout_marginBottom="@dimen/button_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:text="@string/register_driver" />
+
+        <FrameLayout
+            android:id="@+id/gradient"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/gradient"
+            android:clickable="true"
+            android:elevation="2dp"
+            android:visibility="@{spinnerShown ? View.VISIBLE : View.GONE}"
+            app:elevation="2dp"
+            app:layout_heightPercent="67%" />
+
+        <RelativeLayout
+            android:id="@+id/citySelector"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spinner_item_height"
+            android:layout_above="@+id/divider"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:elevation="2dp">
+
+            <ImageView
+                android:id="@+id/pin"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="12dp"
+                android:src="@drawable/ic_pinicon"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/city"
+                style="@style/RATextView.SpinnerItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/pin"
+                android:layout_toStartOf="@+id/arrow"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@{viewModel.selectedCity.cityName}"
+                android:textAlignment="inherit"
+                tools:text="Austin" />
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_arrow_down"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/registerDriver"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_marginTop="3dp"
+            android:background="@color/white_30_opaq"
+            android:elevation="2dp"
+            app:elevation="2dp" />
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/citySelector"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:elevation="2dp"
+            android:gravity="center"
+            android:text="@string/driver_info"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_text_size"
+            app:elevation="2dp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/cityList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/citySelector"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_marginTop="9dp"
+            android:elevation="2dp"
+            android:visibility="@{spinnerShown ? View.VISIBLE : View.GONE}"
+            app:elevation="2dp"
+            tools:listitem="@layout/spinner_item" />
+
+    </android.support.percent.PercentRelativeLayout>
+</layout>

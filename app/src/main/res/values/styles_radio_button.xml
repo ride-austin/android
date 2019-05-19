@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="RadioButton" parent="Base.Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">-1</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingLeft">@dimen/radio_button_padding_left</item>
+        <item name="android:paddingRight">@dimen/radio_button_padding_right</item>
+        <item name="android:shadowRadius">0.2</item>
+        <item name="android:textSize">@dimen/radio_button_text_size</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">50</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <style name="RadioButton.RoundedBlueButton" parent="RadioButton">
+        <item name="android:textColor">@drawable/radio_button_text_color</item>
+        <item name="android:background">@drawable/radio_button_blue_background</item>
+    </style>
+
+    <style name="RadioButton.RoundedBlueButton.Center" parent="RadioButton.RoundedBlueButton">
+        <item name="android:background">@drawable/radio_button_blue_background</item>
+    </style>
+
+    <style name="RadioButton.RoundedPinkButton.Center" parent="RadioButton.RoundedBlueButton">
+        <item name="android:background">@drawable/radio_button_pink_background</item>
+    </style>
+
+    <style name="RadioButton.RoundedBlueButton.Left" parent="RadioButton.RoundedBlueButton.Center">
+        <item name="android:background">@drawable/radio_button_left_blue_background</item>
+        <item name="android:layout_weight">65</item>
+    </style>
+
+    <style name="RadioButton.RoundedBlueButton.Right" parent="RadioButton.RoundedBlueButton.Center">
+        <item name="android:background">@drawable/radio_button_right_blue_background</item>
+        <item name="android:layout_weight">65</item>
+    </style>
+
+    <style name="RadioButton.RoundedPinkButton.Right" parent="RadioButton.RoundedBlueButton.Center">
+        <item name="android:background">@drawable/radio_button_right_pink_background</item>
+        <item name="android:layout_weight">65</item>
+    </style>
+
+</resources>

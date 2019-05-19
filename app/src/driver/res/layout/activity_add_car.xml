@@ -1,0 +1,60 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="AddCarBinding">
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.cars.add.AddCarViewModel" />
+
+    </data>
+
+    <LinearLayout style="@style/LinearLayout.Base">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar.Base"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                style="@style/Toolbar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_driver_vehicle_information" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <include layout="@layout/view_single_divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/black"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/city_logo"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/tv_driver_need_help_horizontal_padding"
+                app:addCarCityLogo="@{viewModel.logoUrl}"
+                tools:src="@drawable/splash_logo" />
+
+            <TextView
+                android:id="@+id/need_help"
+                style="@style/RATextView.NeedHelp"
+                android:layout_alignParentRight="true"
+                android:text="@string/need_help" />
+
+        </RelativeLayout>
+
+        <FrameLayout style="@style/FrameLayout.Base.Fragment" />
+
+    </LinearLayout>
+
+</layout>

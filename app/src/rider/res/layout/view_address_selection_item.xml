@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/listPreferredItemHeight"
+        android:descendantFocusability="blocksDescendants">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/iv_history_size"
+            android:layout_height="@dimen/iv_history_size"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:scaleType="center"
+            tools:src="@drawable/ic_home_black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/icon"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home"
+                android:textSize="@dimen/tv_history_title_text_size"
+                android:textColor="@color/users_name_in_settings"
+                tools:text="Home"/>
+
+            <TextView
+                android:id="@+id/address"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/tv_history_desc_text_size"
+                tools:text="Address line"
+                tools:visibility="visible"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</layout>

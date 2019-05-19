@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="FragmentFemaleOnlyBinding">
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.driver.FemaleOnlyInfoViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/female_only_container"
+        style="@style/LinearLayout.Base">
+
+        <FrameLayout style="@style/ImageView.DriverSignUp.Top">
+
+            <ImageView
+                android:layout_width="@dimen/female_only_car_dimen"
+                android:layout_height="@dimen/female_only_car_dimen"
+                android:layout_gravity="center"
+                android:src="@drawable/female_only_detail"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/message"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/material_padding"
+            android:text="@{viewModel.subTitle}" />
+
+        <include layout="@layout/view_single_divider" />
+
+        <LinearLayout style="@style/LinearLayout.Horizontal"
+            android:id="@+id/switchLayout"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:descendantFocusability="blocksDescendants">
+
+            <TextView
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="@dimen/zero_width"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/material_padding"
+                android:text="@{viewModel.title}" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_enable_pink_drivers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/heterogenous_padding"
+                android:text="@string/empty"
+                android:enabled="@{viewModel.switchEnabled}"
+                app:theme="@style/SwitchFemaleOnly" />
+
+        </LinearLayout>
+
+        <include layout="@layout/view_single_divider" />
+
+    </LinearLayout>
+</layout>

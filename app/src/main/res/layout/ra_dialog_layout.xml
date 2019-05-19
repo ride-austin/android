@@ -1,0 +1,159 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="RADialogBinding">
+
+        <import type="com.rideaustin.ui.widgets.dialogs.RADialogType" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.widgets.dialogs.RADialogViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="40dp"
+        tools:background="@color/black_80_opaq">
+
+        <RelativeLayout
+            android:id="@+id/visible_part"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/rounded_white_background">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/dialog_header" />
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="@dimen/driver_avatar_in_ride_big_version_size"
+                android:layout_height="@dimen/driver_avatar_in_ride_big_version_size"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="18dp"
+                app:imageResource="@{viewModel.icon}"
+                tools:src="@drawable/icn_dialog_hourglass" />
+
+            <TextView
+                android:id="@+id/title_text"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@{viewModel.title}"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@{(viewModel.dialogType == RADialogType.TWO_ACTIONS) ? @dimen/text_20sp : @dimen/text_24sp}"
+                tools:text="Do you confirm an\nupgrade to SUV class?" />
+
+            <TextView
+                android:id="@+id/content_text"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@{viewModel.content}"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@{(viewModel.dialogType == RADialogType.TWO_ACTIONS) ? @dimen/text_14sp : @dimen/text_20sp}"
+                tools:text="Your driver requested a car class\nupgrade from Standard to SUV" />
+
+            <android.support.v4.widget.Space
+                android:id="@+id/space"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_below="@+id/content_text"
+                android:visibility="@{viewModel.dialogType != RADialogType.TWO_ACTIONS}"
+                tools:visibility="gone" />
+
+            <FrameLayout
+                android:id="@+id/extension_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/space"
+                android:visibility="@{viewModel.hasExtension ? View.VISIBLE : View.GONE}" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/extension_layout"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:visibility="@{(viewModel.dialogType == RADialogType.TWO_ACTIONS) ? View.VISIBLE : View.GONE}">
+
+                <Button
+                    android:id="@+id/positive_button"
+                    style="?android:attr/buttonBarPositiveButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/blue_confirmation_button_dialog"
+                    android:text="@{viewModel.actionPositive}"
+                    android:textColor="@color/white"
+                    tools:text="@string/btn_yes" />
+
+                <Button
+                    android:id="@+id/negative_button"
+                    style="?android:attr/buttonBarNegativeButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/gray_decline_button_dialog"
+                    android:text="@{viewModel.actionNegative}"
+                    android:textColor="@color/grey_700"
+                    tools:text="@string/btn_no" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/single_action"
+            style="@style/RATextView.MontserratRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/visible_part"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:onClick="@{viewModel::onSingleActionClicked}"
+            android:text="@{viewModel.singleAction}"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="@{viewModel.dialogType == RADialogType.SINGLE_ACTION}"
+            tools:text="Cancel Upgrade" />
+
+        <ImageButton
+            android:id="@+id/dismiss_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/single_action"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/icn_cancel"
+            android:onClick="@{viewModel::onDismissClicked}" />
+    </RelativeLayout>
+
+</layout>

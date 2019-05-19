@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.riderequest.RideRequestTypeViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@{viewModel.carModel}"
+                android:textColor="@color/charcoalGrey"
+                android:textSize="16sp"
+                tools:text="Bentley Continental GT Speed" />
+
+            <LinearLayout
+                android:id="@+id/item_type_holder"
+                style="@style/LinearLayout.Wrap"
+                android:layout_margin="@dimen/heterogenous_padding"
+                android:gravity="center" />
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_filters"
+                style="@style/RadioGroup.Horizontal.Blue"
+                android:layout_height="@dimen/rounded_radio_group_height"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/rate_driver_divider_margin"
+                android:visibility="@{viewModel.filtersAvailable}">
+
+                <RadioButton
+                    android:id="@+id/filter_none"
+                    style="@style/RadioButton.RoundedBlueButton.Left"
+                    android:checked="@{viewModel.noneChecked}"
+                    android:text="No Filter" />
+
+                <RadioButton
+                    android:id="@+id/filter_female_only"
+                    android:layout_weight="70"
+                    style="@style/RadioButton.RoundedPinkButton.Center"
+                    android:checked="@{viewModel.womanModeChecked &amp;&amp; viewModel.womanModeAtCenter}"
+                    android:text="Female Only"
+                    android:visibility="@{viewModel.womanModeAtCenter}"
+                    tools:visibility="visible" />
+
+                <RadioButton
+                    android:id="@+id/filter_female_only_right"
+                    style="@style/RadioButton.RoundedPinkButton.Right"
+                    android:checked="@{viewModel.womanModeChecked &amp;&amp; viewModel.womanModeAtRight}"
+                    android:text="Female Only"
+                    android:visibility="@{viewModel.womanModeAtRight}"
+                    tools:visibility="gone" />
+
+                <RadioButton
+                    android:id="@+id/filter_dc_only"
+                    style="@style/RadioButton.RoundedBlueButton.Right"
+                    android:checked="@{viewModel.directChecked}"
+                    android:text="Direct Connect"
+                    android:visibility="@{viewModel.directAvailable}" />
+
+            </RadioGroup>
+
+            <TextView
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:text="@{viewModel.summary}"
+                android:textColor="@color/charcoalGrey"
+                android:textSize="13sp"
+                tools:text="Ride request summary" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</layout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            style="@style/LinearLayout.Vertical"
+            android:layout_margin="30dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:descendantFocusability="beforeDescendants">
+
+            <LinearLayout
+                style="@style/LinearLayout.Horizontal"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/bg_text_input_rect"
+                android:padding="14dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/icon_payment_type"
+                    android:layout_width="28dp"
+                    android:layout_height="19dp"
+                    tools:src="@drawable/icn_visa" />
+
+                <TextView
+                    android:id="@+id/text_payment_card"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:textColor="@color/disabled_text_color"
+                    android:textSize="14sp"
+                    tools:text="Personal **** 4422" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LinearLayout.Horizontal"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:background="@drawable/bg_text_input_rect"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1">
+
+                    <com.devmarvel.creditcardentry.fields.ExpDateText
+                        android:id="@+id/expiration_input"
+                        style="@style/MontserratRegular"
+                        android:textSize="14sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:background="@drawable/bg_text_input_rect"
+                    android:layout_weight="1">
+
+                    <com.devmarvel.creditcardentry.fields.SecurityCodeText
+                        android:id="@+id/cvv_input"
+                        style="@style/MontserratRegular"
+                        android:textSize="14sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLines="1" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_save"
+                style="@style/Button.RoundedBlueButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/save"
+                android:textAllCaps="true" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

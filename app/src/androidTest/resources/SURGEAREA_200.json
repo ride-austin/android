@@ -1,0 +1,68 @@
+{
+  "content": [{
+    "id": 507,
+    "name": "CLARKSVILLE",
+    "recommendedSurgeMapping": {
+      "REGULAR": 1,
+      "LUXURY": 1,
+      "SUV": 1,
+      "PREMIUM": 1
+    },
+    "carCategoriesBitmask": 23,
+    "automated": true,
+    "topLeftCornerLat": -97.758206,
+    "topLeftCornerLng": 30.422138,
+    "bottomRightCornerLat": -97.740483,
+    "bottomRightCornerLng": 30.412369,
+    "centerPointLat": -97.749299,
+    "centerPointLng": 30.417569,
+    "csvGeometry": "-97.758206,30.422138 -97.740940,30.422256 -97.740483,30.412369 -97.756105,30.411975",
+    "labelLat": 30.267,
+    "labelLng": -95.681,
+    "geometry_id": 2057,
+    "cityId": 1,
+    "surgeFactor": 1.00,
+    "carCategories": ["REGULAR", "SUV", "PREMIUM", "LUXURY"],
+    "carCategoriesFactors": {
+      "PREMIUM": 2.50,
+      "LUXURY": 2.50,
+      "SUV": 2.50,
+      "REGULAR": 2.50
+    },
+    "carCategoriesRequestedRides": {
+      "LUXURY": 0,
+      "REGULAR": 0,
+      "PREMIUM": 0,
+      "SUV": 0
+    },
+    "carCategoriesAcceptedRides": {
+      "PREMIUM": 0,
+      "REGULAR": 0,
+      "LUXURY": 0,
+      "SUV": 0
+    },
+    "carCategoriesCars": {
+      "REGULAR": 0,
+      "LUXURY": 0,
+      "SUV": 0,
+      "PREMIUM": 0
+    },
+    "carCategoriesAvailableCars": {
+      "REGULAR": 0,
+      "LUXURY": 0,
+      "PREMIUM": 0,
+      "SUV": 0
+    },
+    "carCategoriesNumberOfEyeballs": {
+      "REGULAR": 0,
+      "LUXURY": 0,
+      "SUV": 0,
+      "PREMIUM": 0
+    },
+    "numberOfRequestedRides": 0,
+    "numberOfAcceptedRides": 0,
+    "numberOfEyeballs": 0,
+    "numberOfAvailableCars": 1,
+    "numberOfCars": 1
+  }]
+}

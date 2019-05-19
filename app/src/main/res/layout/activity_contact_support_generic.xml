@@ -1,0 +1,24 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/app_screen_background"
+    style="@style/LinearLayout.Base">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar.Base"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <TextView
+            style="@style/Toolbar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_contact_support" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <include layout="@layout/view_single_divider" />
+
+    <FrameLayout style="@style/FrameLayout.Base.Fragment" />
+
+</LinearLayout>

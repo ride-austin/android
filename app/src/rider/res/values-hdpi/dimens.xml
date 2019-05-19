@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_padding">12dp</dimen>
+    <dimen name="material_padding">16dp</dimen>
+    <dimen name="pickup_location_height">52dp</dimen>
+    <!--TextViews-->
+    <dimen name="toolbar_text_size">20sp</dimen>
+    <dimen name="regular_text_size">14sp</dimen>
+    <dimen name="edit_text_size">16sp</dimen>
+    <dimen name="btn_text_small">11dp</dimen>
+    <dimen name="btn_cancel_pickup_padding_left">30dp</dimen>
+    <dimen name="btn_fare_estimate_padding_left">15dp</dimen>
+</resources>

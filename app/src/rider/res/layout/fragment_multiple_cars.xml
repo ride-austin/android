@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.map.MultipleCarViewModel" />
+
+        <variable
+            name="handler"
+            type="com.rideaustin.ui.map.MultipleCarFragment" />
+
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="95dp"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/mark_image"
+                        android:layout_width="15dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/icn_down_arrow"/>
+
+                    <RelativeLayout
+                        android:id="@+id/car_types_label_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <com.etiennelawlor.discreteslider.library.ui.DiscreteSlider
+                        android:id="@+id/car_types_slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_gravity="bottom"
+                        app:backdropFillColor="@color/white"
+                        app:backdropStrokeColor="#C4C6CA"
+                        app:backdropStrokeWidth="1dp"
+                        app:horizontalBarThickness="0dp"
+                        app:tickMarkRadius="6dp"
+                        app:progressDrawable="@drawable/transparent_progress_drawable"
+                        app:thumb="@drawable/icn_car_background"/>
+
+                </FrameLayout>
+                <include layout="@layout/fragment_multiple_cars_hidden_actions"
+                    app:viewModel="@{viewModel}"
+                    app:handler="@{handler}"/>
+            </LinearLayout>
+        </FrameLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

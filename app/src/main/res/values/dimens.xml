@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="loading_wheel_progress_size">80dp</dimen>
+    <dimen name="loading_wheel_max_margin">62dp</dimen>
+    <dimen name="splash_logo_margin_top">32dp</dimen>
+    <dimen name="tv_driver_need_help_horizontal_padding">10dp</dimen>
+    <dimen name="tv_driver_need_help_text_size">14sp</dimen>
+    <dimen name="tv_driver_header_text_size">20sp</dimen>
+    <dimen name="tv_driver_terms_header_text_size">16sp</dimen>
+    <dimen name="tv_driver_small_text_size">14sp</dimen>
+    <dimen name="tv_driver_small_text_line_spacing_extra">4sp</dimen>
+    <dimen name="tv_driver_list_item_vertical_padding">24dp</dimen>
+    <dimen name="tv_driver_list_item_horizontal_padding">16dp</dimen>
+    <dimen name="tv_driver_header_vertical_padding">4dp</dimen>
+    <dimen name="tv_driver_header_horizontal_padding">16dp</dimen>
+    <dimen name="tv_bullet_padding">18dp</dimen>
+    <dimen name="tv_bulleted_list_item_initial_vertical_margin">13dp</dimen>
+    <dimen name="tv_bulleted_list_item_vertical_margin">8dp</dimen>
+    <dimen name="tv_bulleted_list_item_left_margin">24dp</dimen>
+    <dimen name="driver_top_image_height">180dp</dimen>
+    <dimen name="map_padding_for_marker">40dp</dimen>
+    <!-- add some more space on top to fit "ic_time_pin" height -->
+    <dimen name="map_top_padding_for_marker">60dp</dimen>
+    <dimen name="map_route_stroke_width">8dp</dimen>
+    <dimen name="car_marker_width">24dp</dimen>
+    <dimen name="car_marker_height">48dp</dimen>
+
+    <!-- Trip History -->
+    <dimen name="trip_history_item_margin">12dp</dimen>
+    <dimen name="trip_history_map_height">139dp</dimen>
+    <dimen name="trip_history_card_horizontal_margin">11dp</dimen>
+    <dimen name="trip_history_card_vertical_margin">18dp</dimen>
+    <dimen name="trip_history_card_space">6dp</dimen>
+
+    <!-- FAB -->
+    <!-- 56dp by design, but 54dp looks better together with slide button -->
+    <dimen name="fab_size_normal">54dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+    <dimen name="fab_margin">10dp</dimen>
+
+    <dimen name="driver_avatar_in_ride_big_version_size">90dp</dimen>
+    <dimen name="text_24sp">24sp</dimen>
+    <dimen name="text_20sp">20sp</dimen>
+    <dimen name="text_14sp">14sp</dimen>
+
+    <!--Radio buttons-->
+    <dimen name="rounded_radio_button_corner_radius">3dp</dimen>
+    <dimen name="radio_button_padding_left">3dp</dimen>
+    <dimen name="radio_button_padding_right">3dp</dimen>
+    <dimen name="radio_button_text_size">12sp</dimen>
+
+    <!--Radio buttons-->
+    <dimen name="rounded_radio_group_height">40dp</dimen>
+    <dimen name="rounded_radio_group_corner_radius">3dp</dimen>
+
+</resources>

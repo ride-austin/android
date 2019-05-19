@@ -1,0 +1,186 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.map.fare.PriorityFareDialogViewModel"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_screen_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/RATextView.MontserratLight.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tv_priority_fare_bar_title_height"
+                android:background="@color/toolbar"
+                android:gravity="center"
+                android:padding="@dimen/padding_8dp"
+                android:text="@string/priority_fare_toolbar"
+                android:textColor="@color/grey_900"
+                android:textSize="@dimen/tv_priority_fare_toolbar_title"/>
+
+            <android.view.View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/rate_driver_divider_height"
+                android:layout_gravity="center"
+                android:background="@android:color/darker_gray"
+                android:paddingBottom="@dimen/padding_9dp"
+                android:paddingTop="@dimen/padding_9dp"/>
+
+            <TextView
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/padding_8dp"
+                android:paddingEnd="@dimen/padding_20dp"
+                android:paddingStart="@dimen/padding_20dp"
+                android:paddingTop="@dimen/padding_20dp"
+                android:text="@string/priority_fare_cars_demand"
+                android:textColor="@color/blue_grey_800"
+                android:textSize="@dimen/tv_priority_fare_title"/>
+
+            <TextView
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingEnd="@dimen/padding_20dp"
+                android:paddingStart="@dimen/padding_20dp"
+                android:text="@string/priority_fare_cars_demand_desc"
+                android:textColor="@color/grey_700"
+                android:textSize="@dimen/tv_priority_fare_title_desc"/>
+
+            <TextView
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/padding_8dp"
+                android:paddingEnd="@dimen/padding_20dp"
+                android:paddingStart="@dimen/padding_20dp"
+                android:paddingTop="@dimen/padding_20dp"
+                android:text="@{@string/priority_fare_fare_x(viewModel.fare)}"
+                android:textColor="@color/blue_grey_800"
+                android:textSize="@dimen/tv_priority_fare_fare_rate"/>
+
+            <TextView
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/padding_20dp"
+                android:text="@string/priority_fare_normal_fare_desc"
+                android:textAllCaps="true"
+                android:textColor="@color/grey_700"
+                android:textSize="@dimen/tv_priority_fare_fare_desc"/>
+
+            <TextView
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/padding_8dp"
+                android:text="@string/priority_fare_fare_details"
+                android:textColor="@color/blue_grey_800"
+                android:textSize="@dimen/tv_priority_fare_fare_details"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_15dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:background="@drawable/rectangle_text_view_border"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_8dp">
+
+                <TextView
+                    android:id="@+id/min_fare"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_9dp"
+                    android:text="@{@string/minimum_fare(String.valueOf(viewModel.minimum))}"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/last_trip_text_size"/>
+
+                <android.view.View
+                    android:id="@+id/devider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/padding_15dp"
+                    android:layout_marginStart="@dimen/padding_15dp"
+                    android:background="@android:color/darker_gray"
+                    android:paddingBottom="@dimen/padding_9dp"
+                    android:paddingTop="@dimen/padding_9dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/min"
+                        style="@style/RATextView.MontserratRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/padding_9dp"
+                        android:text="@{@string/fare_price_min(viewModel.min)}"
+                        android:textAllCaps="true"
+                        android:textSize="@dimen/last_trip_text_size"/>
+
+                    <TextView
+                        android:id="@+id/mile"
+                        style="@style/RATextView.MontserratRegular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/padding_9dp"
+                        android:text="@{@string/fare_price_mile(viewModel.mile)}"
+                        android:textAllCaps="true"
+                        android:textSize="@dimen/last_trip_text_size"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_submit"
+                style="@style/Button.RoundedBlueButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_9dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/padding_15dp"
+                android:layout_marginLeft="@dimen/activity_top_margin"
+                android:layout_marginRight="@dimen/activity_top_margin"
+                android:text="@string/priority_fare_accept"/>
+
+            <Button
+                android:id="@+id/btn_cancel"
+                style="@style/Button.RoundedDarkGreyButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/activity_top_margin"
+                android:layout_marginRight="@dimen/activity_top_margin"
+                android:text="@string/priority_fare_cancel"/>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

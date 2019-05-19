@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="@dimen/header_space_weight" />
+
+    <TextView
+        android:id="@+id/tv_trips_number"
+        style="@style/RATextView.MontserratBold.Small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="@dimen/header_count_weight"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="@string/text_header_number_nof_trips" />
+
+    <TextView
+        android:id="@+id/tv_total_fare_view"
+        style="@style/RATextView.MontserratBold.Small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="@dimen/row_column_weight"
+        android:gravity="center"
+        android:maxLines="20"
+        android:padding="@dimen/padding_2dp"
+        android:text="@string/text_header_total_fare" />
+
+    <TextView
+        android:id="@+id/tv_total_ra_fee_view"
+        style="@style/RATextView.MontserratBold.Small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="@dimen/row_column_weight"
+        android:gravity="center"
+        android:maxLines="2"
+        android:padding="@dimen/padding_2dp"
+        android:text="@string/text_header_total_ra_fee" />
+
+    <TextView
+        android:id="@+id/tv_total_tips"
+        style="@style/RATextView.MontserratBold.Small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="@dimen/row_column_weight"
+        android:gravity="center"
+        android:maxLines="2"
+        android:padding="@dimen/padding_2dp"
+        android:text="@string/tips" />
+
+    <TextView
+        android:id="@+id/tv_total_earnings_view"
+        style="@style/RATextView.MontserratBold.Small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="@dimen/row_column_weight"
+        android:gravity="center"
+        android:maxLines="2"
+        android:padding="@dimen/padding_2dp"
+        android:text="@string/text_header_total_earnings" />
+</LinearLayout>

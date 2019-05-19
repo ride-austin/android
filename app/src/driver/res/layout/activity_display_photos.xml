@@ -1,0 +1,189 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="DisplayPhotosBinding" />
+
+    <LinearLayout style="@style/LinearLayout.Base">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar.Base"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                style="@style/Toolbar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_driver_vehicle_information" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <include layout="@layout/view_single_divider" />
+
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp">
+
+            <RelativeLayout
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                app:layout_heightPercent="50%"
+                app:layout_widthPercent="50%">
+
+                <TextView
+                    android:id="@+id/text_front"
+                    style="@style/RATextView.MontserratRegular.Wrap"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/front_right"
+                    android:textColor="@color/charcoalGrey"
+                    android:textSize="@dimen/text_size_14" />
+
+                <Button
+                    android:id="@+id/update_front"
+                    style="@style/Button.RoundedBlueButton.Mini"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/margin_20dp"
+                    android:text="@string/update" />
+
+                <ImageView
+                    android:id="@+id/image_front"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/update_front"
+                    android:layout_below="@+id/text_front"
+                    android:layout_marginBottom="@dimen/padding_8dp"
+                    android:layout_marginTop="@dimen/margin_12dp"
+                    android:background="@color/paleGrey"
+                    android:src="@drawable/icon_car_front" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                app:layout_heightPercent="50%"
+                app:layout_widthPercent="50%">
+
+                <TextView
+                    android:id="@+id/text_back"
+                    style="@style/RATextView.MontserratRegular.Wrap"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/back_left"
+                    android:textColor="@color/charcoalGrey"
+                    android:textSize="@dimen/text_size_14" />
+
+                <Button
+                    android:id="@+id/update_back"
+                    style="@style/Button.RoundedBlueButton.Mini"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/margin_20dp"
+                    android:text="@string/update" />
+
+                <ImageView
+                    android:id="@+id/image_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/update_back"
+                    android:layout_below="@+id/text_back"
+                    android:layout_marginBottom="@dimen/padding_8dp"
+                    android:layout_marginTop="@dimen/margin_12dp"
+                    android:background="@color/paleGrey"
+                    android:src="@drawable/icon_car_back" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                app:layout_heightPercent="50%"
+                app:layout_widthPercent="50%">
+
+                <TextView
+                    android:id="@+id/text_inside"
+                    style="@style/RATextView.MontserratRegular.Wrap"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/back_seat"
+                    android:textColor="@color/charcoalGrey"
+                    android:textSize="@dimen/text_size_14" />
+
+                <Button
+                    android:id="@+id/update_inside"
+                    style="@style/Button.RoundedBlueButton.Mini"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/margin_20dp"
+                    android:text="@string/update" />
+
+                <ImageView
+                    android:id="@+id/image_inside"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/update_inside"
+                    android:layout_below="@+id/text_inside"
+                    android:layout_marginBottom="@dimen/padding_8dp"
+                    android:layout_marginTop="@dimen/margin_12dp"
+                    android:background="@color/paleGrey"
+                    android:src="@drawable/icon_car_inside" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                app:layout_heightPercent="50%"
+                app:layout_widthPercent="50%">
+
+                <TextView
+                    android:id="@+id/text_trunk"
+                    style="@style/RATextView.MontserratRegular.Wrap"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/trunk"
+                    android:textColor="@color/charcoalGrey"
+                    android:textSize="@dimen/text_size_14" />
+
+                <Button
+                    android:id="@+id/update_trunk"
+                    style="@style/Button.RoundedBlueButton.Mini"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/margin_20dp"
+                    android:text="@string/update" />
+
+                <ImageView
+                    android:id="@+id/image_trunk"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/update_trunk"
+                    android:layout_below="@+id/text_trunk"
+                    android:layout_marginBottom="@dimen/padding_8dp"
+                    android:layout_marginTop="@dimen/margin_12dp"
+                    android:background="@color/paleGrey"
+                    android:src="@drawable/icon_car_trunk" />
+
+            </RelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+
+    </LinearLayout>
+
+</layout>

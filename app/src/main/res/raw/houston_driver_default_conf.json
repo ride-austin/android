@@ -1,0 +1,143 @@
+{
+  "currentTerms": {
+    "currentTermsId": 2,
+    "currentTermsUrl": "https://media.rideaustin.com/download/DriverTermsAustin.txt",
+    "currentTermsIsMandatory": true,
+    "currentTermsVersion": "2.0",
+    "currentTermsPublicationDate": 1495843200000
+  },
+  "referFriend": {
+    "emailEnabled": true,
+    "smsEnabled": true,
+    "header": "Receive a $125 bonus",
+    "title": "Refer a Friend",
+    "body": "Refer a driver, and you'll each receive a $125 bonus after your friend completes 20 trips with"
+  },
+  "supportedCities": [
+    {
+      "cityId": 1,
+      "cityName": "AUSTIN",
+      "logoUrl": "https://media.rideaustin.com/images/logoRideAustin@3x.png",
+      "logoBlackUrl": "https://media.rideaustin.com/images/logoRideAustinBlack@3x.png"
+    },
+    {
+      "cityId": 2,
+      "cityName": "HOUSTON",
+      "logoUrl": "https://media.rideaustin.com/images/logoRideHouston@3x.png",
+      "logoBlackUrl": "https://media.rideaustin.com/images/logoRideHoustonBlack@3x.png"
+    }
+  ],
+  "smsMaskingEnabled": true,
+  "currentCity": {
+    "cityId": 2,
+    "cityName": "HOUSTON",
+    "cityCenterLocation": "29.8174782 -95.6814804",
+    "cityCenterLocationData": {
+      "lat": 29.8174782,
+      "lng": -95.6814804
+    },
+    "cityBoundaryPolygon": [
+      {
+        "lat": 30.20211,
+        "lng": -94.70215
+      },
+      {
+        "lat": 29.13777,
+        "lng": -94.70215
+      },
+      {
+        "lat": 29.13777,
+        "lng": -95.85022
+      },
+      {
+        "lat": 30.20211,
+        "lng": -95.85022
+      }
+    ]
+  },
+  "generalInformation": {
+    "privacyStatement": "http://www.ridehou.com/legal/driverprivacystatement/",
+    "splashUrl": "https://media.rideaustin.com/images/photoHouston@3x.jpg",
+    "companyDomain": "ridehou.com",
+    "playStoreLink": "market://details?id=com.rideaustin.android",
+    "logoUrl": "https://media.rideaustin.com/images/logoRideHouston@3x.png",
+    "appstoreLink": "itms-apps://itunes.apple.com/app/id1116489847",
+    "legalRider": "http://www.ridehou.com/legal/userterms/",
+    "supportEmail": "support@ridehou.com",
+    "facebookUrl": "https://www.facebook.com/werideaustin",
+    "legalDriver": "http://www.ridehou.com/legal/driverterms/",
+    "playStoreWeb": "https://play.google.com/store/apps/details?id=com.rideaustin.android",
+    "applicationNamePipe": "Ride|Houston",
+    "logoBlackUrl": "https://media.rideaustin.com/images/logoRideHoustonBlack@3x.png",
+    "facebookUrlSchemeiOS": "fb://page?id=241278152906970",
+    "iconUrl": "https://media.rideaustin.com/images/Ride_180-1.png",
+    "companyWebsite": "http://www.ridehou.com",
+    "applicationName": "Ride Houston"
+  },
+  "riderLiveLocation": {
+    "expirationTime": 5,
+    "requiredAccuracy": 50,
+    "enabled": true
+  },
+  "commonMessages": {
+    "networkTimeoutMessage": "You appear to have a poor connection. Keep calm and don't call support."
+  },
+  "ratingConfiguration": {
+    "defaultRating": 5.0,
+    "minimumRatingThreshold": 5,
+    "limit": 50
+  },
+  "driverMessages": {
+    "iOSLocationSettingsAlwaysPrompt": "When online, please allow location access 'Always' to avoid unexpected issues"
+  },
+  "offline": {
+    "TERMS_NOT_ACCEPTED": "In order to go online you should read and accept new Driver terms and conditions",
+    "MISSED_RIDES": "You have been marked as offline due to excessive consecutive missed ride requests.\nPlease go online again for additional requests.",
+    "DRIVER_INACTIVE": "You have been marked as offline due to inactivity. \nPlease go online again for additional requests."
+  },
+  "tipping": {
+    "enabled": true
+  },
+  "directConnectPhone": "+12013895725",
+  "rideCancellation": {
+    "rideCancellationPeriod": 100
+  },
+  "rideAcceptance": {
+    "decisionThreshold": 5,
+    "acceptancePeriod": 10,
+    "totalWaitTime": 90,
+    "allowancePeriod": 2
+  },
+  "locationUpdateIntervals": {
+    "whenOnTrip": 2,
+    "whenOnlineAndNotMoving": 7,
+    "movementSpeed": 7,
+    "whenOnlineAndMoving": 7
+  },
+  "womanOnly": {
+    "enabled": false
+  },
+  "rideUpgrade": {
+    "buttonTitle": "Ask rider to upgrade to SUV",
+    "variants": [
+      {
+        "carCategory": "REGULAR",
+        "validUpgrades": [
+          "SUV"
+        ]
+      },
+      {
+        "carCategory": "SUV",
+        "validUpgrades": []
+      },
+      {
+        "carCategory": "PREMIUM",
+        "validUpgrades": []
+      },
+      {
+        "carCategory": "LUXURY",
+        "validUpgrades": []
+      }
+    ]
+  }
+}

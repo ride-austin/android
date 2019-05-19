@@ -1,0 +1,63 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.rideupgrade.RideUpgradeDialogViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/priority_extension"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.view.View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rate_driver_divider_height"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/darker_gray"
+            android:padding="40dp"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/surge_icon"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_below="@+id/line"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/surge_factor_text"
+            android:src="@drawable/ic_p_inside_circle"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/surge_factor_text"
+            style="@style/RATextView.MontserratRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/surge_icon"
+            android:layout_below="@+id/line"
+            android:layout_centerHorizontal="true"
+            android:text="@{viewModel.priorityFareFactor}"
+            android:textColor="@color/grey_800"
+            tools:text="PRIORITY FARE: 2.50X"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textView6"
+            style="@style/RATextView.MontserratRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/surge_factor_text"
+            android:layout_centerHorizontal="true"
+            android:text="@string/more_than_normal_fare"
+            android:textColor="@color/grey_800"
+            tools:visibility="visible" />
+    </RelativeLayout>
+</layout>

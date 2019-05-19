@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="EditText" parent="Base.Widget.AppCompat.EditText" />
+
+    <style name="EditText.AppLogin" parent="MontserratLight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/edit_height</item>
+    </style>
+
+    <style name="EditText.Registration" parent="MontserratLight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/edit_height</item>
+        <item name="android:layout_marginBottom">@dimen/default_margin</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="EditText.Tint">
+        <item name="backgroundTint">@color/drawer_icon</item>
+    </style>
+
+    <style name="EditText.Profile" parent="MontserratRegular">
+        <item name="android:background">@drawable/bg_text_input_rect</item>
+        <item name="android:textColorHint">@color/divider</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:textColor">@color/charcoalGrey</item>
+    </style>
+
+    <style name="EditText.LeaveComment" parent="MontserratLight">
+        <item name="backgroundTint">@color/divider</item>
+        <item name="android:background">@drawable/edtittext_thin</item>
+        <item name="android:textColorHint">@color/divider</item>
+        <item name="android:textSize">@dimen/edit_text_size</item>
+        <item name="android:layout_marginLeft">@dimen/edit_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/edit_margin_right</item>
+        <item name="android:layout_marginTop">@dimen/edit_margin_top</item>
+    </style>
+
+</resources>

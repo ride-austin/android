@@ -1,0 +1,18 @@
+[
+  {
+    "code":"CODE_1",
+    "description":"First reason"
+  },
+  {
+    "code":"CODE_2",
+    "description":"Second reason"
+  },
+  {
+    "code":"CODE_3",
+    "description":"Third reason"
+  },
+  {
+    "code":"OTHER",
+    "description":"Other"
+  }
+]

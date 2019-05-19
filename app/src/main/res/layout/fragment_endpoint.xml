@@ -1,0 +1,52 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils" />
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.signin.EndpointFragment.ViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        android:background="@color/app_screen_background">
+
+        <EditText
+            android:id="@+id/inputEndpoint"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:padding="15dp"
+            android:maxLines="1"
+            android:inputType="textUri"
+            android:hint="Enter endpoint url"
+            android:textColor="#4A515C"
+            android:textColorHint="#A0A2A6"
+            android:background="@drawable/bg_text_input_round"
+            android:text="@={viewModel.endpoint}"
+            app:initialText="@{viewModel.initialText}"
+            app:viewModel="@{viewModel}"
+            />
+
+        <Button
+            android:id="@+id/buttonSubmit"
+            style="@style/Button.RoundedGreyButton"
+            tools:enabled="false"
+            android:enabled="@{TextUtils.isEmpty(viewModel.endpoint.trim()) ? false : true}"
+            android:onClick="@{viewModel::onSubmit}"
+            android:text="@string/btn_submit" />
+
+
+    </LinearLayout>
+
+</layout>

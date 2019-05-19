@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="mapModel"
+            type="com.rideaustin.ui.map.MapViewModel" />
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mapContainer"
+        style="@style/RelativeLayout.Base">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/inactive_warning"
+            style="@style/RATextView.Inactive"
+            android:text="@string/inactive_warning"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/error_panel"
+            style="@style/RATextView.Inactive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/connection_problems"
+            android:visibility="@{!mapModel.hasServerConnection}"
+            tools:visibility="visible" />
+
+        <FrameLayout
+            android:id="@+id/topPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/error_panel" />
+
+        <FrameLayout
+            android:id="@+id/bottomPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+
+        <LinearLayout
+            android:id="@+id/fabContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="10dp">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/upgradeCarType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/car_suv"
+                app:fab_colorNormal="@color/white"
+                app:fab_colorPressed="@color/white_80_opaq"
+                app:fab_colorRipple="@color/caldroid_gray"
+                app:fab_label="@string/upgrade_requested"
+                app:fab_size="normal"
+                tools:enabled="false"/>
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/myLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icn_gps"
+                app:fab_colorNormal="@color/white"
+                app:fab_colorPressed="@color/white_80_opaq"
+                app:fab_colorRipple="@color/caldroid_gray"
+                app:fab_label="@string/my_location"
+                app:fab_size="normal"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

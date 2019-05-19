@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- hints -->
+    <string name="email_hint">Email</string>
+    <string name="mobile_hint">Mobile</string>
+    <string name="password_hint">Password</string>
+    <string name="firstname_hint">First Name</string>
+    <string name="lastname_hint">Last Name</string>
+    <string name="gender_hint">Gender</string>
+
+    <!-- sign in -->
+    <string name="fb_login_text">Continue with Facebook</string>
+    <string name="or">or</string>
+    <string name="sign_in">Sign in</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="reset_pass">Reset Password</string>
+    <string name="reset_pass_text">Enter your email address and we will send you a link to reset your password</string>
+    <string name="signed_out">You are signed out</string>
+
+    <!-- sign up -->
+    <string name="register">Register</string>
+    <string name="confirm_dialog">Please confirm your email address</string>
+    <string name="reenter">re-enter</string>
+    <string name="correct">correct</string>
+    <string name="sign_up_info">We use your email and mobile number to send you ride confirmations and receipts.</string>
+    <string name="login">Login</string>
+
+    <!-- mobile number -->
+    <string name="mobile">Enter Your Phone Number</string>
+    <string name="mobile_info">Get text messages when your car arrives, let drivers contact you to organize pickup, and get help getting back lost items</string>
+
+    <!-- terms -->
+    <string name="agreement">By creating an Ride %s account, you agree to the</string>
+    <string name="terms"><a href="#">Terms &amp; Conditions and Privacy Policy</a></string>
+    <string name="done">Done</string>
+
+    <!-- driver -->
+    <string name="register_driver">Register as a driver</string>
+    <string name="register_driver_sucess">Thank you for your application! We will reach out to you soon regarding next steps.</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="driver_info">Interested in\nbecoming a driver?</string>
+    <string name="coming_soon">Coming soon, please be patient</string>
+    <string name="license_confirm">Have you had your license for at least ONE year?</string>
+    <string name="car_photo_confirm">Please take clear photo %1$s?</string>
+    <string name="car_photo_front">Front right angle, showing the licence plate</string>
+    <string name="car_photo_dialog_front">from the Front right angle showing your licence plate</string>
+    <string name="car_photo_back">Back left angle showing plate</string>
+    <string name="car_photo_dialog_back">from the Back left angle side showing your licence plate</string>
+    <string name="car_photo_inside">Inside photo showing the entire back seat</string>
+    <string name="car_photo_dialog_inside">from the Inside the car showing the entire back seat</string>
+    <string name="car_photo_trunk">Open trunk, full view</string>
+    <string name="car_photo_dialog_trunk">Are your sure the Photo is showing the Trunk open in full view?</string>
+
+    <!-- title -->
+    <string name="title_activity_driver">DriverActivity</string>
+    <string name="title_create_account">Create an Account</string>
+    <string name="title_create_profile">Create a Profile</string>
+    <string name="title_sign_in">Sign in</string>
+    <string name="title_forgot_pass">Forgot Password</string>
+    <string name="title_sign_in_failed">Sign in Failed</string>
+
+    <!-- errors -->
+    <string name="facebook_error">Facebook user is not associated with %1$s, please sign up first.</string>
+    <string name="email_error">Please enter your email</string>
+    <string name="mobile_error">Please enter your phone number</string>
+    <string name="invalid_mobile_error">Invalid phone number</string>
+    <string name="password_error">Password cannot be less that 6 characters</string>
+    <string name="no_password_error">Please enter a password</string>
+    <string name="no_email_error">You need an email to sign up</string>
+    <string name="invalid_email_error">Please enter a valid email</string>
+    <string name="no_first_name_error">Please enter your first name</string>
+    <string name="no_last_name_error">Please enter your last name</string>
+    <string name="user_already_exists">This phone number is already in use</string>
+</resources>

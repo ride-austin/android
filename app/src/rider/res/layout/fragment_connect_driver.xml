@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.dc.ConnectDriverViewModel" />
+    </data>
+
+    <RelativeLayout
+        style="@style/RelativeLayout.Base"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/driver_image"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:scaleType="fitXY"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:src="@{viewModel.driverImage}"
+            tools:src="@drawable/ic_user_icon" />
+
+        <TextView
+            android:id="@+id/driver_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/driver_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:text="@{viewModel.driverNickname}"
+            android:textAppearance="@style/RATextView.MontserratLight"
+            android:textSize="14sp"
+            android:textColor="@color/charcoalGrey"
+            tools:text="Thomas Watson" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/driver_name_text"
+            android:layout_marginTop="9dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/driver_rating_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:text="@{viewModel.driverRating}"
+                android:textAppearance="@style/RATextView.MontserratRegular"
+                android:textSize="14sp"
+                tools:text="4.6" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/icn_star" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/car_picker"
+            style="@style/RelativeLayout.Background.Top"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/linearLayout3"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="26dp"
+            android:gravity="center_vertical"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:onClick="@{() -> viewModel.selectCarType()}"
+            android:visibility="@{!viewModel.requesting}"
+            tools:visibility="gone">
+
+            <ImageView
+                android:id="@+id/car_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:src="@{viewModel.carImage}"
+                tools:src="@drawable/icn_generic_car" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="15dp">
+
+                <TextView
+                    android:id="@+id/car_category_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.carCategory}"
+                    android:textAppearance="@style/RATextView.MontserratLight.Default"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    tools:text="STANDARD" />
+
+                <TextView
+                    android:id="@+id/car_category_seats_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.carCategorySeats}"
+                    android:textAppearance="@style/RATextView.MontserratLight.Default"
+                    android:textColor="@color/grey_600"
+                    android:textSize="13sp"
+                    tools:text="4 seats" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/priority_icon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_p_inside_circle_small"
+                android:visibility="@{viewModel.priorityIconVisibility}" />
+
+            <TextView
+                android:id="@+id/surge_factor_text"
+                android:layout_width="wrap_content"
+                android:minWidth="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{viewModel.carCategorySurgeFactor}"
+                android:textAppearance="@style/RATextView.MontserratRegular"
+                android:textColor="@color/charcoalGrey"
+                android:textSize="14sp"
+                android:visibility="@{viewModel.priorityIconVisibility}"
+                tools:text="2.5X" />
+
+            <ImageView
+                android:id="@+id/car_type_details"
+                android:layout_width="28dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/arrow_gray" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/car_picker"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:background="#DFDFDF"
+            android:visibility="@{!viewModel.requesting}"
+            tools:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/payment_picker"
+            style="@style/RelativeLayout.Background.Bottom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/imageView2"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:onClick="@{() -> viewModel.selectPaymentType()}"
+            android:visibility="@{!viewModel.requesting}"
+            tools:visibility="gone">
+
+            <ImageView
+                android:id="@+id/icon_payment_type"
+                android:layout_width="28dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="18dp"
+                android:layout_centerVertical="true"
+                android:src="@{viewModel.selectedPaymentImage}"
+                tools:src="@drawable/icn_visa" />
+
+            <TextView
+                android:id="@+id/text_payment_card"
+                style="@style/RATextView.MontserratRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/icon_payment_type"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/icon_payment_type"
+                android:text="@{viewModel.selectedPaymentName}"
+                android:textColor="#2C3225"
+                android:textSize="12sp"
+                tools:text="Personal **** 4422" />
+
+            <ImageView
+                android:id="@+id/payments"
+                android:layout_width="28dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="2dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/arrow_gray" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/request_driver"
+            style="@style/Button.RoundedBlueButton"
+            android:layout_below="@id/payment_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:text="@string/direct_connect_request_driver"
+            android:visibility="@{!viewModel.requesting}"
+            tools:visibility="gone" />
+
+
+        <LinearLayout
+            android:id="@+id/requesting"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/bg_text_input_round"
+            android:layout_below="@id/linearLayout3"
+            android:visibility="@{viewModel.requesting}"
+            tools:visibility="visible">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="16dp"
+                android:indeterminate="true"
+                android:visibility="@{!viewModel.isEspresso}"/>
+
+            <TextView
+                style="@style/RATextView.MontserratRegular"
+                android:textSize="14sp"
+                android:textColor="@color/charcoalGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/direct_connect_requesting"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/cancel"
+            style="@style/Button.RoundedBlueButton"
+            android:layout_below="@id/requesting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:text="@string/cancel"
+            android:visibility="@{viewModel.requesting}"
+            tools:visibility="visible" />
+
+
+    </RelativeLayout>
+
+
+</layout>

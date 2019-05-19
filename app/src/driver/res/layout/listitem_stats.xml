@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rideaustin.api.model.DriverStat" />
+    </data>
+    
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:descendantFocusability="blocksDescendants">
+        
+        <TextView
+            android:id="@+id/tv_stat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_percentage"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="4dp"
+            style="@style/RATextView.MontserratRegular"
+            android:textColor="@color/trip_history_item_black"
+            android:textSize="16sp"
+            android:text="@{viewModel.name}"
+            tools:text="Acceptance rate"/>
+    
+        <TextView
+            android:id="@+id/tv_percentage"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_stat"
+            style="@style/RATextView.MontserratBold"
+            android:textColor="@color/trip_history_item_black"
+            android:textSize="20sp"
+            android:text="@{viewModel.percentage}"
+            tools:text="99%"/>
+    
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tv_stat"
+            app:layout_constraintEnd_toEndOf="@id/tv_stat"
+            app:layout_constraintTop_toBottomOf="@id/tv_stat"
+            app:layout_constraintBottom_toBottomOf="parent"
+            style="@style/RATextView.MontserratRegular"
+            android:textColor="@color/trip_history_item_grey"
+            android:textSize="12sp"
+            android:text="@{viewModel.description}"
+            tools:text="99 out of 100 dispatches" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="@dimen/rate_driver_divider_height"
+            android:background="@color/grey_400"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.queue.QueueEntryViewModel"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/entry_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/queue_request_type_card_height"
+        android:layout_margin="@dimen/card_view_margin"
+        android:descendantFocusability="blocksDescendants"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        app:contentPadding="@dimen/queue_card_padding">
+
+        <LinearLayout style="@style/LinearLayout.Horizontal">
+
+            <ImageView
+                android:id="@+id/queue_category_image"
+                android:layout_width="@dimen/queue_car_type_width"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center_vertical"
+                android:scaleType="center"
+                android:src="@{viewModel.carImage}"
+                tools:src="@drawable/icn_car_regular_ride_request"/>
+
+            <View
+                style="@style/Separator.Vertical.Queue"/>
+
+            <TextView
+                style="@style/RATextView.AirportQueue.RequestType"
+                android:id="@+id/queue_car_category"
+                android:layout_weight="1"
+                tools:text="STANDARD"
+                android:text="@{viewModel.carCategory}"/>
+
+            <View
+                style="@style/Separator.Vertical.Queue"/>
+
+            <TextView
+                android:id="@+id/queue_value"
+                style="@style/RATextView.AirportQueue.Number"
+                android:text="@{viewModel.queuePosition}"
+                tools:text="NEXT"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</layout>

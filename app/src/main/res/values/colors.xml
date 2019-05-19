@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="paleGrey">#ECEFF1</color>
+    <color name="charcoalGrey">#3C4350</color>
+    <color name="charcoalGreyTwo">#2C323C</color>
+    <color name="driver_sign_up_text_color_primary">#3c4350</color>
+    <color name="driver_need_help_background">#080d15</color>
+    <color name="map_route_stroke_color">#9900AEEF</color>
+    <color name="light_icon_tint">#9DA1A7</color>
+    <color name="tint_color">#02A7F9</color>
+    <color name="female_only_pink">#F8278D</color>
+</resources>

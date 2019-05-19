@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.0'
+        classpath 'com.google.gms:google-services:4.2.0'
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6"
+        classpath 'io.fabric.tools:gradle:1.25.4'
+    }
+}
+apply plugin: "org.sonarqube"
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "http://dl.bintray.com/populov/maven" }
+        maven { url 'https://maven.fabric.io/public' }
+
+    }
+}
+
+subprojects {
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << '-Xmaxerrs' << '500'
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+

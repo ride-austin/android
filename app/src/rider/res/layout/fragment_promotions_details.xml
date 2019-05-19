@@ -1,0 +1,70 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.promotions.details.PromotionsDetailsViewModel" />
+    </data>
+
+    <LinearLayout
+        style="@style/LinearLayout.Base"
+        android:background="@color/app_screen_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="21dp">
+
+            <ImageView
+                android:layout_width="67dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icn_wallet" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                style="@style/RATextView.MontserratRegular"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:text="Credits Available" />
+
+            <TextView
+                android:id="@+id/total_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="16dp"
+                style="@style/RATextView.MontserratRegular"
+                android:textColor="@android:color/black"
+                android:textSize="36sp"
+                android:text="@{viewModel.totalBalance}"
+                tools:text="$50" />
+
+
+        </LinearLayout>
+
+        <android.view.View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rate_driver_divider_height"
+            android:background="@android:color/darker_gray" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/credits_list"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+</layout>

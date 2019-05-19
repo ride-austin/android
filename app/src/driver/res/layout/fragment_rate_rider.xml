@@ -1,0 +1,72 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="RateRiderBinding" />
+
+    <LinearLayout
+        style="@style/LinearLayout.Base"
+        android:padding="@dimen/dialog_padding">
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/ride_price_top"
+            android:text="@string/map.rate.title"
+            android:textColor="@color/rate_ride_price_grey"
+            android:textSize="@dimen/rate_driver_price_text_size" />
+
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/ride_price_top"
+            android:text="-"
+            android:textColor="@color/rate_ride_price_grey"
+            android:textSize="@dimen/rate_driver_price_text_size" />
+
+        <android.view.View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rate_driver_divider_height"
+            android:layout_marginTop="@dimen/rate_driver_divider_margin"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/tv_rate_ride_label"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:text="@string/map.rate.rate_rider"
+            android:textColor="@color/divider" />
+
+        <com.rideaustin.ui.widgets.CustomRatingBar
+            android:id="@+id/rb_rate_driver"
+            style="@style/Base.Widget.AppCompat.RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/ratingbar_margin_bottom"
+            android:layout_marginTop="@dimen/ratingbar_margin_top"
+            app:maxStars="5"
+            app:starPadding="@dimen/padding_2dp" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            style="@style/Button.RoundedBlueButton.Small"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/text_size_16"
+            android:layout_marginLeft="@dimen/activity_top_margin"
+            android:layout_marginRight="@dimen/activity_top_margin"
+            android:layout_marginTop="16dp"
+            android:text="@string/btn_submit" />
+
+    </LinearLayout>
+
+
+</layout>

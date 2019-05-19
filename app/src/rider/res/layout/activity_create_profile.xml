@@ -1,0 +1,137 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="CreateProfileBinding" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/createProfileContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_screen_background"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout style="@style/LinearLayout.Base">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/Toolbar.Base"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize">
+
+                <TextView
+                    style="@style/Toolbar.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_create_profile" />
+
+            </android.support.v7.widget.Toolbar>
+
+            <include layout="@layout/view_single_divider" />
+
+            <LinearLayout
+                style="@style/LinearLayout.Horizontal"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="@dimen/activity_top_margin">
+
+                <LinearLayout
+                    style="@style/LinearLayout.Base"
+                    android:layout_marginRight="@dimen/default_elevation"
+                    android:layout_weight="2">
+
+                    <ImageView
+                        android:id="@+id/profile"
+                        android:layout_width="@dimen/global_menu_avatar_size"
+                        android:layout_height="@dimen/global_menu_avatar_size"
+                        android:background="@drawable/ic_profile"
+                        android:scaleType="centerCrop" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LinearLayout.Base"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/firstName"
+                        style="@style/EditText.AppLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/default_margin"
+                        android:layout_weight="1"
+                        android:hint="@string/firstname_hint"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textSize="@dimen/button_text_size" />
+
+                    <EditText
+                        android:id="@+id/lastName"
+                        style="@style/EditText.AppLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/lastname_hint"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textSize="@dimen/button_text_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/shade_layout_height"
+                android:background="@color/iron" />
+
+            <LinearLayout
+                style="@style/LinearLayout.Regular"
+                android:paddingLeft="@dimen/activity_top_margin"
+                android:paddingRight="@dimen/activity_top_margin">
+
+                <TextView
+                    android:id="@+id/agreement"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:text="@string/agreement"
+                    android:textSize="@dimen/sign_up_info" />
+
+                <TextView
+                    android:id="@+id/terms"
+                    style="@style/RATextView.MontserratLight"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/default_elevation"
+                    android:layout_marginTop="@dimen/default_elevation"
+                    android:autoLink="web"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:linksClickable="true"
+                    android:text="@string/terms"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textSize="@dimen/sign_up_info" />
+
+                <Button
+                    android:id="@+id/done"
+                    style="@style/Button.RoundedBlueButton"
+                    android:layout_marginTop="@dimen/default_elevation"
+                    android:text="@string/done" />
+
+                <android.view.View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_top_margin"
+                    android:background="@android:color/transparent" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/edit_picture_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

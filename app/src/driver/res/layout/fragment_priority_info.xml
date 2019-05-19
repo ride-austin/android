@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="PriorityInfoBinding" />
+
+    <LinearLayout
+        style="@style/MultiplierBar"
+        android:layout_marginLeft="@dimen/padding_48dp"
+        android:layout_marginRight="@dimen/padding_48dp"
+        android:layout_marginTop="@dimen/basic_widget_margin"
+        android:background="@drawable/rounded_white_button"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/priorityIcon"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@drawable/ic_p_inside_circle" />
+
+        <TextView
+            android:id="@+id/priorityInfo"
+            style="@style/RATextView.MontserratRegular.Wrap"
+            android:text="@string/priority_info"
+            android:textAllCaps="true" />
+    </LinearLayout>
+</layout>

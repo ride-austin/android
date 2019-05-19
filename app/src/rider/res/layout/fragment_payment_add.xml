@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        style="@style/LinearLayout.Base"
+        android:paddingBottom="@dimen/padding_9dp"
+        android:paddingLeft="@dimen/default_margin"
+        android:paddingRight="@dimen/default_margin"
+        android:paddingTop="@dimen/padding_9dp">
+
+        <com.devmarvel.creditcardentry.library.CreditCardForm
+            android:id="@+id/credit_card_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cursor_color="@color/tint_color"
+            app:input_background="@android:drawable/edit_text"
+            app:card_number_hint="@string/hint_credit_card_number"
+            app:hint_text_color="@color/hint_color"
+            app:include_helper="false"
+            app:include_zip="false"/>
+
+        <Button
+            android:id="@+id/btn_add_payment"
+            style="@style/Button.RoundedBlueButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_9dp"
+            android:text="@string/btn_add_payment"
+            android:textAllCaps="true" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="RelativeLayout.SplashRegister" parent="RelativeLayout.Wrap">
+        <item name="android:animateLayoutChanges">true</item>
+    </style>
+
+
+    <style name="RelativeLayout.Background">
+        <item name="android:background">@drawable/comments_backround</item>
+        <item name="android:textColorHint">@color/divider</item>
+    </style>
+
+    <style name="RelativeLayout.Background.Top">
+        <item name="android:background">@drawable/background_top</item>
+        <item name="android:textColorHint">@color/divider</item>
+    </style>
+
+    <style name="RelativeLayout.Background.Bottom">
+        <item name="android:background">@drawable/background_bottom</item>
+        <item name="android:textColorHint">@color/divider</item>
+    </style>
+
+</resources>

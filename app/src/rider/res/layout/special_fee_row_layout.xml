@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/fee_value"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="$ 1.50"
+            android:textAppearance="@style/RATextView.MontserratBold"
+            android:textSize="12dp"
+            android:textColor="@color/black"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/fee_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="some description"
+            android:textAppearance="@style/RATextView.MontserratBold"
+            android:textSize="10dp"
+            android:textColor="@color/grey_400"
+            android:layout_below="@+id/fee_text"
+            android:layout_alignStart="@+id/fee_text" />
+
+        <TextView
+            android:id="@+id/fee_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="SPECIAL FEE TEXT"
+            android:textAppearance="@style/RATextView.MontserratBold"
+            android:textSize="12dp"
+            android:textColor="@color/grey_400"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/fee_value" />
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,32 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data />
+
+    <LinearLayout style="@style/LinearLayout.Base">
+
+        <TextView
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/direct_connect_car_categories"
+            android:textSize="14sp"
+            android:textColor="@color/black" />
+
+        <android.support.v7.widget.RecyclerView
+            android:background="@drawable/comments_backround"
+            android:id="@+id/list_car_types"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/fragment_car_type_item"
+            android:divider="@drawable/list_item_divider"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:dividerHeight="1dp" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,330 @@
+<resources>
+    <string name="app_name_placeholder">Ride %1$s</string>
+    <string name="app_name_formatted_placeholder">Ride|%1$s</string>
+
+    <!--Navigation Drawer-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="help">Help</string>
+    <string name="ride_request">Ride Request Type</string>
+    <string name="earnings">Earnings</string>
+    <string name="settings">Settings</string>
+    <string name="empty" />
+
+    <!--SettingsFragment-->
+    <string name="edit_account">Edit Account</string>
+    <string name="rate_us_on_google_play">Rate us on Google Play</string>
+    <string name="like_us_on_facebook">Like us on Facebook</string>
+    <string name="legal">Legal</string>
+    <string name="sign_out">Sign out</string>
+    <string name="error_version_info">Error getting version info</string>
+    <string name="pass_spaces">Password cannot contain spaces</string>
+    <string name="phone_number_10_digits">Phone number should have at least 10 digits</string>
+
+    <!--MainMapFragment-->
+    <string name="inactive_warning">Driver account not yet activated and pending approval.</string>
+    <string name="coming_soon_in_your_area">Coming soon in your area</string>
+    <string name="lorem_ipsum">Lorem ipsum</string>
+    <string name="placeholder_rate">5</string>
+    <string name="hint_leave_comment">Leave comment</string>
+    <string name="rate_your_ride">Rate your ride</string>
+    <string name="text_cancel_ride_dialog">Do you really want to cancel this ride?</string>
+    <string name="mock">Mock</string>
+    <string name="location_error">Can not get location. Please check settings and enable location.</string>
+    <string name="priority_info">Priority multiplier:</string>
+
+    <string name="placeholder_home_location">Home\n205 Congress ave # 2555</string>
+    <string name="placeholder_location">Work\n401 Congress Ave #2650</string>
+    <string name="rider_home_label">Home\n</string>
+    <string name="rider_work_label">Work\n</string>
+    <string name="message_ride_cancelled_by_driver">Your ride is cancelled by the driver.</string>
+    <string name="message_ride_cancelled_by_admin">Your ride is cancelled by admin.</string>
+    <string name="message_ride_cancelled_by_user">Your ride has been successfully cancelled</string>
+    <string name="phone">Phone</string>
+    <string name="unknown_error">Something went wrong. Please try again later.</string>
+    <string name="scheme_sms">sms</string>
+    <string name="scheme_telephone">tel:</string>
+    <string name="text_regular_car_label">Regular</string>
+    <string name="text_suv_car_label">SUV</string>
+    <string name="text_luxury_car_label">Premium</string>
+    <string name="unauthorized">Unauthorized</string>
+    <string name="your_last_trip">Your Last Trip</string>
+    <string name="comment_if_rate_is_less">Comment is required if rate is less than 3</string>
+    <string name="price_placeholder">0</string>
+    <string name="cannot_logout_during_ride">You cannot logout during active ride</string>
+    <string name="extra_sms">sms_body</string>
+    <string name="text_tabulation">\t</string>
+    <string name="version">Version\u00A0</string>
+    <string name="navigate">Navigate</string>
+
+    <!--Driver Map Fragment -->
+    <string name="map.rate.title">Driver Earnings</string>
+    <string name="map.rate.rate_rider">Rate Rider</string>
+    <string name="map.rate.submit">Submit</string>
+
+    <string name="menu.decline">Decline</string>
+    <string name="menu.contact">Contact</string>
+    <string name="menu.support">Support</string>
+    <string name="action_go_online">OFFLINE</string> <!-- button indicates current state, not action -->
+    <string name="action_go_offline">ONLINE</string> <!-- button indicates current state, not action -->
+    <string name="action_sync">SYNC</string>
+    <string name="action_in_progress">Syncing</string>
+    <string name="slide_to_arrive">Arrived</string>
+    <string name="slide_to_start_trip">Begin Trip</string>
+    <string name="slide_to_finish">End Trip</string>
+    <string name="nickname">Nickname</string>
+
+    <string name="car_type_save_warning">Please select at least one car category</string>
+    <string name="ride_request_change_error">You cannot change ride type during trip.</string>
+    <string name="ride_request_please_select">Please select car type</string>
+    <string name="ride_request_description">Your current ride request type is now set to the following categories. You are set to receive:\n\n</string>
+    <string name="ride_request_female_only">\nfemale driver requests ONLY</string>
+    <string name="ride_request_dc_only">\ndirect connect requests ONLY</string>
+    <string name="ride_request_and">\nand\n</string>
+    <string name="ride_request_female_driver_requests">\nfemale driver requests</string>
+    <string name="ride_request_dc_requests">\ndirect connect requests</string>
+    <string name="ride_request_all_selected">\n\nAll car types are selected</string>
+    <string name="ride_request_select_others">\n\nSelect or register for other car categories to receive ride requests in those categories.</string>
+    <string name="ride_request_online">%1$s %2$s is online</string>
+    <string name="ride_request_you_are_online">You are online</string>
+    <string name="ride_request_description_online">You are set to receive\n\n</string>
+    <string name="ride_request_female_only_online">%s\nfemale driver requests ONLY\n\nTo receive requests from all genders, please visit Menu -> Ride Request Type</string>
+    <string name="ride_request_dc_only_online">%s\ndirect connect requests ONLY\n\nTo remove this filter, please visit Menu -> Ride Request Type</string>
+    <string name="ride_request_by_admin_title">Car Categories Updated by Admin!</string>
+    <string name="ride_request_by_admin_message">Please visit Menu -> Ride Request Type to review</string>
+    <string name="ride_request_added">%s activated</string>
+    <string name="ride_request_removed">%s disabled</string>
+    <string name="ride_request_go_to_enable">\n\nPlease visit Menu -> Ride Request Type to enable</string>
+    <string name="ride_request_missed_title">Car Categories Disabled!</string>
+    <string name="ride_request_missed_message">Please visit Menu -> Ride Request Type to enable</string>
+    <string name="ride_request_missed">Car category &lt;%s&gt; was disabled due to many consecutive missed requests.\nPlease visit Menu -> Ride Request Type to enable</string>
+    <string name="ride_request_missed_plural">Car categories &lt;%s&gt; were disabled due to many consecutive missed requests.\nPlease visit Menu -> Ride Request Type to enable</string>
+
+    <string-array name="week_days">
+        <item>M</item>
+        <item>T</item>
+        <item>W</item>
+        <item>T</item>
+        <item>F</item>
+        <item>S</item>
+        <item>S</item>
+    </string-array>
+
+    <string name="text_weekly_earnings">Weekly Earnings</string>
+
+    <string name="text_earnings">Earnings</string>
+    <string name="text_date_delimiter">" - "</string>
+    <string name="text_hours_online">HOURS ONLINE</string>
+    <string name="text_trips">TRIPS</string>
+    <string name="text_current_rating">CURRENT RATING</string>
+    <string name="text_this_week">This Week:</string>
+    <string name="text_header_number_nof_trips">NUMBER\nOF TRIPS</string>
+    <string name="text_header_total_fare">TOTAL\nFARE</string>
+    <string name="text_header_total_ra_fee">TOTAL RA\nFEE</string>
+    <string name="text_header_total_earnings">TOTAL\nEARNINGS</string>
+    <string name="ride_cancelled">Trip was cancelled</string>
+    <string name="ride_cancelled_by_rider">%1$s has cancelled the ride.</string>
+    <string name="ride_cancelled_by_rider_with_fee">%1$s has cancelled the ride. You will receive $%2$s for ride cancellation.</string>
+    <string name="ride_cancelled_by_driver_with_fee">Your ride has been cancelled. You will receive $%1$s for ride cancellation.</string>
+    <string name="ride_cancelled_by_driver_without_fee">Your ride has been cancelled.</string>
+    <string name="ride_cancelled_by_admin">Ride is cancelled by administrator</string>
+    <string name="text_contact_rider_dialog">How do you want to contact your rider?</string>
+    <string name="text_daily_earnings">Daily Earnings</string>
+    <string name="text_trips_header">Trips</string>
+    <string name="text_your_earning">Your earning</string>
+    <string name="text_ride_service_fee">%1$s Fee</string>
+    <string name="text_total_fare">Total Fare</string>
+    <string name="text_time_fare">Time Fare</string>
+    <string name="text_distance_fare">Distance Fare</string>
+    <string name="text_base_fare">Base Fare</string>
+    <string name="text_email_title">"Driver Support Request - "</string>
+    <string name="text_body_partial_1">"My Name is "</string>
+    <string name="text_body_partial_2"><![CDATA[" <"]]></string>
+    <string name="text_body_partial_3"><![CDATA[>]]></string>
+    <string name="text_body_partial_4">" ("</string>
+    <string name="text_body_partial_5">"Driver ID: "</string>
+    <string name="text_body_partial_6">).</string>
+    <string name="text_new_line">\n</string>
+    <string name="text_body_partial_7">"I have a question about (RideID: "</string>
+    <string name="text_body_partial_8">"Question: "</string>
+    <string name="text_chooser_title">Send Email</string>
+    <string name="hint_password">Password</string>
+    <string name="text_password_placeholder">1234567890</string>
+    <string name="text_change_password">Change Password</string>
+    <string name="text_confirm_password">Confirm Password</string>
+    <string name="text_new_password">New Password (6+ Characters)</string>
+    <string name="text_oops">OOPS</string>
+    <string name="text_choose_password_alert">Please choose a password with at least 6 or more characters</string>
+    <string name="text_password_mismatch">Passwords don\'t match</string>
+    <string name="text_password_update_success">Your password has been updated successfully</string>
+
+    <string name="notification.rider">Rider</string>
+    <string name="notification.destination_changed">Destination Changed</string>
+    <string name="notification.request">%1$s is requesting a ride</string>
+    <string name="notification_request_eta">%1$s is requesting a ride, ETA: %2$s</string>
+    <string name="notification.rate">Please, rate your ride</string>
+
+    <string name="share_action_navigate">Navigate</string>
+    <string name="signed_out">You are signed out</string>
+    <string name="rider_phone_number">Rider phone number: </string>
+    <string name="cant_find_app_for_call">Can\'t find application to call</string>
+    <string name="cant_find_app_to_send_message">Can\'t find application to send message</string>
+    <string name="tips">TIPS</string>
+    <string name="tip">Tip</string>
+    <string name="rider_cancel_fee">Rider Cancellation Fee</string>
+    <string name="send_report">Report defect</string>
+    <string name="text_cancel_ride_confirmation">Are you sure you want to cancel ?</string>
+
+    <string name="dynamic_queue_name">%1$s Queue</string>
+    <string name="queue_in_number_info">Numbers represent your current spot\n in queue</string>
+    <string name="queue_out_number_info">Numbers represent amount of drivers in the %s queue</string>
+    <string name="queue_leaving_area_desc"> You have left the queue zone and have been removed from the queue</string>
+    <string name="queue_leaving_inactive_desc">You have been removed from the queue because you were offline</string>
+    <string name="queue_leaving_penalty_desc">You have been removed from the queue due to consequently missed requests</string>
+    <string name="queue_zone">%1$s Zone</string>
+    <string name="queue_zone_desc_greetings">Welcome to the %1$s Zone.\u0020</string>
+    <string name="queue_zone_desc_you">Your locations in the queue:\n</string>
+    <string name="queue_zone_desc_next">%1$s - NEXT</string>
+    <string name="queue_zone_desc_number">%2$s - %1$d</string>
+    <string name="queue_zone_update">Your location updated.</string>
+    <string name="first_in_queue_text">NEXT</string>
+    <plurals name="queue_zone_position">
+        <item quantity="one">You are NEXT in the queue.</item>
+        <item quantity="other">Minimum queue position: %d</item>
+    </plurals>
+    <string name="missing_navigation_application_dialog_title">Missing navigation application</string>
+    <string name="missing_navigation_application_dialog_msg">In order to navigate, please install a navigation app from play store</string>
+    <string name="text_subject">Production Defect Report</string>
+    <string name="driver_offline">Driver is not online</string>
+    <string name="text_honda">HONDA</string>
+    <string name="motion_detected_start_dialog_title">Forgot To Start Trip?</string>
+    <string name="motion_detected_end_dialog_title">Forgot To Finish Trip?</string>
+    <string name="motion_detected_dialog_message">It appears you are on the move and forgot to start your trip.\nStart trip now?</string>
+    <string name="motion_detected_finish">It appears you are on the move and forgot to finish your trip.\Finish trip now?</string>
+    <string name="set_as_default">Set as default</string>
+    <string name="navigation_app_not_selected">Please choose a navigation app</string>
+    <string name="choose_navigation_app">Choose an app</string>
+    <string name="default_navigation_message">You can change your preference from settings any time.</string>
+    <string name="default_navigation_pref">Default Navigation App</string>
+    <string name="text_priority_default">Priority Fare (1.0X)</string>
+    <string name="txt_confirm_start_ride">Start this ride ?</string>
+    <string name="txt_confirm_start_trip">Start this trip ?</string>
+    <string name="navigation_app_google_map">Google Map</string>
+    <string name="navigation_app_waze">Waze</string>
+    <string name="btn_install">Install</string>
+
+    <string name="optional_app_update_message">An update is available.</string>
+    <string name="mandatory_app_update_message">Your app is out of date, please update to continue using it.</string>
+    <string name="action_update">Update</string>
+    <string name="action_remind_later">Remind later</string>
+
+    <string name="only_receive_female_ride_requests">Only receive female driver requests</string>
+    <string name="only_receive_female_ride_requests_multi">Only receive female driver requests: (Requires %1$s)</string>
+
+    <string name="female_only_mode">Female Driver Mode</string>
+    <string name="female_only">Female Driver</string>
+    <string name="title_activity_refer_friend">ReferFriendActivity</string>
+    <string name="operation_completed">Operation completed</string>
+    <string name="operation_failed">Operation failed, please try again later</string>
+    <string name="enter_valid_phone_msg">Please enter correct phone number</string>
+    <string name="enter_valid_email">Please enter valid email</string>
+    <string name="please_enter_email_address">Please enter email address</string>
+    <string name="please_enter_phone_number">Please enter phone number</string>
+    <string name="refer_friend_title">Refer A Friend</string>
+    <string name="refer_by_email_title">Refer By Email</string>
+    <string name="refer_by_phone_title">Refer By Phone</string>
+    <string name="refer_friend_sms_success_msg">An SMS message to refer your friend has been sent.</string>
+    <string name="refer_friend_email_success_msg">An Email message to refer your friend has been sent.</string>
+
+    <string name="title_contact_rider">Contact Rider</string>
+    <string name="call_request_title">Call Request</string>
+    <string name="call_request_message">Your call has been initiated successfully, you should soon receive a call</string>
+
+    <string name="inspection_sticker">Registration Sticker</string>
+
+    <string name="menu_send">Send</string>
+    <string name="contact_rider">Contact Rider</string>
+    <string name="contact_support">Select an Issue</string>
+    <string name="my_cars">My Cars</string>
+    <string name="add_car">Add Car</string>
+    <string name="update_sticker">Update %s</string>
+    <string name="update_insurance">Update Insurance</string>
+    <string name="update_car_photos">Update Car Photos</string>
+    <string name="update_your_license">Update Your Driver License Photo</string>
+    <string name="update_your_insurance">Update Your Insurance Photo</string>
+    <string name="my_driver_license">My Driver License</string>
+    <string name="my_tnc_card">My %s</string>
+    <string name="documents_updated">Your document is successfully updated</string>
+    <string name="need_help_message">Need help on adding new car</string>
+    <string name="failed_car_create">Creating car failed</string>
+    <string name="failed_photos_upload">Photo upload failed</string>
+    <string name="failed_sticker_upload">%s upload failed</string>
+    <string name="failed_insurance_upload">Insurance upload failed</string>
+    <string name="failed_car_edit">Failed to update car</string>
+    <string name="failed_to_cancel">Failed to remove car</string>
+    <string name="failed_license_upload">License upload failed</string>
+
+    <string name="failed_license_fetch">Failed to fetch License</string>
+    <string name="failed_insurance_fetch">Failed to fetch Insurance</string>
+    <string name="failed_sticker_fetch">Failed to fetch %s</string>
+    <string name="failed_tnc_fetch">Failed to fetch %s</string>
+    <string name="failed_photos_fetch">Failed to fetch car photos</string>
+    <string name="updating_car_failed">Updating car failed</string>
+    <string name="are_you_sure">Do you want to cancel adding a car?</string>
+    <string name="abort">Abort</string>
+    <string name="have_to_be_offline">You must be offline in order to change car</string>
+
+    <string name="front_right">Front Right</string>
+    <string name="back_left">Back Left</string>
+    <string name="back_seat">Back Seat</string>
+    <string name="trunk">Trunk</string>
+    <string name="vehicle_photos">Vehicle Photos</string>
+    <string name="failed_car_photo_upload">Failed to upload car photo</string>
+    <string name="unable_to_fetch_queue_positions">We are unable to fetch queue positions</string>
+
+    <!-- SMS Masking -->
+    <string name="ride_contact_title">Contact Rider</string>
+    <string name="has_no_phone_number">Rider has no phone number</string>
+    <string name="how_do_you_want_to_contact">How do you want to contact rider?</string>
+    <string name="other_side_number">"Riders number: "</string>
+    <string name="users_number">Rider number: %1$s</string>
+
+    <!-- T&C -->
+    <string name="terms_message">Review and approve the changes on Driver terms and conditions</string>
+    <string name="terms_last_updated">LAST UPDATE: %s</string>
+    <string name="terms_check">I AGREE AND ACKNOWLEDGE</string>
+    <string name="terms_button">ACCEPT</string>
+
+    <!-- Ride upgrade -->
+    <string name="upgrade_to_suv">Upgrade to SUV</string>
+    <string name="no_type_available">No car type available to upgrade ride</string>
+    <string name="upgrade_waiting_rider">Waiting for Rider’s Confirmation</string>
+    <string name="upgrade_cancel">Cancel Upgrade</string>
+    <string name="upgrade_requested">Upgrade Requested</string>
+    <string name="upgrade_rider_confirmed">Rider confirmed</string>
+    <string name="upgraded_to_suv">Upgraded to SUV</string>
+    <string name="upgrade_rider_denied">Rider denied</string>
+    <string name="upgrade_expired">Request expired</string>
+
+    <string name="foreground_service_online">You are online</string>
+    <string name="foreground_service_marked_as_offline">Marked as offline</string>
+
+    <!-- Driver Stats -->
+    <string name="stats_title">My Stats</string>
+    <string name="stats_empty_list">No stats present</string>
+    
+    <!-- Direct connect -->
+    <string name="direct_connect_description">To connect with a Rider directly, please have  the rider to input this Driver ID</string>
+    <string name="direct_connect_new_id">Get new driver ID</string>
+    <string name="direct_connect_id_hint">- - - - -</string>
+    <string name="direct_connect_request_car_type">Direct Connect: %s</string>
+    <string name="direct_connect_request_car_type_w_surge">Direct Connect:\n%s</string>
+
+    <!-- Stacked rides -->
+    <string name="stacked_ride_next_ride">Next Ride</string>
+    <string name="stacked_ride_ride_not_found">Something went wrong. Ride not found</string>
+    <string name="stacked_ride_dialog_title">Your Next Ride</string>
+    <string name="stacked_ride_dialog_pickup">Pickup Address</string>
+    <string name="stacked_ride_dialog_cancel">Cancel Pickup</string>
+
+</resources>

@@ -1,0 +1,11 @@
+{
+  "driverRegistration": {
+    "requirements": [
+      "a",
+      "b",
+      "c"
+    ],
+    "description": "description",
+    "enabled": true
+  }
+}

@@ -1,0 +1,69 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data class="SplashBinding">
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.signin.SplashViewModel"/>
+
+    </data>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/main_container"
+        style="@style/RelativeLayout.Splash"
+        tools:background="@drawable/bg_austin_splash_screen">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/splash_logo_margin_top"
+            app:layout_heightPercent="10%"
+            tools:src="@drawable/app_austin_white_logo"/>
+
+        <TextView
+            android:id="@+id/label_version"
+            style="@style/RATextView.MontserratRegular.ThinGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/padding_8dp"
+            tools:text="2.7.0" />
+
+        <LinearLayout
+            android:id="@+id/buttons_container"
+            style="@style/LinearLayout.Horizontal"
+            android:layout_above="@+id/label_version">
+
+            <Button
+                android:id="@+id/signIn"
+                style="@style/Button.RoundedBlueButton.RoundedTransparentButton"
+                android:layout_marginRight="@dimen/button_horizontal_margin"
+                android:layout_weight="1"
+                android:text="@string/sign_in" />
+
+            <Button
+                android:id="@+id/signUp"
+                style="@style/Button.RoundedBlueButton"
+                android:layout_marginLeft="@dimen/button_horizontal_margin"
+                android:layout_weight="1"
+                android:text="@string/register" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/env_container"
+            style="@style/Button.RoundedBlueButton.RoundedWhiteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttons_container"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="60dp"
+            android:gravity="right"
+            android:visibility="gone">
+        </RadioGroup>
+    </android.support.percent.PercentRelativeLayout>
+</layout>

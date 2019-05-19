@@ -1,0 +1,33 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.triphistory.TripHistoryFragmentViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_screen_background">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerTripHistory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/empty_view"
+            style="@style/RATextView.MontserratLight"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="@dimen/heterogenous_padding"
+            android:text="@string/trip_history_empty_list"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:visibility="@{viewModel.shouldDisplayEmptyText ? View.VISIBLE : View.GONE}" />
+
+    </FrameLayout>
+
+</layout>

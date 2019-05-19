@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data class="RideRequestTypeItemBinding" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/item_bg"
+        android:layout_width="@dimen/ride_request_item_type"
+        android:layout_height="@dimen/ride_request_item_type"
+        android:background="@drawable/bg_car_ride_request"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/car_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="@dimen/padding_9dp"
+            android:drawableTop="@drawable/icn_car_regular_ride_request"
+            android:gravity="center"
+            android:paddingBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_car_type"
+            style="@style/RATextView.MontserratBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:padding="@dimen/padding_9dp"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/select_state_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/padding_9dp"
+            android:layout_marginTop="@dimen/padding_9dp"
+            android:src="@drawable/icn_check_ride_request" />
+    </RelativeLayout>
+</layout>

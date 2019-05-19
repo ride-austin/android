@@ -1,0 +1,9 @@
+{
+    "id": 82,
+    "avatarType": "DRIVER",
+    "platformType": "ANDROID",
+    "version": "3.0.0",
+    "mandatoryUpgrade": false,
+    "userAgentHeader": "droid",
+    "uuid": "82"
+}

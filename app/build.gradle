@@ -1,0 +1,274 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+apply from: "$rootProject.projectDir/gradle/timing.gradle"
+apply from: "variants.gradle"
+
+ext.props = new Properties()
+file("app.properties").withInputStream { props.load(it) }
+
+android {
+    compileSdkVersion 28
+
+    ext {
+        /////////////////////////////////////////////////////////////////////////
+        // Rider app configs
+        /////////////////////////////////////////////////////////////////////////
+
+        RIDER_GOOGLE_DIRECTION_API_KEY_DEBUG = props['rider_google_direction_api_key_debug']
+        RIDER_STRIPE_KEY_BETA = props['rider_stripe_key_beta']
+
+        RIDER_GOOGLE_DIRECTION_API_KEY_RELEASE = props['rider_google_direction_api_key_release']
+        RIDER_STRIPE_KEY_PROD = props['rider_stripe_key_prod']
+
+        RIDER_AUSTIN_FACEBOOK_ID = props['rider_austin_facebook_id']
+        RIDER_HOUSTON_FACEBOOK_ID = props['rider_houston_facebook_id']
+
+        /////////////////////////////////////////////////////////////////////////
+        // Driver app configs
+        /////////////////////////////////////////////////////////////////////////
+
+        DRIVER_GOOGLE_DIRECTION_API_KEY_DEBUG = props['driver_google_direction_api_key_debug']
+        DRIVER_GOOGLE_DIRECTION_API_KEY_RELEASE = props['driver_google_direction_api_key_release']
+
+        DRIVER_AUSTIN_FACEBOOK_ID = props['driver_austin_facebook_id']
+        DRIVER_HOUSTON_FACEBOOK_ID = props['driver_houston_facebook_id']
+    }
+
+    dexOptions {
+        jumboMode true
+    }
+
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 28
+        multiDexEnabled true
+        buildConfigField 'String', 'MD5_SAULT', "\"${props['md5_sault']}\""
+        buildConfigField 'String', 'API_PROD', "\"${props['api_prod']}\""
+        buildConfigField 'String', 'API_RC', "\"${props['api_rc']}\""
+        buildConfigField 'String', 'API_BACKUP', "\"${props['api_backup']}\""
+        buildConfigField 'String', 'API_STAGE', "\"${props['api_stage']}\""
+        buildConfigField 'String', 'API_DEV', "\"${props['api_dev']}\""
+        buildConfigField 'String', 'API_FEATURE', "\"${props['api_feature']}\""
+        buildConfigField 'String', 'API_TESTS', "\"${props['api_tests']}\""
+        buildConfigField 'String', 'DIRECTION_ENDPOINT', '"https://maps.googleapis.com/maps/api/directions/"'
+        buildConfigField 'Boolean', 'BETA_TESTING', 'true'
+        manifestPlaceholders.put("CRASHLYTICS_APP_ID", props['crashlytics_app_id'])
+        testInstrumentationRunner "com.rideaustin.UITestRunner"
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+        release {
+            storeFile file('release.jks')
+            storePassword props['store_password']
+            keyAlias props['key_alias']
+            keyPassword props['key_password']
+        }
+    }
+
+    buildTypes {
+        debug {
+            // Disable fabric build ID generation for debug builds
+            ext.enableCrashlytics = false
+            signingConfig signingConfigs.debug
+            shrinkResources false
+            minifyEnabled false
+
+            //RIDER
+            manifestPlaceholders.put("RIDER_GOOGLE_MAP_API_KEY", props['rider_google_map_api_key_debug'])
+
+            //DRIVER
+            manifestPlaceholders.put("DRIVER_GOOGLE_MAP_API_KEY", props['driver_google_map_api_key_debug'])
+        }
+        release {
+            signingConfig signingConfigs.release
+            shrinkResources false
+            minifyEnabled false
+
+            //RIDER
+            manifestPlaceholders.put("RIDER_GOOGLE_MAP_API_KEY", props['rider_google_map_api_key_release'])
+
+            //DRIVER
+            manifestPlaceholders.put("DRIVER_GOOGLE_MAP_API_KEY", props['driver_google_map_api_key_release'])
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "env", "avatar", "city"
+
+    productFlavors {
+
+        driver {
+            dimension "avatar"
+            testApplicationId = 'com.rideaustin.driver.test'
+            //applicationId "com.rideaustin.driver"
+            versionCode 337
+            versionName "4.9.5"
+        }
+
+        rider {
+            dimension "avatar"
+            testApplicationId = 'com.rideaustin.android.test'
+            //applicationId "com.rideaustin.android"
+            versionCode 337
+            versionName "4.9.5"
+        }
+
+        houston {
+            dimension "city"
+        }
+
+        austin {
+            dimension "city"
+        }
+
+        beta {
+            dimension "env"
+            versionNameSuffix = " beta "
+        }
+
+        prod {
+            dimension "env"
+            versionName = android.defaultConfig.versionName
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    testOptions {
+        execution 'ANDROID_TEST_ORCHESTRATOR'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+ext {
+    playServicesVersion = '16.0.0'
+    supportLibraryVersion = '28.0.0'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:multidex:1.0.3'
+
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation "com.google.firebase:firebase-messaging:17.6.0"
+    implementation "com.google.android.gms:play-services-maps:${playServicesVersion}"
+    implementation "com.google.android.gms:play-services-location:${playServicesVersion}"
+    implementation "com.google.android.gms:play-services-places:${playServicesVersion}"
+
+    implementation "com.android.support:design:${supportLibraryVersion}"
+    implementation "com.android.support:support-v13:${supportLibraryVersion}"
+    implementation "com.android.support:customtabs:${supportLibraryVersion}"
+    implementation "com.android.support:appcompat-v7:${supportLibraryVersion}"
+    implementation "com.android.support:cardview-v7:${supportLibraryVersion}"
+    implementation "com.android.support:percent:${supportLibraryVersion}"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    implementation 'com.wdullaer:materialdatetimepicker:3.5.1'
+
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+    implementation 'com.github.sdelaysam:PinView:1.1.3'
+    implementation 'com.facebook.android:facebook-android-sdk:4.25.0'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation "com.google.maps.android:android-maps-utils:0.5"
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+
+    //Rx-Java
+    implementation 'io.reactivex:rxjava:1.3.0'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
+    implementation 'com.github.pwittchen:reactivenetwork:0.11.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.7.1'
+    implementation 'com.afollestad.material-dialogs:core:0.9.4.3'
+
+
+    // 2.2 is the final one for Rx1
+    implementation 'com.github.instacart.truetime-android:library-extension-rx:2.2'
+    implementation 'com.googlecode.libphonenumber:libphonenumber:8.9.9'
+
+    implementation 'joda-time:joda-time:2.9.9'
+    implementation('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
+        transitive = true
+    }
+    implementation 'com.roomorama:caldroid:3.0.1'
+    implementation 'commons-codec:commons-codec:1.10'
+
+    implementation 'pl.charmas.android:android-reactive-location:0.10@aar'
+
+    implementation 'net.sourceforge.streamsupport:streamsupport:1.5.6'
+    implementation 'commons-io:commons-io:2.6'
+
+    implementation 'io.branch.sdk.android:library:3.0.4'
+
+    riderImplementation 'com.stripe:stripe-android:8.0.0'
+
+    riderImplementation 'com.github.sdelaysam:CreditCardEntry:1.5.3'
+    riderImplementation 'com.github.sdelaysam:DiscreteSlider:0.1.1'
+
+    driverImplementation 'com.diogobernardino:williamchart:2.5.0'
+    driverImplementation 'com.github.sdelaysam:FloatingActionButton:1.6.7'
+
+    // do not use 1.5.2 until the following issue is fixed
+    // https://github.com/square/leakcanary/issues/815
+    betaImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    prodImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    androidTestImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+
+    //Java Unit test
+    testImplementation 'org.mockito:mockito-all:1.10.19'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.robolectric:robolectric:3.3.2'
+
+    androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
+    androidTestImplementation 'com.jakewharton.espresso:okhttp3-idling-resource:1.0.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.1', {
+        exclude module: 'support-annotations'
+        exclude module: 'support-v4'
+        exclude module: 'support-v13'
+        exclude module: 'recyclerview-v7'
+        exclude module: 'appcompat-v7'
+        exclude module: 'design'
+    }
+    androidTestImplementation 'com.android.support.test.espresso:espresso-intents:3.0.1', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+
+    androidTestImplementation 'org.apache.commons:commons-lang3:3.6'
+    androidTestUtil 'com.android.support.test:orchestrator:1.0.2'
+}
+apply plugin: 'com.google.gms.google-services'

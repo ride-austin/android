@@ -1,0 +1,96 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="DriverLicenseBinding" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/createProfileContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_screen_background">
+
+        <LinearLayout
+            style="@style/LinearLayout.Base"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    style="@style/LinearLayout.Base"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/license"
+                        style="@style/ImageView.DriverSignUp.Top"
+                        android:src="@drawable/icn_license" />
+
+                    <include layout="@layout/view_single_divider" />
+
+                    <TextView
+                        android:id="@+id/license_text_1"
+                        style="@style/RATextView.Driver.Header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/material_padding"
+                        android:text="@string/driver_license_take_photo_description" />
+
+                    <TextView
+                        android:id="@+id/license_text_2"
+                        style="@style/RATextView.Driver.Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/material_padding"
+                        android:paddingRight="@dimen/material_padding"
+                        android:text="@string/driver_can_easy_read" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/driver_licence_expiration_date" />
+
+                <Button
+                    android:id="@+id/select_expiration_date_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    android:ems="12"
+                    android:text="@string/select" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_single_divider" />
+
+            <Button
+                android:id="@+id/openTakePhotoControl"
+                style="@style/Button.RoundedBlueButton"
+                android:layout_margin="@dimen/material_padding"
+                android:drawableStart="@drawable/icn_photo_white"
+                android:paddingEnd="@dimen/material_padding"
+                android:paddingStart="@dimen/material_padding"
+                android:text="@string/take_photo" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/edit_picture_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

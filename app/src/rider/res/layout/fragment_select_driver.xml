@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.dc.SelectDriverViewModel" />
+    </data>
+
+    <RelativeLayout
+        style="@style/RelativeLayout.Base"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="31dp"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="43dp"
+            android:textAppearance="@style/RATextView.MontserratLight"
+            android:textSize="13sp"
+            tools:text="@string/connect_driver_info"
+            android:text="@{viewModel.description}"
+             />
+
+        <EditText
+            android:id="@+id/driver_id_text"
+            style="@style/EditText.LeaveComment"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/description"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:gravity="left|center_vertical"
+            android:hint="@string/direct_connect_id_hint"
+            android:padding="14dp"
+            android:inputType="number"
+            android:maxLength="10"
+            android:text="@={viewModel.driverId}"
+            android:textColor="#4A515C"
+            android:textColorHint="#A0A2A6"
+            android:textSize="16sp"
+            android:textAppearance="@style/RATextView.MontserratLight" />
+
+        <Button
+            style="@style/Button.RoundedBlueButton"
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/driver_id_text"
+            android:layout_centerHorizontal="true"
+            android:text="@string/btn_submit"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:enabled="@{viewModel.buttonEnabled}"
+            android:onClick="@{() -> viewModel.findDriver()}" />
+
+    </RelativeLayout>
+
+
+</layout>

@@ -1,0 +1,199 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="editProfileFragmentViewModel"
+            type="com.rideaustin.ui.drawer.editprofile.EditProfileFragmentViewModel" />
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/createProfileContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout style="@style/LinearLayout.Vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    style="@style/LinearLayout.Horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/profile"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="5dp"
+                        android:padding="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@{editProfileFragmentViewModel.userPhoto}"
+                        tools:src="@drawable/ic_user_icon"/>
+
+                    <TextView
+                        android:id="@+id/changeAvatar"
+                        style="@style/RATextView.MontserratRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/charcoalGrey"
+                        android:textSize="14sp"
+                        android:text="@string/change_photo"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LinearLayout.Horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/firstName"
+                        style="@style/EditText.Profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:digits="@string/name_digits"
+                        android:hint="@string/firstname_hint"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:text="@{editProfileFragmentViewModel.user.firstName}" />
+
+                    <EditText
+                        android:id="@+id/lastName"
+                        style="@style/EditText.Profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:layout_weight="1"
+                        android:digits="@string/name_digits"
+                        android:hint="@string/lastname_hint"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:text="@{editProfileFragmentViewModel.user.lastName}" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/nickname"
+                    style="@style/EditText.Profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/nickname_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:text="@{editProfileFragmentViewModel.user.nickName}"
+                    android:visibility="@{editProfileFragmentViewModel.isNicknameEnabled}" />
+
+                <TextView
+                    android:id="@+id/emailAddress"
+                    style="@style/RATextView.Profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="@{!editProfileFragmentViewModel.emailVerified}"
+                    android:hint="@string/email_hint"
+                    android:maxLines="1"
+                    android:text="@{editProfileFragmentViewModel.user.email}"
+                    android:drawableEnd="@{editProfileFragmentViewModel.emailVerified ? null : @drawable/ic_input_error}"
+                    tools:drawableEnd="@drawable/ic_input_error"/>
+
+                <EditText
+                    android:id="@+id/password"
+                    style="@style/EditText.Profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="8dp"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/hint_password"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberPassword"
+                    android:maxLines="1"
+                    android:text="@string/text_password_placeholder" />
+
+                <LinearLayout
+                    style="@style/LinearLayout.Horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="46dp"
+                        android:background="@drawable/bg_text_input_rect"
+                        android:layout_marginEnd="8dp"
+                        android:paddingLeft="10dp">
+
+                        <Spinner
+                            android:id="@+id/country"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:spinnerMode="dialog"/>
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/mobile"
+                        style="@style/EditText.Profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:hint="@string/phone"
+                        android:imeOptions="actionDone"
+                        android:inputType="phone"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        app:phoneNumber="@{editProfileFragmentViewModel.user.phoneNumber}" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/RATextView.Profile"
+                    android:id="@+id/gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="8dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:hint="@string/gender_hint"
+                    android:gravity="center_vertical"
+                    android:text="@{editProfileFragmentViewModel.genderText}" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_top_margin"/>
+
+                <Button
+                    android:id="@+id/done"
+                    style="@style/Button.RoundedBlueButton"
+                    android:enabled="@{editProfileFragmentViewModel.dirtyFlag}"
+                    android:text="@string/save"
+                    tools:enabled="false"/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_top_margin"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <FrameLayout
+            android:id="@+id/edit_picture_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

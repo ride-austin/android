@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.earnings.DailyEarningsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/rl_container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar.Base"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                style="@style/Toolbar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_daily_earnings" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <include layout="@layout/view_single_divider" />
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_earning_day"
+                    style="@style/RATextView.MontserratLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/iv_week_indicator_margin"
+                    android:text="@{viewModel.dayName}"/>
+
+                <TextView
+                    android:id="@+id/tv_earning_amount"
+                    style="@style/RATextView.MontserratBold.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_earning_day"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/iv_week_indicator_margin"
+                    android:text="@{viewModel.dailyEarnings}"/>
+
+                <View
+                    android:id="@+id/delimiter"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/vertical_delimiter_height"
+                    android:layout_below="@+id/tv_earning_amount"
+                    android:layout_margin="@dimen/iv_week_indicator_margin"
+                    android:background="@color/grey_200" />
+
+                <LinearLayout
+                    android:id="@+id/driver_trips_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/delimiter"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/driver_trip_padding">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_rating"
+                            style="@style/RATextView.MontserratBold.Large"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:drawableLeft="@drawable/icn_star"
+                            android:drawablePadding="@dimen/iv_week_indicator_margin"
+                            android:text="@{viewModel.rating}"
+                            tools:text="5.0" />
+
+                        <TextView
+                            android:id="@+id/tv_current_rating"
+                            style="@style/RATextView.MontserratLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_rating"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/tv_driver_data_top"
+                            android:text="@string/text_current_rating"
+                            android:textSize="@dimen/text_size_14" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="@dimen/vertical_delimiter_height"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/driver_trip_padding"
+                        android:layout_marginTop="@dimen/driver_trip_padding"
+                        android:background="@color/grey_200" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_trip_count"
+                            style="@style/RATextView.MontserratBold.Large"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="@{viewModel.tripCount}"
+                            tools:text="10" />
+
+                        <TextView
+                            android:id="@+id/tv_trips"
+                            style="@style/RATextView.MontserratLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_trip_count"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/tv_driver_data_top"
+                            android:text="@string/text_trips"
+                            android:textSize="@dimen/text_size_14" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="@dimen/vertical_delimiter_height"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/driver_trip_padding"
+                        android:layout_marginTop="@dimen/driver_trip_padding"
+                        android:background="@color/grey_200" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_online"
+                            style="@style/RATextView.MontserratBold.Large"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="@{viewModel.onlineHours}"
+                            tools:text="12:41" />
+
+                        <TextView
+                            android:id="@+id/tv_total_hours"
+                            style="@style/RATextView.MontserratLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_online"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/tv_driver_data_top"
+                            android:text="@string/text_hours_online"
+                            android:textSize="@dimen/text_size_14" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_trips_delimiter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/driver_trips_info"
+                    android:background="@color/grey_100"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_trips_header"
+                        style="@style/RATextView.MontserratBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/iv_week_indicator_margin"
+                        android:text="@string/text_trips_header" />
+                </LinearLayout>
+
+                <com.rideaustin.ui.earnings.NonScrollableExpandableList
+                    android:id="@+id/trips_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_trips_delimiter" />
+            </RelativeLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

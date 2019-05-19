@@ -1,0 +1,37 @@
+{
+  "type": "RIDER",
+  "id": 8988,
+  "user": {
+    "id": 8018,
+    "email": "espressorider3@xo.com",
+    "firstname": "maciej",
+    "lastname": "test",
+    "phoneNumber": "+48698123456",
+    "phoneNumberVerified": true,
+    "address": {},
+    "gender": "UNKNOWN",
+    "fullName": "maciej test",
+    "uuid": "8018",
+    "enabled": true,
+    "avatars": [
+      {
+        "id": 8988,
+        "type": "RIDER",
+        "active": true
+      }
+    ],
+    "active": true
+  },
+  "active": true,
+  "stripeId": "cus_Ad6lXMNJu3w3JM",
+  "rating": 5,
+  "cityId": 1,
+  "applePayEnabled": false,
+  "email": "espressorider3@xo.com",
+  "gender": "UNKNOWN",
+  "firstname": "maciej",
+  "lastname": "test",
+  "phoneNumber": "+48698123456",
+  "fullName": "maciej test",
+  "uuid": "8988"
+}

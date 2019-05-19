@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="LicensePlateBinding" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_8dp">
+
+        <EditText
+            android:id="@+id/license_place_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:digits="@string/alpha_numeric_characters"
+            android:hint="@string/licence_place"
+            android:inputType="textCapCharacters"
+            android:lines="1"
+            android:maxLength="@integer/license_plate_code_max_length">
+
+            <requestFocus />
+        </EditText>
+    </FrameLayout>
+
+
+</layout>

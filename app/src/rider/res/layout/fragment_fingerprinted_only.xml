@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="FragmentFingerprintedOnlyBinding">
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.driver.FingerprintedOnlyInfoViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_screen_background">
+
+        <LinearLayout
+            android:id="@+id/fingerprint_only_container"
+            style="@style/LinearLayout.Base"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout style="@style/ImageView.DriverSignUp.Top">
+
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_fingerprint" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/message"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/material_padding"
+                android:text="@{viewModel.subTitle}"
+                tools:text="You can choose to book rides with only Fingerprinted drivers" />
+
+            <include layout="@layout/view_single_divider" />
+
+            <LinearLayout
+                android:id="@+id/switchLayout"
+                style="@style/LinearLayout.Horizontal"
+                android:clickable="true"
+                android:descendantFocusability="blocksDescendants"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <TextView
+                    style="@style/RATextView.MontserratLight"
+                    android:layout_width="@dimen/zero_width"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/material_padding"
+                    android:text="@{viewModel.title}"
+                    tools:text="Fingerprinted Drivers Mode" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switch_fingerprinted_drivers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/heterogenous_padding"
+                    android:enabled="@{viewModel.switchEnabled}"
+                    android:text="@string/empty"
+                    app:theme="@style/SwitchAccent" />
+
+            </LinearLayout>
+
+            <include layout="@layout/view_single_divider" />
+
+            <TextView
+                style="@style/RATextView.MontserratLightItalic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/fingerprinted_description"
+                android:textColor="@color/charcoalGrey"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

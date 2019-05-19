@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="PickupDestinationBinding" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:animateLayoutChanges="true">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/pickup_destination_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/basic_widget_margin"
+            android:layout_marginRight="@dimen/basic_widget_margin"
+            android:layout_marginTop="@dimen/basic_widget_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/starting_address"
+                    style="@style/RATextView.MontserratLight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:drawableLeft="@drawable/ic_green"
+                    android:drawablePadding="@dimen/material_padding"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_10dp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/regular_text_size"
+                    tools:text="K.R.Layout, J P Nagar 6th Phase" />
+
+                <View
+                    android:id="@+id/address_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/rate_driver_divider_height"
+                    android:background="@color/divider" />
+
+                <TextView
+                    android:id="@+id/finish_address"
+                    style="@style/RATextView.MontserratLight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:drawableLeft="@drawable/ic_red"
+                    android:drawablePadding="@dimen/material_padding"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_10dp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/regular_text_size"
+                    android:visibility="gone"
+                    tools:text="K.R.Layout, J P Nagar 6th Phase"
+                    tools:visibility="visible"/>
+
+                <LinearLayout
+                    android:id="@+id/comments_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:drawablePadding="@dimen/material_padding"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <View
+                        android:id="@+id/comments_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/rate_driver_divider_height"
+                        android:background="@color/divider" />
+
+                    <TextView
+                        style="@style/RATextView.MontserratBold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:text="Rider comment:"
+                        android:textSize="@dimen/regular_text_size" />
+
+                    <TextView
+                        android:id="@+id/comment"
+                        style="@style/RATextView.MontserratLight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:drawablePadding="@dimen/material_padding"
+                        android:gravity="left|center_vertical"
+                        android:maxLines="1"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp"
+                        android:textSize="@dimen/regular_text_size"
+                        tools:text="your rider comment about pickup location or any other information" />
+
+                    <ImageView
+                        android:id="@+id/mark_image"
+                        android:layout_width="15dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/icn_down_arrow" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/cancel_navigate_buttons_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/basic_widget_margin"
+            android:layout_marginRight="@dimen/basic_widget_margin"
+            android:layout_marginTop="@dimen/basic_widget_margin"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/navigate"
+                style="@style/Button.Button.Navigation.Blue"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:drawableLeft="@drawable/ic_navigation"
+                android:drawablePadding="-15dp"
+                android:paddingLeft="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/navigate" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/cancel"
+                style="@style/Button.Button.Navigation.Red"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/cancel" />
+
+            <Button
+                android:id="@+id/next"
+                style="@style/Button.Button.Navigation.Dark"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/stacked_ride_next_ride"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

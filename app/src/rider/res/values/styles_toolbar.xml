@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Toolbar" />
+
+    <style name="Toolbar.Base">
+        <item name="theme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="navigationIcon">@drawable/icn_back</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">#2C323C</item>
+        <item name="android:textSize">19dp</item> <!-- use dp here -->
+    </style>
+
+    <style name="Toolbar.Title" parent="RATextView.MontserratLight">
+        <item name="android:textColor">#2C323C</item>
+        <item name="android:textSize">19dp</item> <!-- use dp here -->
+    </style>
+
+    <style name="Toolbar.NoIcon">
+        <item name="theme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">#2C323C</item>
+        <item name="android:textSize">19dp</item> <!-- use dp here -->
+    </style>
+
+    <style name="Toolbar.MenuButton" parent="BorderedRoundButton">
+        <item name="android:textSize">13dp</item> <!-- use dp here -->
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/driver_details_round_button</item>
+    </style>
+
+</resources>

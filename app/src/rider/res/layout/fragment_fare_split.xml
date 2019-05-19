@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.splitfare.FareSplitViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_screen_background">
+
+        <LinearLayout
+            style="@style/LinearLayout.Base"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_phone_number"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginBottom="20dp"
+                android:padding="15dp"
+                android:maxLines="1"
+                android:inputType="phone"
+                android:imeOptions="actionGo"
+                android:hint="@string/hint_enter_phone"
+                android:textColor="#3C4350"
+                android:textColorHint="#919499"
+                android:background="@drawable/bg_text_input_round"
+                android:selectAllOnFocus="true"
+                android:textSize="14sp"
+                android:text="@={viewModel.phone}"/>
+
+            <Button
+                android:id="@+id/btn_send"
+                style="@style/Button.RoundedGreyButton"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="50dp"
+                android:layout_height="42dp"
+                android:enabled="@{viewModel.enableSendButton}"
+                android:onClick="@{() -> viewModel.onSend()}"
+                android:text="@string/send"
+                tools:enabled="false" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="#D8D8D8"
+                />
+
+            <TextView
+                style="@style/MontserratLight"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="38dp"
+                android:layout_marginEnd="38dp"
+                android:textSize="12sp"
+                android:textColor="#84878B"
+                android:text="@string/msg_fare_split_contact" />
+
+            <Button
+                style="@style/Toolbar.MenuButton"
+                android:id="@+id/btn_show_contact"
+                android:layout_width="185dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@drawable/ic_phone_android_gray_18dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="14sp"
+                android:text="@string/btn_show_contacts" />
+
+            <View
+                android:layout_width="66dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="60dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/ic_split"
+                android:visibility="@{viewModel.showEmpty}"
+                tools:visibility="gone" />
+
+            <TextView
+                style="@style/MontserratLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="38dp"
+                android:layout_marginEnd="38dp"
+                android:layout_gravity="center_horizontal"
+                android:textSize="13sp"
+                android:textColor="#2C323C"
+                android:text="@string/msg_fare_split_empty"
+                android:visibility="@{viewModel.showEmpty}"
+                tools:visibility="gone" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:visibility="@{!viewModel.showEmpty}" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="#D8D8D8"
+                android:visibility="@{!viewModel.showEmpty &amp;&amp; !viewModel.showLoading}" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                android:visibility="@{viewModel.showLoading}"
+                tools:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_accepted"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:gravity="left|center_vertical"
+                android:background="#EBEDED"
+                android:textSize="13sp"
+                android:textColor="@color/charcoalGrey"
+                android:textAllCaps="true"
+                tools:text="Fare splitting 3 ways" />
+
+            <LinearLayout
+                android:id="@+id/container_accepted"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_requested"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:gravity="left|center_vertical"
+                android:background="#EBEDED"
+                android:textSize="13sp"
+                android:textColor="@color/charcoalGrey"
+                android:textAllCaps="true"
+                android:text="@string/fare_split_requested_title" />
+
+            <LinearLayout
+                android:id="@+id/container_requested"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_declined"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:gravity="left|center_vertical"
+                android:background="#EBEDED"
+                android:textSize="13sp"
+                android:textColor="@color/charcoalGrey"
+                android:textAllCaps="true"
+                android:text="@string/fare_split_declined_title" />
+
+            <LinearLayout
+                android:id="@+id/container_declined"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

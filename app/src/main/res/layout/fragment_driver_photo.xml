@@ -1,0 +1,71 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="DriverPhotoBinding" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/createProfileContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_screen_background">
+
+        <LinearLayout
+            style="@style/LinearLayout.Base"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout style="@style/LinearLayout.Base">
+
+                    <ImageView
+                        android:id="@+id/photo"
+                        style="@style/ImageView.DriverSignUp.Top"
+                        android:src="@drawable/icn_license" />
+
+                    <include layout="@layout/view_single_divider" />
+
+                    <TextView
+                        style="@style/RATextView.Driver.Header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/material_padding"
+                        android:text="@string/driver_photo_description" />
+
+                    <TextView
+                        style="@style/RATextView.Driver.Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/material_padding"
+                        android:paddingRight="@dimen/material_padding"
+                        android:text="@string/driver_photo_detail" />
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <include layout="@layout/view_single_divider"  />
+
+            <Button
+                android:id="@+id/openTakePhotoControl"
+                style="@style/Button.RoundedBlueButton"
+                android:layout_margin="@dimen/material_padding"
+                android:drawableStart="@drawable/icn_photo_white"
+                android:paddingEnd="@dimen/material_padding"
+                android:paddingStart="@dimen/material_padding"
+                android:text="@string/take_photo" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/edit_picture_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

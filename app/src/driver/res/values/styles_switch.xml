@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Switch" parent="Widget.AppCompat.CompoundButton.Switch" />
+
+    <style name="Switch.WomanOnlyMode">
+        <item name="android:gravity">left</item>
+        <item name="android:textColor">@drawable/grey_text_color</item>
+        <item name="android:textSize">@dimen/switch_woman_only_mode</item>
+        <item name="switchTextAppearance">@style/RATextView.MontserratLight</item>
+        <item name="colorControlActivated">@color/pink_500</item>
+        <item name="colorSwitchThumbNormal">@color/white</item>
+        <item name="android:colorForeground">@color/pink_200</item>
+        <item name="android:background">@color/white</item>
+    </style>
+</resources>

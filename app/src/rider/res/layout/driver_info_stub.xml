@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/driver_info_margin_top">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/driver_info_panel_height">
+
+                <TextView
+                    android:id="@+id/tv_driver_name"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/driver_name_left"
+                    android:layout_marginTop="@dimen/driver_name_top"
+                    android:text="@string/lorem_ipsum" />
+
+                <LinearLayout
+                    android:id="@+id/ll_auto_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/auto_name_top">
+
+                    <TextView
+                        android:id="@+id/tv_auto_model"
+                        style="@style/RATextView.MontserratLight"
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="@dimen/car_model_margin"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lorem_ipsum" />
+
+                    <TextView
+                        android:id="@+id/tv_auto_name"
+                        style="@style/RATextView.MontserratLight"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="@dimen/car_model_margin"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lorem_ipsum" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_auto_plate"
+                    style="@style/RATextView.MontserratLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_auto_model"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/lorem_ipsum" />
+
+                <TextView
+                    android:id="@+id/tv_driver_rate"
+                    style="@style/RATextView.MontserratRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/driver_rate_margin_right"
+                    android:layout_marginTop="@dimen/driver_rate_margin_top"
+                    android:text="@string/placeholder_rate" />
+
+                <ImageView
+                    android:id="@+id/iv_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/iv_rating_right"
+                    android:layout_marginTop="@dimen/iv_rating_top"
+                    android:background="@drawable/icn_star" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </FrameLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_driver_avatar"
+        android:layout_width="@dimen/navigation_view_header_image"
+        android:layout_height="@dimen/navigation_view_header_image"
+        android:layout_gravity="top|center"
+        android:src="@mipmap/ic_launcher" />
+</FrameLayout>

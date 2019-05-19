@@ -1,0 +1,304 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.rideaustin.utils.Constants" />
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.rate.RateDriverDialogViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@android:color/transparent"
+        tools:background="@color/charcoalGrey">
+
+        <com.rideaustin.ui.widgets.RoundedRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cornerRadius="8dp">
+
+            <ScrollView
+                android:id="@+id/rate_driver_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_white_background"
+                android:layout_centerInParent="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <FrameLayout
+                        android:id="@+id/fl_ride_map_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_alignParentTop="true"
+                        tools:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/iv_ride_map"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/map_placeholder"
+                            android:scaleType="centerCrop"
+                            app:map="@{viewModel.map}"
+                            app:viewModel="@{viewModel}" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bottom_gradient" />
+
+                        <TextView
+                            android:id="@+id/tv_ride_map"
+                            style="@style/RATextView.MontserratLight.Wrap"
+                            android:layout_gravity="center"
+                            android:text="@string/rate_unable_to_load_map"
+                            android:visibility="@{viewModel.shouldDisplayMapError}" />
+
+                        <ProgressBar
+                            android:id="@+id/pb_ride_map"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:indeterminate="true"
+                            android:indeterminateTint="#4184F3"
+                            android:indeterminateTintMode="src_atop"
+                            android:visibility="@{viewModel.shouldDisplayMapPreloading}" />
+
+                    </FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/user_avatar"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_below="@+id/fl_ride_map_container"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="-29dp"
+                        app:usersAvatar="@{viewModel.ride.activeDriver.driver.photoUrl}" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fl_ride_map_container"
+                        android:orientation="vertical">
+
+                        <com.rideaustin.ui.widgets.CustomRatingBar
+                            android:id="@+id/rb_rate_driver"
+                            style="@style/Base.Widget.AppCompat.RatingBar"
+                            android:layout_width="220dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
+                            app:maxStars="5"
+                            app:starPadding="4dp" />
+
+                        <TextView
+                            android:id="@+id/tv_comment_title"
+                            style="@style/RATextView.MontserratLight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="11dp"
+                            android:gravity="center_horizontal"
+                            android:textSize="12sp"
+                            android:textColor="@color/charcoalGrey"
+                            android:text="@{viewModel.riderFeedbackText}"
+                            tools:text="@string/rating_feedback_message_text" />
+
+                        <EditText
+                            android:id="@+id/edt_leave_comment"
+                            style="@style/EditText.LeaveComment"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal"
+                            android:hint="@string/hint_leave_comment"
+                            android:imeOptions="actionDone"
+                            android:inputType="textEmailAddress|textMultiLine"
+                            android:maxLength="@{Constants.MAX_COMMENT_LENGTH}"
+                            android:maxLines="1"
+                            android:paddingTop="10dp"
+                            android:layout_marginTop="15dp"
+                            android:text="@={viewModel.comment}"
+                            tools:visibility="visible" />
+
+                        <android.view.View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="17dp"
+                            android:background="#DFDFDF" />
+
+                        <LinearLayout
+                            android:id="@+id/bevo_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:visibility="@{viewModel.shouldDisplayBevoBucks}">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/icn_bevobucks_logo" />
+
+                            <TextView
+                                android:id="@+id/bevo_text"
+                                style="@style/RATextView.MontserratLight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="6dp"
+                                android:text="@string/pay_with_bevobucks"
+                                android:textColor="@color/charcoalGrey"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:id="@+id/bevo_info"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:scaleType="center"
+                                android:src="@drawable/icn_info_icon" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="1dp" />
+
+                            <android.support.v7.widget.SwitchCompat
+                                android:id="@+id/bevo_switch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={viewModel.bevoBucksChecked}"/>
+
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/radio_group_tips"
+                            style="@style/RadioGroup.Horizontal.Blue"
+                            android:layout_height="@dimen/rounded_radio_group_height"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_marginRight="@dimen/activity_horizontal_margin"
+                            android:layout_marginTop="@dimen/rate_driver_divider_margin"
+                            android:visibility="@{viewModel.shouldShowTipOption}">
+
+                            <RadioButton
+                                android:id="@+id/tips_no"
+                                style="@style/RadioButton.RoundedBlueButton.Left"
+                                android:onClick="@{viewModel.onTipChecked}"
+                                android:text="@string/tip_no" />
+
+                            <RadioButton
+                                android:id="@+id/tips_one"
+                                style="@style/RadioButton.RoundedBlueButton.Center"
+                                android:onClick="@{viewModel.onTipChecked}"
+                                android:text="@string/tip_one" />
+
+                            <RadioButton
+                                android:id="@+id/tips_two"
+                                style="@style/RadioButton.RoundedBlueButton.Center"
+                                android:onClick="@{viewModel.onTipChecked}"
+                                android:text="@string/tip_two" />
+
+                            <RadioButton
+                                android:id="@+id/tips_five"
+                                style="@style/RadioButton.RoundedBlueButton.Center"
+                                android:onClick="@{viewModel.onTipChecked}"
+                                android:text="@string/tip_five" />
+
+
+                            <RadioButton
+                                android:id="@+id/tips_other"
+                                style="@style/RadioButton.RoundedBlueButton.Right"
+                                android:onClick="@{viewModel.onTipChecked}"
+                                android:text="@string/tip_other" />
+                        </RadioGroup>
+
+                        <com.rideaustin.ui.widgets.ExtendedEditText
+                            android:id="@+id/custom_tip"
+                            style="@style/EditText.LeaveComment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:digits="0123456789"
+                            android:minEms="4"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="6dp"
+                            android:text="@={viewModel.customTip}"
+                            android:visibility="gone"
+                            app:prefixText="@string/usd_sign"
+                            tools:text="123.0"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tv_price"
+                            style="@style/RATextView.MontserratLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="16dp"
+                            android:text="@{viewModel.fareString}"
+                            android:textColor="@color/rate_ride_price_grey"
+                            android:textSize="30sp"
+                            tools:text="$ 56.50" />
+
+                        <TextView
+                            android:id="@+id/tv_ride_summary"
+                            style="@style/RATextView.MontserratLight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:gravity="center_horizontal"
+                            android:textSize="12sp"
+                            android:textColor="#6D7177"
+                            android:text="@{viewModel.summaryDescription}"
+                            tools:text="@string/ride_summary_description" />
+
+                        <Button
+                            android:id="@+id/btn_submit"
+                            style="@style/Button.RoundedBlueButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/btn_submit"
+                            tools:visibility="visible" />
+
+                        <android.view.View
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"
+                            android:background="@android:color/transparent" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_alignTop="@+id/user_avatar"
+                        android:layout_centerHorizontal="true"
+                        tools:src="@drawable/icn_android_app" />
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+        </com.rideaustin.ui.widgets.RoundedRelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

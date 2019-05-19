@@ -1,0 +1,17 @@
+{
+  "id": 1194,
+  "color": "Orange",
+  "license": "Q555QQ",
+  "make": "Tesla",
+  "model": "Model 3",
+  "year": "2018",
+  "insuranceExpiryDate": "2017-10-31",
+  "insurancePictureUrl": "https://s3.amazonaws.com/media-stage.rideaustin.com/driver-insurances/d3c55728-9fdf-4892-abc5-ea79d9fa1db3.png?AWSAccessKeyId=AKIAJRZKPEUYYX2JFKEA&Expires=1496385878&Signature=oF%2BJUDNYj7dVcoKY6XYFh9yThgI%3D",
+  "selected": true,
+  "inspectionStatus": "APPROVED",
+  "removed": false,
+  "carCategories": ["PREMIUM", "LUXURY"],
+  "photoUrl": "http://media-stage.rideaustin.com/car-photos/9167c3d3-2292-45c1-8234-8623aa2cc7a3.png",
+  "uuid": 1194,
+  "photoURL": "http://media-stage.rideaustin.com/car-photos/9167c3d3-2292-45c1-8234-8623aa2cc7a3.png"
+}

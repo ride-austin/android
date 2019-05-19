@@ -1,0 +1,99 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="FreeRidesBinding">
+
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.drawer.promotions.FreeRidesViewModel" />
+
+    </data>
+
+    <ScrollView style="@style/ScrollView.Base">
+
+        <LinearLayout
+            style="@style/LinearLayout.Base"
+            android:background="@color/app_screen_background"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/activity_top_margin">
+
+            <TextView
+                android:id="@+id/appLogoText"
+                style="@style/RATextView.MontserratLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_top_margin"
+                android:textAllCaps="false"
+                android:textSize="@dimen/toolbar_text_size"
+                tools:text="@string/app_name" />
+
+            <TextView
+                style="@style/RATextView.MontserratBold.Large"
+                android:layout_marginBottom="@dimen/activity_top_margin"
+                android:gravity="center"
+                android:text="@string/referral_discounts_description"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_extra_big" />
+
+            <TextView
+                android:id="@+id/freeRidesIntro"
+                style="@style/RATextView.MontserratLight.Wrap"
+                tools:text="Referral details text"
+                android:textSize="@dimen/text_size_medium" />
+
+
+            <LinearLayout
+                style="@style/LinearLayout.Vertical"
+                android:gravity="center">
+
+                <TextView
+                    style="@style/RATextView.MontserratLight.Wrap"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:text="@string/free_rides_send_promo"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <TextView
+                    android:id="@+id/promoCode"
+                    style="@style/RATextView.MontserratRegular.Large"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_extra_big"
+                    tools:text="rkzqtrag" />
+
+                <Button
+                    android:id="@+id/emailInvite"
+                    style="@style/Button.RoundedBlueButton"
+                    android:layout_marginBottom="@dimen/default_elevation"
+                    android:drawableLeft="@drawable/icon_email"
+                    android:paddingLeft="@dimen/fb_button_padding"
+                    android:paddingRight="@dimen/fb_button_padding"
+                    android:text="@string/email_invite"
+                    android:enabled="@{viewModel.hasPromoCode}"/>
+
+                <Button
+                    android:id="@+id/textInvite"
+                    style="@style/Button.RoundedBlueButton"
+                    android:layout_marginBottom="@dimen/default_margin"
+                    android:drawableLeft="@drawable/icon_chat"
+                    android:paddingLeft="@dimen/fb_button_padding"
+                    android:paddingRight="@dimen/fb_button_padding"
+                    android:text="@string/text_invite"
+                    android:enabled="@{viewModel.hasPromoCode}"/>
+
+                <TextView
+                    android:id="@+id/socialShare"
+                    style="@style/RATextView.MontserratLight.Default"
+                    android:text="@string/social_share"
+                    android:textColor="@color/tint_color"
+                    android:textSize="@dimen/text_size_medium"
+                    android:enabled="@{viewModel.hasPromoCode}"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

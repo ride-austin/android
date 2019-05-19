@@ -1,0 +1,143 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="TermsBinding">
+        <variable
+            name="viewModel"
+            type="com.rideaustin.ui.terms.TermsViewModel" />
+    </data>
+
+    <LinearLayout
+        style="@style/LinearLayout.Base"
+        android:background="@color/app_screen_background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/black"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/city_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="@dimen/tv_driver_need_help_horizontal_padding"
+                android:layout_centerVertical="true"
+                app:termsLogoUrl="@{viewModel.logoUrl}"
+                tools:src="@drawable/app_austin_white_logo" />
+
+            <TextView
+                android:id="@+id/need_help"
+                style="@style/RATextView.NeedHelp"
+                android:layout_alignParentRight="true"
+                android:text="@string/need_help" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            style="@style/ScrollView.Driver"
+            android:scrollbars="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/termsHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginRight="15dp">
+
+                    <ImageView
+                        android:layout_width="41dp"
+                        android:layout_height="41dp"
+                        android:layout_marginRight="9dp"
+                        app:srcCompat="@drawable/ic_terms" />
+
+                    <TextView
+                        style="@style/RATextView.Driver.TermsHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/terms_message" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/terms_last_updated"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:background="@drawable/bg_terms_date"
+                    android:gravity="center_vertical"
+                    android:text="@{@string/terms_last_updated(viewModel.termsDate)}"
+                    tools:text="LAST UPDATE: MAY 25, 2017"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="25dp"
+                    android:minHeight="100dp">
+
+                    <TextView
+                        android:id="@+id/terms_and_conditions"
+                        style="@style/RATextView.Driver.Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.terms}"
+                        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repr ehenderit "/>
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:visibility="@{viewModel.termsLoading}"/>
+
+                </RelativeLayout>
+
+                <CheckBox
+                    android:id="@+id/accept_checkbox"
+                    style="@style/RATextView.Driver.TermsCheckbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/terms_check"
+                    android:enabled="@{!viewModel.termsLoading}"
+                    android:checked="@={viewModel.termsChecked}"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E2E2"/>
+
+                <Button
+                    android:id="@+id/accept_button"
+                    style="@style/Button.RoundedBlueButton"
+                    android:layout_width="match_parent"
+                    android:layout_margin="24dp"
+                    android:text="@string/terms_button"
+                    android:enabled="@{acceptCheckbox.checked}"
+                    android:onClick="@{() -> viewModel.acceptDriverTerms()}"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>
