@@ -93,3 +93,7 @@ There is a bunch of specialized managers which names are mostly self-explaining:
 * `AppNotificationManager` manages device notifications and in-app messages
 * `ConnectionStateManager` listens to network and server reachability
 * `DataManager` stores session data and encapsulates networking
+
+# License
+
+Distributed under the MIT license. See [LICENSE](LICENSE) for more information.
